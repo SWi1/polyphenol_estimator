@@ -1,0 +1,987 @@
+"fdd_ingredient","orig_food_common_name","score","method","food_id","food_public_id","food_name","orig_food_id","food_V2_ID"
+"Carrots, dehydrated","carrot dehydrated",1,"tfidf",245,"FOOD00245","Carrot","11683",722
+"Juice, sweet potato","sweet potato",0.845080947535877,"tfidf",92,"FOOD00092","Sweet potato","501",64
+"Peaches, dried","peach dried",1,"tfidf",149,"FOOD00149","Peach","0051",1254
+"Wasabi powder","wasabi",0.868761108699141,"tfidf",509,"FOOD00498","Wasabi","",9423
+"Juice, tangerine/clementine/mandarin orange","mandarin orange clementine tangerine",0.959601386469071,"tfidf",56,"FOOD00056","Mandarin orange (Clementine, Tangerine)","",9499
+"Pork, variety meat, liver, cooked","pork fresh variety meats by products liver cooked braised",0.72664633615212,"tfidf",549,"FOOD00536","Domestic pig","10111",4187
+"Artichokes, (globe or french), canned","artichokes globe french raw",0.932192872224722,"tfidf",71,"FOOD00071","Globe artichoke","11007",706
+"Corn hominy, canned","hominy canned white",0.787052985560161,"tfidf",205,"FOOD00205","Corn","20030",1643
+"Seeds, flax, roasted","flax",0.808413517899532,"tfidf",101,"FOOD00101","Flaxseed","561",72
+"Milk, 2% fat, evaporated","evaporated milk",0.951942223897147,"tfidf",824,"FOOD00798","Evaporated milk","",9853
+"Pumpkin, cooked","pumpkin",0.917217721559645,"tfidf",284,"FOOD00283","Winter squash","326",144
+"Mulberries, raw","mulberries raw",1,"tfidf",117,"FOOD00117","Black mulberry","09190",927
+"Spices, sage","spices sage ground",0.865319007987815,"tfidf",165,"FOOD00165","Common sage","02038",1341
+"Nuts, coconut cream","nuts coconut cream canned sweetened",0.793196563819088,"tfidf",341,"FOOD00336","Coconut","12116",2502
+"Cheese, parmesan","cheese parmesan hard",0.803571380883921,"tfidf",631,"FOOD00617","Cheese","01033",4763
+"Beans, green/snap, dehydrated","beans snap green raw",0.773772668921042,"tfidf",134,"FOOD00134","Common bean","11052",1044
+"Peas, green, mature (split), raw (consumed cooked/heat-treated)","peas green split mature seeds raw",0.703758509119155,"tfidf",141,"FOOD00141","Common pea","",8758
+"Carrots, raw/canned/cooked","carrot canned",0.87310141462606,"tfidf",245,"FOOD00245","Carrot","0684",713
+"Oranges, canned/cooked/frozen (oranges only)","orange",0.878962725169501,"tfidf",57,"FOOD00057","Sweet orange","282",40
+"Fish, haddock, cooked","fish haddock raw",0.909845046916258,"tfidf",379,"FOOD00374","Haddock","15033",2606
+"Broccoli raab, cooked","broccoli raab cooked",1,"tfidf",314,"FOOD00311","Rapini","11097",2432
+"Cheese, provolone, reduced fat","cheese provolone reduced fat",1,"tfidf",631,"FOOD00617","Cheese","01208",4787
+"Carrots, canned","carrot canned",1,"tfidf",245,"FOOD00245","Carrot","0684",713
+"Okra, raw","okra raw",1,"tfidf",427,"FOOD00420","Okra","0678",2725
+"Beef, lean and fat, dried","beef cured dried",0.594700469094395,"tfidf",506,"FOOD00495","Cattle (Beef, Veal)","13350",3041
+"Juice, apple","babyfood juice apple",0.824196102691257,"tfidf",690,"FOOD00668","Baby food","03166",5906
+"Onions, canned","onion",0.838513415710618,"tfidf",226,"FOOD00226","Garden onion (var.)","53",2
+"Spices, chili powder","spices chili powder",1,"tfidf",40,"FOOD00040","Pepper","02009",495
+"Oranges, raw","orange raw",1,"tfidf",57,"FOOD00057","Sweet orange","0005",593
+"Spices, nutmeg","spices nutmeg ground",0.870109743901372,"tfidf",118,"FOOD00118","Nutmeg","02025",930
+"Grapes, raw/frozen/canned (grapes only)","grape raw",0.888630884643869,"tfidf",374,"FOOD00369","Grape","0329",2581
+"Spices, nutmeg, ground","spices nutmeg ground",1,"tfidf",118,"FOOD00118","Nutmeg","02025",930
+"Peaches, cooked","peach",0.899519893513325,"tfidf",149,"FOOD00149","Peach","792",103
+"Fish, mullet, raw","fish mullet striped raw",0.777587921707931,"tfidf",418,"FOOD00412","Striped mullet","15055",2708
+"Mollusks, clam, canned","mollusks clam mixed species canned liquid",0.731743071584949,"tfidf",544,"FOOD00531","Bivalvia (Clam, Mussel, Oyster)","15162",3967
+"Spices, pumpkin pie spice","spices pumpkin pie spice",1,"tfidf",50,"FOOD00050","Chinese cinnamon","02035",6664
+"Milk, whole, evaporated","evaporated milk",0.901129493547586,"tfidf",824,"FOOD00798","Evaporated milk","",9853
+"Fish, ocean perch, raw","fish ocean perch atlantic raw",0.880179600630249,"tfidf",295,"FOOD00294","Painted comber","15057",2389
+"Persimmons, raw","persimmons raw",1,"tfidf",437,"FOOD00429","Common persimmon","",8890
+"Beans, mung, mature, sprouted, raw","mung beans mature seeds sprouted raw",0.940804499819576,"tfidf",200,"FOOD00200","Mung bean","11043",1566
+"Cheese, queso seco","cheese dry white queso seco",0.912251517531422,"tfidf",631,"FOOD00617","Cheese","01227",4789
+"Mustard greens, canned/cooked","mustard greens",0.873254823537451,"tfidf",27,"FOOD00027","Chinese mustard","171",19
+"Peppers, sweet/bell, canned","bell pepper",0.824078318503307,"tfidf",40,"FOOD00040","Pepper","207",26
+"Beans, mung, mature, sprouted, canned","mung beans mature seeds sprouted raw",0.874510729735823,"tfidf",200,"FOOD00200","Mung bean","11043",1566
+"Lambsquarters, cooked","lambsquarters",0.941897482455897,"tfidf",399,"FOOD00394","Lambsquarters","",9740
+"Deer, lean and fat, cooked","deer",0.824098738765584,"tfidf",535,"FOOD00524","Deer","",9862
+"Beans, pink, mature, raw (consumed cooked/heat-treated)","beans pink mature seeds raw",0.632956238195956,"tfidf",134,"FOOD00134","Common bean","16040",1098
+"Turnips, cooked","turnip",0.919649599129761,"tfidf",36,"FOOD00036","Turnip","",9548
+"Fish, carp, cooked","fish carp raw",0.919644478819796,"tfidf",327,"FOOD00322","Common carp","15008",2458
+"Mushrooms, cooked","mushroom raw",0.803908733293683,"tfidf",561,"FOOD00547","Common mushroom","0037",4455
+"Luffa/loofah, cooked","luffa",0.953689807699502,"tfidf",503,"FOOD00492","Towel gourd","572",203
+"Bran, wheat","wheat bran",1,"tfidf",575,"FOOD00561","Wheat","0086",4489
+"Bananas, dehydrated","bananas dehydrated banana powder",0.886449391970682,"tfidf",208,"FOOD00208","Banana","09041",1668
+"Cornmeal, whole grain","cornmeal whole grain white",0.924827046899342,"tfidf",205,"FOOD00205","Corn","20320",1648
+"Fish, mackerel, smoked","mackerel smoked",0.899922957512146,"tfidf",600,"FOOD00586","Scombridae (Bonito, Mackerel, Tuna)","0177",4567
+"Spices, fennel seed","spices fennel seed",1,"tfidf",82,"FOOD00082","Fennel","02018",751
+"Pigeonpeas, immature, canned","pigeonpeas immature seeds raw",0.847013165597724,"tfidf",37,"FOOD00037","Pigeon pea","11344",460
+"Duck, lean and fat, cooked","fat duck",0.881850171790363,"tfidf",704,"FOOD00682","Other animal fat","04574",6799
+"Jellyfish, dried","jellyfish dried salted",0.846362719274821,"tfidf",579,"FOOD00565","Jellyfish","43497",4530
+"Beans, mung, mature, sprouted, canned/cooked","mung beans mature seeds sprouted raw",0.85133434109385,"tfidf",200,"FOOD00200","Mung bean","11043",1566
+"Pears, canned/cooked (pears only)","pear canned",0.935107247308871,"tfidf",152,"FOOD00152","Pear","0215",1280
+"Cranberries, raw","cranberries raw",1,"tfidf",192,"FOOD00192","American cranberry","09078",1538
+"Figs, raw","figs raw",1,"tfidf",81,"FOOD00081","Fig","0632",741
+"Beet greens, cooked","beet greens raw",0.90218148285589,"tfidf",25,"FOOD00025","Common beet","11086",360
+"Beef, variety meat, liver, cooked","beef variety meats by products liver cooked braised",0.75503433374839,"tfidf",506,"FOOD00495","Cattle (Beef, Veal)","13326",3018
+"Soursop, canned/cooked (soursop only)","soursop",0.966703390297145,"tfidf",488,"FOOD00478","Soursop","91",197
+"Seaweed, laver, raw","seaweed laver raw",1,"tfidf",563,"FOOD00549","Purple laver","11446",4473
+"Fish, salmon, smoked","salmon smoked",0.880460060338107,"tfidf",504,"FOOD00493","Salmonidae (Salmon, Trout)","0137",2919
+"Broccoli, cooked","broccoli",0.90313894511704,"tfidf",34,"FOOD00034","Broccoli","",9038
+"Cheese, romano","cheese romano",1,"tfidf",631,"FOOD00617","Cheese","01038",4768
+"Egg, white, raw","egg white raw frozen",0.873777990108808,"tfidf",633,"FOOD00619","Eggs","01172",4872
+"Tea, herbal, leaves/flowers/seeds","herbal tea",1,"tfidf",1021,"FOOD00989","Herbal tea","",9909
+"Pineapple, canned/cooked (pineapple only)","pineapple canned",0.945647431777964,"tfidf",12,"FOOD00012","Pineapple","0004",261
+"Plums, cooked","plum",0.908908411767301,"tfidf",147,"FOOD00147","European plum","789",101
+"Spices, cumin","spices cumin seed",0.925075928071623,"tfidf",67,"FOOD00067","Cumin","02014",701
+"Egg, yolk, raw","egg yolk",0.953940972475217,"tfidf",951,"FOOD00919","Egg yolk","",9890
+"Fennel bulb, raw","fennel bulb raw",1,"tfidf",82,"FOOD00082","Fennel","11957",752
+"Cheese, cheddar","cheese cheddar",1,"tfidf",631,"FOOD00617","Cheese","01009",4739
+"Juice, orange","orange juice raw",0.931673547470814,"tfidf",57,"FOOD00057","Sweet orange","09206",599
+"Flour, millet","millet flour",1,"tfidf",126,"FOOD00126","Millet","20647",989
+"Juice, papaya","papaya",0.869815871510509,"tfidf",41,"FOOD00041","Papaya","209",27
+"Tea, green, leaves","tea leaves",0.849716586554292,"tfidf",38,"FOOD00038","Tea","0304",466
+"Fish, cod, dried","fish cod atlantic dried salted",0.715095609934398,"tfidf",343,"FOOD00338","Atlantic cod","15018",2514
+"Cheese, cottage","cheese cottage with vegetables",0.873565174648614,"tfidf",631,"FOOD00617","Cheese","43273",4799
+"Corn hominy, cooked","hominy canned white",0.664051674611904,"tfidf",205,"FOOD00205","Corn","20030",1643
+"Flour, teff","teff",0.853256205730385,"tfidf",500,"FOOD00489","Teff","",9756
+"Artichokes, (globe or french), raw","artichokes globe french raw",1,"tfidf",71,"FOOD00071","Globe artichoke","11007",706
+"Cornmeal, degermed","cornmeal degermed enriched white",0.84099486968502,"tfidf",205,"FOOD00205","Corn","20322",1649
+"Artichokes, (globe or french), cooked","artichokes globe french raw",0.946961527722677,"tfidf",71,"FOOD00071","Globe artichoke","11007",706
+"Juice, tamarind","tamarind",0.879957684673524,"tfidf",180,"FOOD00180","Tamarind","",9501
+"Cocoa, dry powder, unsweetened","cocoa dry powder unsweetened",1,"tfidf",707,"FOOD00685","Cocoa powder","19165",6813
+"Milk, human","human milk mature",0.883835823207827,"tfidf",687,"FOOD00666","Milk (Human)","1303",5766
+"Endive, raw","endive raw",1,"tfidf",48,"FOOD00048","Endive","11213",561
+"Honey","honey",1,"tfidf",643,"FOOD00626","Honey","0081",4983
+"Tamarind, cooked","tamarind",0.941897482455897,"tfidf",180,"FOOD00180","Tamarind","",9501
+"Bran, corn","corn bran crude",0.717905226374321,"tfidf",205,"FOOD00205","Corn","20015",1632
+"Rhubarb, canned/cooked (rhubarb only)","rhubarb",0.956477641395997,"tfidf",154,"FOOD00154","Garden rhubarb","847",108
+"Peas, green, canned","peas green canned",1,"tfidf",141,"FOOD00141","Common pea","0344",1150
+"Blueberries, canned (blueberries only)","blueberry",0.954772672849784,"tfidf",191,"FOOD00191","Highbush blueberry","1038",133
+"Seaweed, kelp, raw","seaweed kelp raw",1,"tfidf",396,"FOOD00391","Kelp","11445",2661
+"Bran, rice","rice bran",1,"tfidf",125,"FOOD00125","Rice","1023",944
+"Fish, haddock, smoked","fish haddock smoked",1,"tfidf",379,"FOOD00374","Haddock","15035",2608
+"Chicory root powder","chicory roots",0.895857694614351,"tfidf",254,"FOOD00254","Chicory roots","",9694
+"Cheese, swiss, low fat/nonfat","cheese swiss low fat",0.836261737674102,"tfidf",631,"FOOD00617","Cheese","43589",4808
+"Caribou, lean and fat, cooked","stew/soup caribou alaska native",0.54255207758185,"tfidf",749,"FOOD00724","Stew","35024",7242
+"Papayas, canned (papaya only)","papaya",0.973335099552256,"tfidf",41,"FOOD00041","Papaya","209",27
+"Nectarines, raw","nectarines raw",1,"tfidf",229,"FOOD00229","Nectarine","09191",1673
+"Fish, porgy/scup, cooked","fish scup raw",0.92330486267353,"tfidf",473,"FOOD00463","Scup","15090",2843
+"Plums, canned (plums only)","plum",0.960797581919686,"tfidf",147,"FOOD00147","European plum","789",101
+"Wine, table, red","wine table red",1,"tfidf",943,"FOOD00911","Red wine","",9446
+"Squash, summer, canned","summer squash",0.924384036819645,"tfidf",66,"FOOD00066","Cucurbita","328",47
+"Lemon peel, cooked","lemon peel raw",0.913211611645448,"tfidf",54,"FOOD00054","Lemon","0834",573
+"Beets, canned/cooked","beet",0.83301075790248,"tfidf",264,"FOOD00264","Red beetroot","157",143
+"Limes, raw","limes raw",1,"tfidf",557,"FOOD00543","Persian lime","09159",4447
+"Passion-fruit, (granadilla), purple, raw","passion fruit granadilla purple raw",1,"tfidf",128,"FOOD00128","Passion fruit","09231",994
+"Watermelon, raw","watermelon raw",1,"tfidf",52,"FOOD00052","Watermelon","0186",569
+"Carambola (starfruit), raw","carambola starfruit raw",1,"tfidf",23,"FOOD00023","Star fruit","09060",353
+"Peas, green, raw","peas green raw",1,"tfidf",141,"FOOD00141","Common pea","0342",1152
+"Burdock root, cooked","burdock root raw",0.934430669705113,"tfidf",17,"FOOD00017","Burdock","11104",325
+"Fish, ray, cooked","fishes",0.840606316644728,"tfidf",896,"FOOD00865","Fishes","",9850
+"Currants, raw","currants white raw",0.872352717203695,"tfidf",156,"FOOD00156","Redcurrant","",8829
+"Mollusks, clam, canned/cooked","mollusks clam mixed species canned liquid",0.702896150438833,"tfidf",544,"FOOD00531","Bivalvia (Clam, Mussel, Oyster)","15162",3967
+"Squirrel, lean and fat, cooked","squirrel ground meat alaska native",0.571367683686145,"tfidf",539,NA,NA,"35075",3955
+"Whey, dried","whey sweet dried",0.879933505986252,"tfidf",679,"FOOD00658","Whey","0514",5711
+"Leeks, (bulb and lower-leaf portion), raw","leeks bulb lower leaf portion raw",1,"tfidf",401,"FOOD00396","Wild leek","11246",2671
+"Coriander (cilantro) leaves, raw","coriander cilantro leaves raw",1,"tfidf",61,"FOOD00061","Coriander","11165",630
+"Papayas, raw","papayas raw",1,"tfidf",41,"FOOD00041","Papaya","09226",532
+"Beets, canned","beet",0.887251735815431,"tfidf",264,"FOOD00264","Red beetroot","157",143
+"Seeds, sesame, dried/roasted","sesame seeds whole dried",0.809117239841882,"tfidf",170,"FOOD00170","Sesame","0657",1353
+"Plums, canned/cooked (plums only)","plum",0.938278629266897,"tfidf",147,"FOOD00147","European plum","789",101
+"Tomato puree, canned/cooked","tomato puree",0.886909755477238,"tfidf",171,"FOOD00171","Garden tomato","0310",1370
+"Chicken, variety meat, giblets (incl liver/gizzard), cooked","gizzard chicken raw",0.696715326217576,"tfidf",334,"FOOD00329","Chicken","",9009
+"Spices, pepper, black","spices pepper black",1,"tfidf",139,"FOOD00139","Pepper (Spice)","02030",1143
+"Flour, corn, masa","corn masa flour masa harina",0.850971851701184,"tfidf",205,"FOOD00205","Corn","",9130
+"Guava, cooked","guava",0.928395672346731,"tfidf",150,"FOOD00150","Guava","796",104
+"Fish, shark, cooked","fish shark mixed species raw",0.722475945088662,"tfidf",481,"FOOD00471","Shark","15095",2867
+"Artichokes, (globe or french), canned/cooked","artichokes globe french raw",0.908370442169038,"tfidf",71,"FOOD00071","Globe artichoke","11007",706
+"Egg, duck, cooked","egg duck whole raw",0.8242911519724,"tfidf",633,"FOOD00619","Eggs","1033",4844
+"Strawberries, cooked","strawberry",0.897100314575567,"tfidf",83,"FOOD00083","Strawberry","70",8343
+"Spinach, cooked","spinach",0.913519671851138,"tfidf",178,"FOOD00178","Spinach","957",124
+"Collards, cooked","collards raw",0.88699501212466,"tfidf",247,"FOOD00247","Black cabbage","11161",1684
+"Kale, canned","kale canned",1,"tfidf",395,"FOOD00390","Kale","0513",2651
+"Cream, sour","sour cream light",0.812131639647795,"tfidf",669,"FOOD00650","Cream","01179",5511
+"Cherries, canned (cherries only)","cherry raw",0.85281821068245,"tfidf",143,"FOOD00143","Prunus (Cherry, Plum)","0121",1184
+"Seaweed, wakame, cooked","seaweed wakame raw",0.94303988662441,"tfidf",564,"FOOD00550","Wakame","11669",4474
+"Cheese, limburger","cheese limburger",1,"tfidf",631,"FOOD00617","Cheese","01024",4754
+"Capers, canned","capers canned",1,"tfidf",39,"FOOD00039","Capers","02054",488
+"Lemon peel, raw","lemon peel raw",1,"tfidf",54,"FOOD00054","Lemon","0834",573
+"Spices, pepper, red/cayenne","spices pepper red cayenne",1,"tfidf",40,"FOOD00040","Pepper","02031",497
+"Cheese, muenster","cheese muenster",1,"tfidf",631,"FOOD00617","Cheese","01030",4760
+"Beans, pinto, mature, canned/cooked","beans pinto mature seeds raw",0.800196034877958,"tfidf",134,"FOOD00134","Common bean","16042",1100
+"Nuts, brazilnuts, unroasted","nuts brazilnuts dried unblanched",0.542683769088404,"tfidf",24,"FOOD00024","Brazil nut","12078",355
+"Spices, turmeric, ground","spices turmeric ground",1,"tfidf",68,"FOOD00068","Turmeric","02043",702
+"Broccoli, Chinese, raw","broccoli chinese raw",1,"tfidf",335,"FOOD00330","Chinese broccoli","",9406
+"Milk, buttermilk, 1% fat, fluid","milk buttermilk fluid whole",0.877689138841312,"tfidf",714,"FOOD00692","Buttermilk","01230",6863
+"Nuts, pistachio, unroasted","nuts pistachio nuts raw",0.651469539482284,"tfidf",140,"FOOD00140","Pistachio","12151",1147
+"Apples, dried","apple dried",1,"tfidf",105,"FOOD00105","Apple","0338",887
+"Kohlrabi, raw","kohlrabi raw",1,"tfidf",33,"FOOD00033","Kohlrabi","0660",423
+"Peas, green, cooked","peas green raw",0.876944646920989,"tfidf",141,"FOOD00141","Common pea","0342",1152
+"Lettuce, leaf, raw","lettuce red leaf raw",0.896278968209712,"tfidf",95,"FOOD00095","Lettuce","11257",861
+"Cabbage, canned","cabbage",0.854015400562366,"tfidf",881,"FOOD00851","Cabbage","176",217
+"Lettuce, cos/romaine, raw","romaine lettuce",0.969284738734152,"tfidf",920,"FOOD00888","Romaine lettuce","",9639
+"Chard, Swiss, raw","chard swiss raw",1,"tfidf",237,"FOOD00237","Swiss chard","0666",1675
+"Squash, winter, raw","winter squash",0.953635412070508,"tfidf",284,"FOOD00283","Winter squash","",9555
+"Grapes, cooked","grape",0.893466065976166,"tfidf",374,"FOOD00369","Grape","",9547
+"Seaweed, agar, dried","seaweed agar dried",1,"tfidf",285,"FOOD00284","Agar","11663",2365
+"Popcorn, air-popped","snacks popcorn air popped",0.941205236489203,"tfidf",744,"FOOD00719","Popcorn","19034",7185
+"Cabbage, raw","cabbage raw",1,"tfidf",30,"FOOD00030","Common cabbage","11109",388
+"Leeks, (bulb and lower-leaf portion), cooked","leeks bulb lower leaf portion raw",0.972018806509842,"tfidf",401,"FOOD00396","Wild leek","11246",2671
+"Blueberries, canned/cooked (blueberries only)","blueberry",0.929169102079006,"tfidf",191,"FOOD00191","Highbush blueberry","1038",133
+"Mushrooms, raw","mushroom raw",1,"tfidf",561,"FOOD00547","Common mushroom","0037",4455
+"Peas, green, mature (split), uncooked (consumed cooked/heat-treated)","peas green split mature seeds raw",0.616555913853424,"tfidf",141,"FOOD00141","Common pea","",8758
+"Cress, cooked","garden cress",0.721167119174222,"tfidf",99,"FOOD00099","Garden cress","556",70
+"Cress, canned","garden cress",0.698579522617119,"tfidf",99,"FOOD00099","Garden cress","556",70
+"Mollusks, clam, raw","mollusks clam mixed species raw",0.776535902027799,"tfidf",544,"FOOD00531","Bivalvia (Clam, Mussel, Oyster)","15157",3963
+"Broccoli, canned","broccoli",0.858242282194505,"tfidf",34,"FOOD00034","Broccoli","",9038
+"Spices, coriander leaf, dried","spices coriander leaf dried",1,"tfidf",61,"FOOD00061","Coriander","02012",628
+"Spices, mustard seed, ground","spices mustard seed ground",1,"tfidf",420,"FOOD00413","White mustard","02024",2710
+"Wine, table, NS as to red/white","wine table red",0.912006074783321,"tfidf",943,"FOOD00911","Red wine","",9446
+"Tomatillos, cooked","tomatillo",0.949783092198908,"tfidf",502,"FOOD00491","Mexican groundcherry","727",202
+"Collards, raw","collards raw",1,"tfidf",247,"FOOD00247","Black cabbage","11161",1684
+"Turnips, raw","turnip raw",1,"tfidf",36,"FOOD00036","Turnip","0149",442
+"Peas, edible-podded, cooked","peas edible podded raw",0.950003301234508,"tfidf",141,"FOOD00141","Common pea","11300",1155
+"Beans, lima, mature, cooked","lima bean",0.808611878751985,"tfidf",133,"FOOD00133","Lima bean","",9480
+"Nuts, coconut water (liquid from coconuts)","nuts coconut water liquid from coconuts",1,"tfidf",341,"FOOD00336","Coconut","12119",2505
+"Spices, celery seed","spices celery seed",1,"tfidf",15,"FOOD00015","Wild celery","02007",284
+"Celeriac, cooked","celeriac",0.938087828956234,"tfidf",214,"FOOD00214","Celeriac","",9664
+"Cabbage, Chinese, cooked","chinese cabbage",0.946366569126052,"tfidf",35,"FOOD00035","Chinese cabbage","",9546
+"Spices, thyme, dried","spices thyme dried",1,"tfidf",183,"FOOD00183","Common thyme","02042",1517
+"Syrup, maple","syrups maple",1,"tfidf",695,"FOOD00673","Syrup","19353",6686
+"Fish, sardines, cooked","fish oil sardine",0.849137130197575,"tfidf",531,"FOOD00520","Clupeinae (Herring, Sardine, Sprat)","04594",3917
+"Yam, cooked","yam",0.9320728262936,"tfidf",519,"FOOD00508","Yam","",9467
+"Yambean (jicama), raw","yambean jicama raw",1,"tfidf",520,"FOOD00509","Jicama","11603",3865
+"Spices, marjoram, dried","spices marjoram dried",1,"tfidf",122,"FOOD00122","Sweet marjoram","02023",942
+"Chard, Swiss, cooked","swiss chard",0.96149313873124,"tfidf",237,"FOOD00237","Swiss chard","",9645
+"Juice, tangerine/clementine/mandarin orange, concentrate","mandarin orange clementine tangerine",0.902712398703286,"tfidf",56,"FOOD00056","Mandarin orange (Clementine, Tangerine)","",9499
+"Grapefruit, canned (grapefruit only)","grapefruit",0.963947138499598,"tfidf",256,"FOOD00256","Grapefruit","11",8515
+"Mollusks, mussels, raw","mollusks mussel blue raw",0.846119975259011,"tfidf",307,"FOOD00304","Blue mussel","15164",2416
+"Ostrich, lean and fat, cooked","ostrich",0.838558121937361,"tfidf",430,"FOOD00422","Ostrich","",9861
+"Cranberries, cooked","cranberry",0.909533660009125,"tfidf",192,"FOOD00192","American cranberry","",9193
+"Cranberries, canned/cooked (cranberries only)","cranberry",0.938722557496244,"tfidf",192,"FOOD00192","American cranberry","",9193
+"Balsam-pear (bitter melon/gourd), pods, cooked","balsam pear bitter gourd pods raw",0.884371313625492,"tfidf",115,"FOOD00115","Bitter gourd","11024",923
+"Amaranth grain, uncooked (consumed cooked/heat-treated)","amaranth grain uncooked",0.747335930533624,"tfidf",289,"FOOD00288","Amaranth","",9401
+"Oranges, cooked","orange",0.890488049962519,"tfidf",57,"FOOD00057","Sweet orange","282",40
+"Melon, casaba, raw","melons casaba raw",1,"tfidf",64,"FOOD00064","Muskmelon","09183",636
+"Spices, curry powder","spices curry powder",1,"tfidf",700,"FOOD00678","Curry powder","02015",6703
+"Beans, kidney, mature, canned/cooked","beans kidney all types mature seeds canned",0.749741241228508,"tfidf",134,"FOOD00134","Common bean","16029",1087
+"Tomatoes, dried","tomato dried",1,"tfidf",171,"FOOD00171","Garden tomato","1478",1372
+"Syrup, agave","agave",0.837548789808703,"tfidf",577,"FOOD00563","Agave","",9776
+"Onions, raw","onions raw",1,"tfidf",226,"FOOD00226","Garden onion (var.)","11282",227
+"Peas, green, dehydrated","peas green raw",0.692076690305229,"tfidf",141,"FOOD00141","Common pea","0342",1152
+"Bison, lean and fat, cooked","bison",0.861571271294921,"tfidf",303,"FOOD00301","Bison","",9864
+"Fish, carp, smoked","fish carp raw",0.822431315597835,"tfidf",327,"FOOD00322","Common carp","15008",2458
+"Brussels sprouts, cooked","brussels sprouts",0.962600962371921,"tfidf",32,"FOOD00032","Brussel sprouts","",9154
+"Tamarind, raw","tamarinds raw",1,"tfidf",180,"FOOD00180","Tamarind","09322",1511
+"Tomato puree, canned","tomato puree",0.925993150775387,"tfidf",171,"FOOD00171","Garden tomato","0310",1370
+"Fish, swordfish, cooked","fish swordfish raw",0.92330486267353,"tfidf",498,"FOOD00487","Swordfish","15110",2892
+"Fish, pompano, raw","fish pompano florida raw",0.794488016730807,"tfidf",371,"FOOD00366","Florida pompano","15068",2575
+"Mollusks, octopus, cooked","mollusks octopus common raw",0.815651136808374,"tfidf",344,"FOOD00339","Common octopus","15166",2516
+"Germ, wheat","wheat germ raw",0.954272489935355,"tfidf",575,"FOOD00561","Wheat","0085",4492
+"Juice, grape","grape juice",1,"tfidf",374,"FOOD00369","Grape","1087",2580
+"Juice, cherry","juice sour cherry",0.766871074223423,"tfidf",143,"FOOD00143","Prunus (Cherry, Plum)","",8872
+"Beans, mung, mature, sprouted, cooked","mung beans mature seeds sprouted raw",0.88891320615843,"tfidf",200,"FOOD00200","Mung bean","11043",1566
+"Seaweed, kombu, raw","kombu",0.752490265731457,"tfidf",616,"FOOD00602","Kombu","",9779
+"Pigeonpeas, immature, raw (consumed canned/cooked)","pigeonpeas immature seeds raw",0.852836196759929,"tfidf",37,"FOOD00037","Pigeon pea","11344",460
+"Seeds, pumpkin/squash, unroasted","seeds pumpkin squash seed kernels dried",0.595282574294978,"tfidf",66,"FOOD00066","Cucurbita","12014",696
+"Blueberries, cooked","blueberry",0.896166099124112,"tfidf",191,"FOOD00191","Highbush blueberry","1038",133
+"Pork, variety meat, tongue, cooked","pork fresh variety meats by products tongue cooked braised",0.751113531758393,"tfidf",549,"FOOD00536","Domestic pig","10122",4198
+"Corn hominy, canned/cooked","hominy canned white",0.755536045449151,"tfidf",205,"FOOD00205","Corn","20030",1643
+"Thistle leaves, cooked","thistle",0.808453704417046,"tfidf",620,"FOOD00606","Thistle","",9780
+"Peaches, dried, cooked","peach dried",0.934749759709915,"tfidf",149,"FOOD00149","Peach","0051",1254
+"Cheese, blue/roquefort","cheese roquefort",0.80238650844831,"tfidf",631,"FOOD00617","Cheese","01039",4769
+"Celery, raw","celery raw",1,"tfidf",215,"FOOD00215","Celery stalks","0015",283
+"Raspberries, cooked","raspberry",0.912824653897315,"tfidf",162,"FOOD00162","Red raspberry","878",114
+"Pears, raw/frozen/canned (pears only)","pear canned",0.886932676258176,"tfidf",152,"FOOD00152","Pear","0215",1280
+"Horseradish root","horseradish root whole",0.921294237422908,"tfidf",18,"FOOD00018","Horseradish","",8936
+"Juice, prune","prune juice canned",0.915062735522603,"tfidf",147,"FOOD00147","European plum","09294",1237
+"Sweet potatoes, canned","sweet potato",0.885138024689243,"tfidf",92,"FOOD00092","Sweet potato","501",64
+"Peas, green, canned/cooked","peas green canned",0.945681024267748,"tfidf",141,"FOOD00141","Common pea","0344",1150
+"Egg, whole, dried","egg whole dried",1,"tfidf",633,"FOOD00619","Eggs","01133",4861
+"Squash, summer, cooked","summer squash",0.950178403400287,"tfidf",66,"FOOD00066","Cucurbita","328",47
+"Juice, lemon","juice lemon raw",0.934489667181781,"tfidf",54,"FOOD00054","Lemon","",8863
+"Fish, eel, smoked","eel smoked",0.914003807450522,"tfidf",591,"FOOD00577","Anguilliformes","0354",4551
+"Apples, raw/frozen/canned (apples only)","apple",0.8565117726511,"tfidf",105,"FOOD00105","Apple","595",73
+"Turnips, canned/cooked","turnip",0.824515026274498,"tfidf",36,"FOOD00036","Turnip","",9548
+"Beans, lima, immature, cooked","lima beans immature seeds raw",0.856987518863384,"tfidf",133,"FOOD00133","Lima bean","11031",1011
+"Rutabagas, cooked","rutabagas raw",0.899496257480615,"tfidf",28,"FOOD00028","Swede","11435",378
+"Pomegranates, raw","pomegranates raw",1,"tfidf",151,"FOOD00151","Pomegranate","0633",1278
+"Juice, watermelon","watermelon",0.889024126600343,"tfidf",52,"FOOD00052","Watermelon","274",36
+"Cabbage, Chinese, raw","cabbage chinese raw",1,"tfidf",35,"FOOD00035","Chinese cabbage","",8917
+"Spinach, raw","spinach raw",1,"tfidf",178,"FOOD00178","Spinach","0278",1500
+"Fish, porgy/scup, raw","fish scup raw",1,"tfidf",473,"FOOD00463","Scup","15090",2843
+"Pumpkin, canned/cooked","pumpkin canned",0.934423378365051,"tfidf",66,"FOOD00066","Cucurbita","0062",654
+"Wine, table, white","wine table white",1,"tfidf",949,"FOOD00917","White wine","",9447
+"Beans, green/snap, canned/cooked","beans snap green raw",0.861386445715613,"tfidf",134,"FOOD00134","Common bean","11052",1044
+"Molasses","molasses",1,"tfidf",811,"FOOD00786","Molasses","19304",7873
+"Milk, 1% fat, evaporated","evaporated milk",0.951942223897147,"tfidf",824,"FOOD00798","Evaporated milk","",9853
+"Breadfruit, canned/cooked","breadfruit",0.863606487535484,"tfidf",312,"FOOD00309","Breadfruit","128",148
+"Fat, animal, turkey","fat turkey",0.612534579408334,"tfidf",704,"FOOD00682","Other animal fat","04575",6800
+"Flavorings, vanilla extract","vanilla extract",0.718622083679763,"tfidf",195,"FOOD00195","Vanilla","02050",1546
+"Blueberries, raw/frozen","blueberries frozen",0.930497067830722,"tfidf",191,"FOOD00191","Highbush blueberry","",9108
+"Beans, black, mature, raw (consumed cooked/heat-treated)","beans black mature seeds raw",0.594576439393518,"tfidf",134,"FOOD00134","Common bean","16014",1075
+"Ginger root, raw","ginger root raw",1,"tfidf",206,"FOOD00206","Ginger","0667",1664
+"Raspberries, raw/frozen","raspberry frozen",0.938883852109257,"tfidf",160,"FOOD00160","Rubus (Blackberry, Raspberry)","1554",1328
+"Watercress, cooked","watercress",0.944137712599099,"tfidf",158,"FOOD00158","Watercress","",9572
+"Egg, whole, cooked","egg whole cooked fried",0.805881275500143,"tfidf",633,"FOOD00619","Eggs","01128",4856
+"Boysenberries, raw/frozen","boysenberry",0.861218040202955,"tfidf",556,"FOOD00542","Boysenberry","",9767
+"Cheese, camembert","cheese camembert",1,"tfidf",631,"FOOD00617","Cheese","01007",4737
+"Milk, buttermilk, whole, dried","milk buttermilk dried",0.899958181993364,"tfidf",714,"FOOD00692","Buttermilk","01094",6862
+"Ginger root, cooked","ginger root raw",0.929213890645635,"tfidf",206,"FOOD00206","Ginger","0667",1664
+"Peaches, yellow, cooked","peaches yellow raw",0.8917849044453,"tfidf",149,"FOOD00149","Peach","",9393
+"Blackberries, canned/cooked (blackberries only)","blackberry",0.947713374288674,"tfidf",160,"FOOD00160","Rubus (Blackberry, Raspberry)","80",8354
+"Sweet potatoes, canned/cooked","sweet potato",0.830160502087371,"tfidf",92,"FOOD00092","Sweet potato","501",64
+"Pineapple, cooked","pineapple",0.904230407273086,"tfidf",12,"FOOD00012","Pineapple","74",5
+"Persimmons, dried","persimmon",0.846316980065154,"tfidf",73,"FOOD00073","Japanese persimmon","1177",8684
+"Peppers, sweet/bell, cooked","bell pepper",0.841734203206203,"tfidf",40,"FOOD00040","Pepper","207",26
+"Okra, canned/cooked","okra",0.85998881033267,"tfidf",427,"FOOD00420","Okra","1",184
+"Garlic, raw","garlic raw",1,"tfidf",8,"FOOD00008","Garlic","0089",247
+"Beans, mungo, mature, cooked","mungo beans mature seeds raw",0.870412563053625,"tfidf",199,"FOOD00199","Gram bean","16083",1561
+"Frog legs, cooked","frog legs raw",0.934870030547593,"tfidf",592,"FOOD00578","True frog","80200",4553
+"Grape leaves, canned/cooked","grape leaves canned",0.950818747365723,"tfidf",374,"FOOD00369","Grape","11975",2591
+"Beans, navy, mature, canned/cooked","beans navy mature seeds canned",0.897030878748581,"tfidf",134,"FOOD00134","Common bean","16039",1097
+"Kumquats, raw","kumquats raw",1,"tfidf",398,"FOOD00393","Kumquat","0636",2664
+"Mollusks, oysters, canned/cooked","mollusks oyster eastern canned",0.756904301976362,"tfidf",361,"FOOD00356","Eastern oyster","15170",2551
+"Asparagus, cooked","asparagus",0.915690506824781,"tfidf",21,"FOOD00021","Asparagus","137",14
+"Milk, buttermilk, 1% fat, dried","milk buttermilk dried",0.951324104702129,"tfidf",714,"FOOD00692","Buttermilk","01094",6862
+"Peaches, raw/frozen/canned (peaches only)","peach canned",0.901424784104314,"tfidf",149,"FOOD00149","Peach","0050",1253
+"Pumpkin, canned","pumpkin canned",1,"tfidf",66,"FOOD00066","Cucurbita","0062",654
+"Lotus root, cooked","lotus root raw",0.929213890645635,"tfidf",407,"FOOD00402","Sacred lotus","11254",2687
+"Flour, peanut","peanut flour low fat",0.806847169546857,"tfidf",16,"FOOD00016","Peanut","16100",309
+"Juice, mango","mango",0.869815871510509,"tfidf",106,"FOOD00106","Mango","600",74
+"Figs, canned/cooked (figs only)","fig",0.95279263284039,"tfidf",81,"FOOD00081","Fig","",9538
+"Beet greens, raw","beet greens raw",1,"tfidf",25,"FOOD00025","Common beet","11086",360
+"Flour, wheat, whole grain","wheat flour whole grain",1,"tfidf",575,"FOOD00561","Wheat","20080",4500
+"Parsley, canned/cooked","parsley",0.856686369335769,"tfidf",131,"FOOD00131","Parsley","712",89
+"Papayas, cooked","papaya",0.936422837654091,"tfidf",41,"FOOD00041","Papaya","209",27
+"Cabbage, canned/cooked","cabbage cooked",0.876854829967398,"tfidf",881,"FOOD00851","Cabbage","",9089
+"Fish, salmon, canned","salmon canned",0.842097084227988,"tfidf",504,"FOOD00493","Salmonidae (Salmon, Trout)","0136",2915
+"Flour, corn, whole grain","corn flour whole grain white",0.925442254361412,"tfidf",205,"FOOD00205","Corn","20316",1646
+"Fish, snapper, raw","fish snapper mixed species raw",0.792564049766958,"tfidf",487,"FOOD00477","Snapper","15101",2875
+"Garlic, canned/cooked","garlic",0.822970581350463,"tfidf",880,"FOOD00850","Soft-necked garlic","54",216
+"Salsify, cooked","salsify",0.938087828956234,"tfidf",467,"FOOD00457","Common salsify","1019",195
+"Beans, pinto, mature, canned","beans pinto mature seeds raw",0.830076202197653,"tfidf",134,"FOOD00134","Common bean","16042",1100
+"Rutabagas, raw","rutabagas raw",1,"tfidf",28,"FOOD00028","Swede","11435",378
+"Fish, tilapia, cooked","fish tilapia raw",0.92330486267353,"tfidf",723,"FOOD00699","Cichlidae (Tilapia)","15261",6911
+"Grapes, canned/cooked (grapes only)","grape",0.927223503330841,"tfidf",374,"FOOD00369","Grape","",9547
+"Apricots, dried","apricot dried",1,"tfidf",144,"FOOD00144","Apricot","0001",1187
+"Spices, coriander (cilantro) leaf, dried","coriander cilantro leaves raw",0.842743444548772,"tfidf",61,"FOOD00061","Coriander","11165",630
+"Cheese, colby","cheese colby",1,"tfidf",631,"FOOD00617","Cheese","01011",4741
+"Spinach, dehydrated","spinach",0.682865520248472,"tfidf",178,"FOOD00178","Spinach","957",124
+"Fish, pollock, cooked","fish pollock raw",0.908030500808862,"tfidf",524,"FOOD00513","Pollock","",9424
+"Fish, sturgeon, smoked","fish sturgeon mixed species smoked",0.818343645206054,"tfidf",494,"FOOD00483","Greater sturgeon","15106",2886
+"Carrots, canned/cooked","carrot canned",0.927881510626626,"tfidf",245,"FOOD00245","Carrot","0684",713
+"Broccoli, raw","raw broccoli",1,"tfidf",34,"FOOD00034","Broccoli","",9086
+"Plums, raw","plums raw",1,"tfidf",147,"FOOD00147","European plum","09279",1225
+"Bananas, cooked","banana",0.896630936471668,"tfidf",444,"FOOD00436","French plantain","645",189
+"Flour, carob","carob flour",1,"tfidf",326,"FOOD00321","Carob","16055",2457
+"Cheese, gouda/edam","cheese gouda",0.739918479128701,"tfidf",631,"FOOD00617","Cheese","01022",4752
+"Raspberries, canned/cooked (raspberries only)","raspberry",0.941054464701074,"tfidf",162,"FOOD00162","Red raspberry","878",114
+"Crustaceans, shrimp, canned","crustaceans shrimp raw",0.896533580203958,"tfidf",546,"FOOD00533","Shrimp","",9426
+"Seaweed, wakame, raw","seaweed wakame raw",1,"tfidf",564,"FOOD00550","Wakame","11669",4474
+"Spirulina","spirulina",1,"tfidf",490,"FOOD00480","Spirulina","2202",198
+"Syrup, sorghum","syrups sorghum",1,"tfidf",695,"FOOD00673","Syrup","19355",6687
+"Whey, fluid","whey sweet fluid",0.897444887225647,"tfidf",679,"FOOD00658","Whey","0515",5712
+"Collards, canned","collards raw",0.858332360604804,"tfidf",247,"FOOD00247","Black cabbage","11161",1684
+"Juice, pomegranate","pomegranate",0.872881766170357,"tfidf",151,"FOOD00151","Pomegranate","181",8433
+"Plums, dried (prunes)","prune dried plum",1,"tfidf",147,"FOOD00147","European plum","0280",1224
+"Juice, strawberry","juice strawberry",1,"tfidf",83,"FOOD00083","Strawberry","",8874
+"Cheese, ricotta","cheese ricotta whole milk",0.837415762450346,"tfidf",631,"FOOD00617","Cheese","01036",4766
+"Spices, cinnamon","spices cinnamon ground",0.824695664411767,"tfidf",50,"FOOD00050","Chinese cinnamon","02010",568
+"Mustard greens, cooked","mustard greens",0.944672927286686,"tfidf",27,"FOOD00027","Chinese mustard","171",19
+"Plums, dried (prunes), cooked","prune dried plum",0.964368557686744,"tfidf",147,"FOOD00147","European plum","0280",1224
+"Onions, cooked","onion",0.88845959847382,"tfidf",226,"FOOD00226","Garden onion (var.)","53",2
+"Peppers, sweet/bell, raw","bell pepper",0.843906985502809,"tfidf",40,"FOOD00040","Pepper","207",26
+"Blackberries, cooked","blackberry",0.922284317028834,"tfidf",160,"FOOD00160","Rubus (Blackberry, Raspberry)","80",8354
+"Turnips, canned","turnip",0.880931876537949,"tfidf",36,"FOOD00036","Turnip","",9548
+"Flour, rice, brown","rice flour brown",1,"tfidf",125,"FOOD00125","Rice","20090",974
+"Mustard greens, canned","mustard greens",0.916397002998272,"tfidf",27,"FOOD00027","Chinese mustard","171",19
+"Protein, soy isolate","soy protein isolate",1,"tfidf",272,"FOOD00271","Other soy product","16122",2157
+"Strawberries, canned (strawberries only)","strawberries canned",0.967847679505136,"tfidf",83,"FOOD00083","Strawberry","0466",754
+"Bamboo shoots, canned/cooked","bamboo shoots",0.916032542166695,"tfidf",298,"FOOD00297","Bamboo shoots","",9563
+"Fish, flatfish, raw","fish flatfish flounder sole species raw",0.612320821073766,"tfidf",548,"FOOD00535","Flatfish","15028",3992
+"Cheese, queso anejo","cheese mexican queso anejo",0.872148559054996,"tfidf",631,"FOOD00617","Cheese","01165",4779
+"Egg, quail, canned","egg quail whole fresh raw",0.765788643941287,"tfidf",633,"FOOD00619","Eggs","01140",4868
+"Fish, barracuda, cooked","fishes",0.840606316644728,"tfidf",896,"FOOD00865","Fishes","",9850
+"Blackberries, raw/frozen","blackberries frozen",0.944011796423964,"tfidf",933,"FOOD00901","Evergreen blackberry","",9196
+"Leavening agents, cream of tartar","leavening agents cream of tartar",1,"tfidf",682,"FOOD00661","Leavening agent","18373",5731
+"Beans, green/snap, raw/canned/cooked","beans snap green raw",0.90493255064265,"tfidf",134,"FOOD00134","Common bean","11052",1044
+"Flour, amaranth","amaranth",0.829566860565281,"tfidf",289,"FOOD00288","Amaranth","",9713
+"Tofu","tofu",1,"tfidf",718,"FOOD00696","Tofu","",9826
+"Nectarines, cooked","nectarine",0.938087828956234,"tfidf",229,"FOOD00229","Nectarine","",9674
+"Sweet potatoes, dehydrated","sweet potato",0.70568608076787,"tfidf",92,"FOOD00092","Sweet potato","501",64
+"Figs, dried","fig dried",1,"tfidf",81,"FOOD00081","Fig","0052",740
+"Fish, ocean perch, cooked","fish ocean perch atlantic raw",0.832676124629502,"tfidf",295,"FOOD00294","Painted comber","15057",2389
+"Cheese, cream","cheese cream",1,"tfidf",631,"FOOD00617","Cheese","01017",4747
+"Cheese, queso fresco","cheese fresh queso fresco",0.945243859540382,"tfidf",631,"FOOD00617","Cheese","01228",4790
+"Beans, pinto, mature, cooked","beans pinto mature seeds raw",0.849100112322863,"tfidf",134,"FOOD00134","Common bean","16042",1100
+"Gelatin, dry powder, unsweetened","gelatins dry powder unsweetened",1,"tfidf",750,"FOOD00725","Gelatin dessert","19177",7256
+"Juice, pineapple","pineapple juice canned",0.900366331107009,"tfidf",12,"FOOD00012","Pineapple","0833",260
+"Pineapple, dried","pineapple",0.791019313186666,"tfidf",12,"FOOD00012","Pineapple","74",5
+"Nuts, almonds, unroasted","nuts almonds",0.655962390306408,"tfidf",148,"FOOD00148","Almond","12061",1243
+"Basil, fresh","basil fresh",1,"tfidf",119,"FOOD00119","Sweet basil","02044",933
+"Cauliflower, canned/cooked","cauliflower",0.83301075790248,"tfidf",31,"FOOD00031","Cauliflower","",9045
+"Nopales, cooked","nopales raw",0.905157715091526,"tfidf",423,"FOOD00416","Nopal","11963",2719
+"Tomato puree, cooked","tomato puree",0.951281845206752,"tfidf",171,"FOOD00171","Garden tomato","0310",1370
+"Cheese, brie","cheese brie",1,"tfidf",631,"FOOD00617","Cheese","01006",4736
+"Beans, white, mature, canned/cooked","beans white mature seeds canned",0.845003572991744,"tfidf",134,"FOOD00134","Common bean","16051",1109
+"Nuts, pine, dried","nuts pine nuts dried",0.946649660959691,"tfidf",138,"FOOD00138","Pine nut","12147",1140
+"Cheese, cotija","cheese",1,"tfidf",631,"FOOD00617","Cheese","",9811
+"Cheese. Oaxaca","cheese",1,"tfidf",631,"FOOD00617","Cheese","",9811
+"Salt","salt table",0.512845283350968,"tfidf",666,"FOOD00647","Salt","0388",5486
+"Waterchestnuts, canned/cooked","waterchestnuts chinese canned solids liquids",0.688178423668441,"tfidf",337,"FOOD00332","Chinese water chestnut","11590",2481
+"Dandelion greens, cooked","dandelion greens raw",0.918723370769909,"tfidf",181,"FOOD00181","Dandelion","11207",1514
+"Eggplant, raw","eggplant raw",1,"tfidf",174,"FOOD00174","Eggplant","11209",1400
+"Crustaceans, crab, canned","crustaceans crab blue canned",0.838160305933058,"tfidf",306,"FOOD00303","Blue crab","15141",2414
+"Peas, green, mature (split), canned","peas green split mature seeds raw",0.869748799761815,"tfidf",141,"FOOD00141","Common pea","",8758
+"Fish, herring, raw","herring raw",0.852644916592421,"tfidf",531,"FOOD00520","Clupeinae (Herring, Sardine, Sprat)","0246",3906
+"Eggplant, cooked","eggplant",0.929562713269887,"tfidf",174,"FOOD00174","Eggplant","",9511
+"Potatoes, canned","potato canned",1,"tfidf",175,"FOOD00175","Potato","0836",1410
+"Sweet potatoes, cooked","sweet potato",0.922667032067075,"tfidf",92,"FOOD00092","Sweet potato","501",64
+"Spices, poppy seed","spices poppy seed",1,"tfidf",447,"FOOD00438","Opium poppy","02033",2760
+"Papayas, dried","papaya",0.852328501773135,"tfidf",41,"FOOD00041","Papaya","209",27
+"Nuts, pecans, unroasted","nuts pecans",0.683272885121277,"tfidf",44,"FOOD00044","Pecan nut","12142",545
+"Spices, ginger","spices ginger ground",0.863304905532017,"tfidf",206,"FOOD00206","Ginger","02021",1665
+"Beans, soy, mature, dried","beans soy dried",0.861041450967892,"tfidf",85,"FOOD00085","Soy bean","0032",764
+"Onions, green/spring/scallions, raw","onions spring raw",0.893054183547957,"tfidf",241,"FOOD00241","Welsh onion","0663",225
+"Grapes, raw","grape raw",1,"tfidf",374,"FOOD00369","Grape","0329",2581
+"Apricots, dried, cooked","apricot dried",0.938024146494762,"tfidf",144,"FOOD00144","Apricot","0001",1187
+"Squash, summer, canned/cooked","summer squash",0.884605417773105,"tfidf",66,"FOOD00066","Cucurbita","328",47
+"Cress, canned/cooked","garden cress",0.664298726733964,"tfidf",99,"FOOD00099","Garden cress","556",70
+"Parsnips, cooked","parsnip",0.941897482455897,"tfidf",129,"FOOD00129","Parsnip","702",87
+"Taro leaves, cooked","taro leaves raw",0.912954948336836,"tfidf",499,"FOOD00488","Taro","11520",2897
+"Tomato sauce, canned","tomato products canned sauce",0.84940983272343,"tfidf",665,"FOOD00646","Sauce","11549",5463
+"Nuts, brazilnuts, roasted/heat-treated","nuts brazilnuts dried unblanched",0.49802540008754,"tfidf",24,"FOOD00024","Brazil nut","12078",355
+"Celery, canned","celery",0.874420479728044,"tfidf",215,"FOOD00215","Celery stalks","96",8
+"Seaweed, kelp, cooked","seaweed kelp raw",0.93944770228313,"tfidf",396,"FOOD00391","Kelp","11445",2661
+"Peaches, canned (peaches only)","peach canned",0.968425196680194,"tfidf",149,"FOOD00149","Peach","0050",1253
+"Veal, variety meat, thymus, cooked","veal variety meats by products thymus cooked braised",0.812871162526456,"tfidf",506,"FOOD00495","Cattle (Beef, Veal)","17219",3424
+"Wheat, sprouted, uncooked","wheat sprouted",0.758234430555685,"tfidf",575,"FOOD00561","Wheat","20087",4506
+"Figs, canned (figs only)","fig",0.970268208686556,"tfidf",81,"FOOD00081","Fig","",9538
+"Juice, kale","kale",0.85735005524772,"tfidf",395,"FOOD00390","Kale","",9738
+"Loganberries, raw/frozen","loganberries frozen",0.958668409792423,"tfidf",405,"FOOD00400","Loganberry","0628",2684
+"Wine, table, rose","wine table rose",1,"tfidf",952,"FOOD00920","Rosé wine","",9449
+"Cheese, port du salut","cheese port de salut",0.875166344168154,"tfidf",631,"FOOD00617","Cheese","01034",4764
+"Mushrooms, canned/cooked","mushroom canned",0.920375182460051,"tfidf",561,"FOOD00547","Common mushroom","0171",4454
+"Taro, cooked","taro",0.928395672346731,"tfidf",499,"FOOD00488","Taro","297",201
+"Beans, great northern, mature, canned","beans great northern mature seeds canned",0.947350665655227,"tfidf",134,"FOOD00134","Common bean","16026",1084
+"Olives, green, pickled","olives green pickled canned",0.949084450951472,"tfidf",121,"FOOD00121","Olive","0203",936
+"Fish, flatfish, cooked","fish flatfish flounder sole species cooked dry heat",0.569731565548655,"tfidf",548,"FOOD00535","Flatfish","15029",3993
+"Orange peel, raw","oranges raw with peel",1,"tfidf",57,"FOOD00057","Sweet orange","09205",598
+"Juice, acerola","acerola juice raw",0.959963275645278,"tfidf",282,"FOOD00281","Acerola","09002",2350
+"Seaweed, laver, cooked","seaweed laver raw",0.94303988662441,"tfidf",563,"FOOD00549","Purple laver","11446",4473
+"Spices, basil, dried","spices basil dried",1,"tfidf",119,"FOOD00119","Sweet basil","02003",932
+"Pears, raw","pear raw",1,"tfidf",152,"FOOD00152","Pear","0214",1281
+"Mangoes, raw/frozen","mangos raw",0.898262434808478,"tfidf",106,"FOOD00106","Mango","0523",916
+"Brussels sprouts, raw","brussels sprouts raw",1,"tfidf",32,"FOOD00032","Brussel sprouts","0225",416
+"Spices, allspice","spices allspice ground",0.880915110644945,"tfidf",288,"FOOD00287","Allspice","02001",2370
+"Bananas, raw","banana raw",1,"tfidf",208,"FOOD00208","Banana","0014",1666
+"Juice, beet","beet",0.84774800545775,"tfidf",264,"FOOD00264","Red beetroot","157",143
+"Egg, goose, cooked","egg goose whole raw",0.830635607009933,"tfidf",633,"FOOD00619","Eggs","1034",4845
+"Spices, cloves","spices cloves ground",0.876555311519962,"tfidf",179,"FOOD00179","Cloves","02011",1509
+"Flour, arrowroot","arrowroot flour",1,"tfidf",291,"FOOD00290","Arrowroot","20003",2380
+"Beets, raw","beets raw",1,"tfidf",25,"FOOD00025","Common beet","11080",356
+"Mangoes, canned (mangoes only)","mango",0.973335099552256,"tfidf",106,"FOOD00106","Mango","600",74
+"Apricots, cooked","apricot",0.907090288782201,"tfidf",144,"FOOD00144","Apricot","787",99
+"Flour, barley malt","barley malt flour",1,"tfidf",88,"FOOD00088","Barley","20131",829
+"Guava, raw","guava",0.932860494336285,"tfidf",150,"FOOD00150","Guava","796",104
+"Litchis/lychees, canned/cooked (litchis only)","litchis raw",0.842257957408226,"tfidf",103,"FOOD00103","Lichee","09164",882
+"Kale, raw","kale raw",1,"tfidf",395,"FOOD00390","Kale","11233",392
+"Juice, spinach","spinach",0.829191390969694,"tfidf",178,"FOOD00178","Spinach","957",124
+"Crustaceans, shrimp, cooked","crustaceans shrimp raw",0.918299778099842,"tfidf",546,"FOOD00533","Shrimp","",9426
+"Kumquats, canned/cooked (kumquats only)","kumquat",0.966703390297145,"tfidf",398,"FOOD00393","Kumquat","",9602
+"Potatoes, raw","potato raw",1,"tfidf",175,"FOOD00175","Potato","0115",1413
+"Fish, herring, smoked","herring smoked",0.893165292008162,"tfidf",531,"FOOD00520","Clupeinae (Herring, Sardine, Sprat)","0245",3908
+"Cheese, queso chihuahua","cheese mexican queso chihuahua",0.872148559054996,"tfidf",631,"FOOD00617","Cheese","01167",4781
+"Beans, lima, immature, raw","lima beans immature seeds raw",0.924099512914412,"tfidf",133,"FOOD00133","Lima bean","11031",1011
+"Beans, pink, mature, cooked","beans pink mature seeds raw",0.84244438642997,"tfidf",134,"FOOD00134","Common bean","16040",1098
+"Juice, guava","guava",0.855255488996129,"tfidf",150,"FOOD00150","Guava","796",104
+"Seaweed, spirulina, dried","seaweed spirulina dried",1,"tfidf",490,"FOOD00480","Spirulina","11667",2882
+"Coffee beans/grounds/instant powder","coffee instant powder",1,"tfidf",58,"FOOD00058","Coffee","0104",611
+"Egg, yolk, cooked","egg yolk",0.950767666898495,"tfidf",951,"FOOD00919","Egg yolk","",9890
+"Tomato paste","tomato paste concentrated",0.787323854934208,"tfidf",171,"FOOD00171","Garden tomato","0311",1369
+"Juice, blueberry","blueberry",0.800178705348927,"tfidf",191,"FOOD00191","Highbush blueberry","1038",133
+"Peas, green, mature (split), cooked","peas green split mature seeds raw",0.884659614679516,"tfidf",141,"FOOD00141","Common pea","",8758
+"Soy sauce","soy sauce",1,"tfidf",716,"FOOD00694","Soy sauce","950",8615
+"Tangerine/clementine/mandarin orange, frozen/canned (oranges only)","mandarin orange clementine tangerine",0.9148791551147,"tfidf",56,"FOOD00056","Mandarin orange (Clementine, Tangerine)","",9499
+"Seeds, chia","chia seeds raw",0.959879462674017,"tfidf",333,"FOOD00328","Chia","",8967
+"Spices, garlic powder","spices garlic powder",1,"tfidf",8,"FOOD00008","Garlic","02020",248
+"Tangerine/clementine/calamondin/mandarin orange, canned/cooked (oranges only)","mandarin orange clementine tangerine",0.925238667222603,"tfidf",56,"FOOD00056","Mandarin orange (Clementine, Tangerine)","",9499
+"Cabbage, savoy, cooked","savoy cabbage",0.961156391254258,"tfidf",2,"FOOD00002","Savoy cabbage","",9630
+"Cucumber, raw","cucumber raw",1,"tfidf",65,"FOOD00065","Cucumber","0002",642
+"Squash, winter, cooked","winter squash",0.950442680093708,"tfidf",284,"FOOD00283","Winter squash","",9555
+"Spices, pepper, white","pepper spice [white]",1,"tfidf",139,"FOOD00139","Pepper (Spice)","846",8480
+"Fish, tuna, raw","tuna raw",0.855085518932957,"tfidf",621,"FOOD00607","Thunnus","0321",4604
+"Goose, lean and fat, cooked","fat goose",0.887471651577402,"tfidf",704,"FOOD00682","Other animal fat","04576",6801
+"Crab, cooked","crab boiled",0.795748594635667,"tfidf",587,"FOOD00573","Crab","0128",4543
+"Avocado, raw","avocado raw",1,"tfidf",130,"FOOD00130","Avocado","0011",1001
+"Okra, cooked","okra",0.938087828956234,"tfidf",427,"FOOD00420","Okra","1",184
+"Currants, dried","currants dried",1,"tfidf",204,"FOOD00204","Common grape","",8735
+"Beans, lima, immature, canned","lima beans immature seeds raw",0.83885446734711,"tfidf",133,"FOOD00133","Lima bean","11031",1011
+"Leavening agents, baking soda","leavening agents baking soda",1,"tfidf",682,"FOOD00661","Leavening agent","18372",5730
+"Goat, lean and fat, cooked","goat raw",0.781245007887202,"tfidf",541,"FOOD00529","Domestic goat","17168",3959
+"Pimento","pimento canned",0.923808245890475,"tfidf",40,"FOOD00040","Pepper","11943",521
+"Cheese, cheddar, dried","cheese cheddar",0.859637965633625,"tfidf",631,"FOOD00617","Cheese","01009",4739
+"Radicchio, raw","radicchio raw",1,"tfidf",49,"FOOD00049","Chicory","11952",567
+"Egg, whole, raw","egg whole raw frozen",0.878941627157703,"tfidf",633,"FOOD00619","Eggs","01171",4871
+"Cheese, cream, low fat","cheese cream low fat",1,"tfidf",631,"FOOD00617","Cheese","43274",4800
+"Taro, dehydrated","taro",0.720815548097917,"tfidf",499,"FOOD00488","Taro","297",201
+"Milk, buttermilk, whole, fluid","milk buttermilk fluid whole",1,"tfidf",714,"FOOD00692","Buttermilk","01230",6863
+"Pokeberry shoots (poke), cooked","pokeberry shoots poke raw",0.96040221750624,"tfidf",445,"FOOD00437","American pokeweed","11350",2757
+"Beans, green/snap, cooked","beans snap green raw",0.917573736716189,"tfidf",134,"FOOD00134","Common bean","11052",1044
+"Rice, brown, uncooked (consumed cooked/heat-treated)","rice brown raw",0.491736791349609,"tfidf",125,"FOOD00125","Rice","0221",949
+"Beans, kidney, mature, canned","beans kidney all types mature seeds canned",0.780664476570498,"tfidf",134,"FOOD00134","Common bean","16029",1087
+"Hearts of palm, cooked","hearts of palm raw",0.932869617396527,"tfidf",743,"FOOD00718","Heart of palm","",9440
+"Tomato sauce, canned/cooked","tomato products canned sauce",0.800506956088749,"tfidf",665,"FOOD00646","Sauce","11549",5463
+"Juice, parsley","parsley",0.869815871510509,"tfidf",131,"FOOD00131","Parsley","712",89
+"Squash, summer, raw","summer squash",0.953386918237416,"tfidf",66,"FOOD00066","Cucurbita","328",47
+"Juice, lime","lime juice raw",0.94895943630413,"tfidf",557,"FOOD00543","Persian lime","09160",4448
+"Juice, garlic","garlic",0.838343344716455,"tfidf",880,"FOOD00850","Soft-necked garlic","54",216
+"Mollusks, conch, cooked","mollusks conch baked broiled",0.802394824021367,"tfidf",625,"FOOD00611","Conch","15250",4615
+"Miso, cooked","miso",0.944137712599099,"tfidf",717,"FOOD00695","Miso","16112",6873
+"Dandelion greens, raw","dandelion greens raw",1,"tfidf",181,"FOOD00181","Dandelion","11207",1514
+"Spices, onion powder","spices onion powder",1,"tfidf",226,"FOOD00226","Garden onion (var.)","02026",226
+"Flour, wheat, refined","common wheat refined flour",0.859343854222936,"tfidf",187,"FOOD00187","Common wheat","226",8465
+"Tangerine/clementine/calamondin/mandarin orange, raw","mandarin orange clementine tangerine",0.982984006362967,"tfidf",56,"FOOD00056","Mandarin orange (Clementine, Tangerine)","",9499
+"Melon, honeydew, raw","melon honeydew raw",1,"tfidf",64,"FOOD00064","Muskmelon","0642",633
+"Cheese, fontina","cheese fontina",1,"tfidf",631,"FOOD00617","Cheese","01020",4750
+"Apricots, raw","apricot raw",1,"tfidf",144,"FOOD00144","Apricot","0626",1188
+"Pears, cooked","pear",0.882425489636571,"tfidf",152,"FOOD00152","Pear","826",106
+"Quinoa, uncooked (consumed cooked/heat-treated)","quinoa uncooked",0.724297991532003,"tfidf",450,"FOOD00441","Quinoa","20035",2765
+"Cheese, muenster, reduced fat","cheese muenster",0.845234333609231,"tfidf",631,"FOOD00617","Cheese","01030",4760
+"Apples, dried, cooked","apple dried",0.922831363129178,"tfidf",105,"FOOD00105","Apple","0338",887
+"Garlic, cooked","garlic",0.91881850267532,"tfidf",880,"FOOD00850","Soft-necked garlic","54",216
+"Lemons, cooked","lemon",0.897100314575567,"tfidf",54,"FOOD00054","Lemon","279",38
+"Mustard greens, raw","mustard greens raw",1,"tfidf",27,"FOOD00027","Chinese mustard","11270",370
+"Deer, lean and fat, dried","deer",0.762294622416642,"tfidf",535,"FOOD00524","Deer","",9862
+"Figs, dried, cooked","fig dried",0.948890868207204,"tfidf",81,"FOOD00081","Fig","0052",740
+"Juice, blackberry","juice blackberry",1,"tfidf",160,"FOOD00160","Rubus (Blackberry, Raspberry)","",8849
+"Tea, black, instant powder","black tea",0.74074791589631,"tfidf",939,"FOOD00907","Black tea","",9876
+"Cabbage, mustard, cooked","cabbage mustard salted",0.768944166195545,"tfidf",27,"FOOD00027","Chinese mustard","43144",376
+"Sweet potato leaves, cooked","sweet potato leaves raw",0.908703343385658,"tfidf",92,"FOOD00092","Sweet potato","11505",834
+"Fish, sea bass, raw","fish sea bass mixed species raw",0.835350908267999,"tfidf",537,"FOOD00526","Percoidei (Bass and others)","15091",3948
+"Peas, edible-podded, raw","peas edible podded raw",1,"tfidf",141,"FOOD00141","Common pea","11300",1155
+"Mollusks, snails, cooked","mollusks snail raw",0.936385872949589,"tfidf",617,"FOOD00603","Snail","90560",4596
+"Tamarind, dried","tamarind",0.863520244859348,"tfidf",180,"FOOD00180","Tamarind","",9501
+"Juice, cucumber","cucumber",0.851345720342117,"tfidf",65,"FOOD00065","Cucumber","325",46
+"Cheese, brick","cheese brick",1,"tfidf",631,"FOOD00617","Cheese","01005",4735
+"Broccoli, Chinese, cooked","broccoli chinese cooked",1,"tfidf",335,"FOOD00330","Chinese broccoli","11969",2475
+"Grapefruit, raw","grapefruit raw",1,"tfidf",256,"FOOD00256","Grapefruit","0059",1698
+"Crustaceans, crab, canned/cooked","crustaceans crab blue canned",0.80688601269012,"tfidf",306,"FOOD00303","Blue crab","15141",2414
+"Juice, raspberry","juice raspberry red",0.864546657764141,"tfidf",162,"FOOD00162","Red raspberry","",8871
+"Seeds, pumpkin/squash, roasted","seeds pumpkin squash seeds whole roasted without salt",0.841661102654083,"tfidf",66,"FOOD00066","Cucurbita","12163",698
+"Spices, cloves, ground","spices cloves ground",1,"tfidf",179,"FOOD00179","Cloves","02011",1509
+"Oranges, canned (oranges only)","orange",0.952042005374519,"tfidf",57,"FOOD00057","Sweet orange","282",40
+"Crustaceans, shrimp, canned/cooked","crustaceans shrimp raw",0.86251782819531,"tfidf",546,"FOOD00533","Shrimp","",9426
+"Nopales, raw","nopales raw",1,"tfidf",423,"FOOD00416","Nopal","11963",2719
+"Nuts, coconut meat, raw","nuts coconut meat raw",1,"tfidf",341,"FOOD00336","Coconut","12104",2496
+"Peaches, canned/cooked (peaches only)","peach canned",0.943318848526792,"tfidf",149,"FOOD00149","Peach","0050",1253
+"Leavening agents, baking powder","leavening agents baking powder low sodium",0.888242736231948,"tfidf",682,"FOOD00661","Leavening agent","18371",5729
+"Cabbage, cooked","cabbage cooked",1,"tfidf",881,"FOOD00851","Cabbage","",9089
+"Pigeonpeas, immature, cooked","pigeonpeas immature seeds raw",0.864308277902338,"tfidf",37,"FOOD00037","Pigeon pea","11344",460
+"Turnip greens, canned","turnip greens raw",0.872113194883283,"tfidf",36,"FOOD00036","Turnip","11568",447
+"Melon, cantaloupe, raw","melons cantaloupe raw",1,"tfidf",64,"FOOD00064","Muskmelon","09181",635
+"Kohlrabi, cooked","kohlrabi",0.944137712599099,"tfidf",33,"FOOD00033","Kohlrabi","180",21
+"Tea, black, leaves","tea hot leaf black",0.849515431062653,"tfidf",939,"FOOD00907","Black tea","",9443
+"Cheese, feta","cheese feta",1,"tfidf",631,"FOOD00617","Cheese","01019",4749
+"Spinach, canned","spinach",0.87244435272669,"tfidf",178,"FOOD00178","Spinach","957",124
+"Apricots, canned/cooked (apricots only)","apricot",0.936986131228584,"tfidf",144,"FOOD00144","Apricot","787",99
+"Chives, raw","chives raw",1,"tfidf",9,"FOOD00009","Chives","0213",249
+"Fish, mackerel, raw","mackerel raw",0.865231650295671,"tfidf",600,"FOOD00586","Scombridae (Bonito, Mackerel, Tuna)","0175",4566
+"Juice, grapefruit, concentrate","grapefruit juice from concentrate",0.898938014737921,"tfidf",256,"FOOD00256","Grapefruit","12",8493
+"Lentils, raw (consumed cooked/heat-treated)","lentils raw",0.587199101782714,"tfidf",98,"FOOD00098","Lentils","16069",869
+"Guava, canned (guava only)","guava",0.969742615688021,"tfidf",150,"FOOD00150","Guava","796",104
+"Fish, perch, cooked","perch raw",0.78375326262403,"tfidf",538,"FOOD00527","Perciformes","0891",3951
+"Rhubarb, cooked","rhubarb",0.934877833113635,"tfidf",154,"FOOD00154","Garden rhubarb","847",108
+"Cheese, Mexican blend","cheese mexican blend",1,"tfidf",631,"FOOD00617","Cheese","01251",4792
+"Peas, cooked","pea",0.890488049962519,"tfidf",141,"FOOD00141","Common pea","759",97
+"Oil, cocoa butter","oil cocoa butter",1,"tfidf",706,"FOOD00684","Cocoa butter","1099",6803
+"Turnip greens, canned/cooked","turnip greens raw",0.831956916671422,"tfidf",36,"FOOD00036","Turnip","11568",447
+"Mangoes, cooked","mango",0.936422837654091,"tfidf",106,"FOOD00106","Mango","600",74
+"Lettuce, leaf, cooked","lettuce red leaf raw",0.810555768866707,"tfidf",95,"FOOD00095","Lettuce","11257",861
+"Flour, buckwheat","buckwheat flour",1,"tfidf",79,"FOOD00079","Common buckwheat","1014",734
+"Carrots, raw","carrot raw",1,"tfidf",245,"FOOD00245","Carrot","0065",714
+"Soy meal, defatted","soy meal defatted raw",0.967305979422102,"tfidf",85,"FOOD00085","Soy bean","16119",798
+"Okra, canned","okra",0.906932919994012,"tfidf",427,"FOOD00420","Okra","1",184
+"Fish, herring, cooked","fish oil herring",0.820529423228,"tfidf",531,"FOOD00520","Clupeinae (Herring, Sardine, Sprat)","04590",3916
+"Milk, nonfat, evaporated","evaporated milk",0.820352286167368,"tfidf",824,"FOOD00798","Evaporated milk","",9853
+"Grapefruit, frozen/canned (grapefruit only)","grapefruit",0.92488557245004,"tfidf",256,"FOOD00256","Grapefruit","11",8515
+"Cassava, cooked","cassava",0.946712142921102,"tfidf",328,"FOOD00323","Cassava","601",154
+"Carrots, cooked","carrot",0.906502170215054,"tfidf",72,"FOOD00072","Wild carrot","357",52
+"Mollusks, oysters, canned","mollusks oyster eastern canned",0.787813538758572,"tfidf",361,"FOOD00356","Eastern oyster","15170",2551
+"Cherries, raw/frozen","cherry raw",0.84281931264468,"tfidf",143,"FOOD00143","Prunus (Cherry, Plum)","0121",1184
+"Flour, corn, degermed","corn flour degermed unenriched yellow",0.794973393291617,"tfidf",205,"FOOD00205","Corn","20018",1635
+"Mollusks, squid, raw","mollusks squid mixed species raw",0.819023251178471,"tfidf",545,"FOOD00532","Squid","15175",3971
+"Apricots, canned (apricots only)","apricot",0.95994655244991,"tfidf",144,"FOOD00144","Apricot","787",99
+"Flour, rye","rye flour light",0.82824994893912,"tfidf",169,"FOOD00169","Rye","20065",1350
+"Milk, buttermilk, 2% fat, fluid","milk buttermilk fluid whole",0.877689138841312,"tfidf",714,"FOOD00692","Buttermilk","01230",6863
+"Cheese, mozzarella","cheese mozzarella whole milk",0.800070324639592,"tfidf",631,"FOOD00617","Cheese","01026",4756
+"Strawberries, canned/cooked (strawberries only)","strawberries canned",0.94213397933956,"tfidf",83,"FOOD00083","Strawberry","0466",754
+"Juice, cranberry","juice cranberry raw",0.940110588778554,"tfidf",188,"FOOD00188","Vaccinium (Blueberry, Cranberry, Huckleberry)","",8852
+"Flour, rice, white","rice flour white",1,"tfidf",125,"FOOD00125","Rice","20061",973
+"Grapes, canned (grapes only)","grape",0.953477749268917,"tfidf",374,"FOOD00369","Grape","",9547
+"Cherries, dried, unsweetened","cherries sour dry unsweetened",0.645888426217989,"tfidf",146,"FOOD00146","Sour cherry","",8818
+"Spices, parsley, dried","spices parsley dried",1,"tfidf",131,"FOOD00131","Parsley","02029",1008
+"Beverage, alcoholic, rice (sake)","alcoholic beverage rice sake",1,"tfidf",763,"FOOD00738","Sake","43479",7441
+"Juice, watercress","watercress",0.884158815708347,"tfidf",158,"FOOD00158","Watercress","",9572
+"Juice, carrot","carrot juice canned",0.90193324884196,"tfidf",245,"FOOD00245","Carrot","0681",712
+"Juice, bilberry","bilberry",0.879957684673524,"tfidf",193,"FOOD00193","Bilberry","1040",135
+"Plantains, cooked","plantains cooked",1,"tfidf",444,"FOOD00436","French plantain","09278",2754
+"Cucumber, cooked","cucumber",0.926206069406015,"tfidf",65,"FOOD00065","Cucumber","325",46
+"Watercress, raw","watercress raw",1,"tfidf",158,"FOOD00158","Watercress","0023",1320
+"Egg, white, dried","egg white dried",1,"tfidf",633,"FOOD00619","Eggs","01173",4873
+"Cheese, monterey, reduced fat","cheese monterey",0.845234333609231,"tfidf",631,"FOOD00617","Cheese","01025",4755
+"Celery, cooked","celery",0.914951805038514,"tfidf",215,"FOOD00215","Celery stalks","96",8
+"Juice, broccoli","broccoli",0.811664954836348,"tfidf",34,"FOOD00034","Broccoli","",9038
+"Spices, caraway seed","spices caraway seed",1,"tfidf",43,"FOOD00043","Caraway","02005",541
+"Flour, barley","barley flour raw",0.951211816593232,"tfidf",88,"FOOD00088","Barley","1015",823
+"Pineapple, canned (pineapple only)","pineapple canned",0.969572083905116,"tfidf",12,"FOOD00012","Pineapple","0004",261
+"Cherries, raw/frozen/canned (cherries only)","cherry raw",0.884911520209467,"tfidf",143,"FOOD00143","Prunus (Cherry, Plum)","0121",1184
+"Mollusks, octopus, dried","mollusks octopus common raw",0.771267404147495,"tfidf",344,"FOOD00339","Common octopus","15166",2516
+"Pheasant, lean and fat, cooked","pheasant",0.854296959304876,"tfidf",438,"FOOD00430","Pheasant","",9857
+"Cheese, mozzarella, low fat/nonfat","cheese mozzarella nonfat",0.882965868285743,"tfidf",631,"FOOD00617","Cheese","42304",4798
+"Spices, oregano, dried","spices oregano dried",1,"tfidf",124,"FOOD00124","Common oregano","02027",943
+"Dates","date",1,"tfidf",135,"FOOD00135","Date","",9583
+"Vinegar","vinegar",1,"tfidf",645,"FOOD00628","Vinegar","0046",4989
+"Asparagus, raw","asparagus raw",1,"tfidf",21,"FOOD00021","Asparagus","11011",335
+"Kale, cooked","kale",0.929562713269887,"tfidf",395,"FOOD00390","Kale","",9738
+"Pineapple, raw/frozen/canned (pineapple only)","pineapple canned",0.905523341937201,"tfidf",12,"FOOD00012","Pineapple","0004",261
+"Egg, yolk, dried","egg yolk dried",1,"tfidf",633,"FOOD00619","Eggs","01137",4865
+"Apples, raw","apple",0.875560405938038,"tfidf",105,"FOOD00105","Apple","595",73
+"Dove, lean and fat, cooked","dove cooked includes squab",0.607295442877778,"tfidf",624,"FOOD00610","Columbidae (Dove, Pigeon)","43287",4614
+"Arugula, raw","arugula raw",1,"tfidf",77,"FOOD00077","Rocket salad (ssp.)","11959",733
+"Flour, soy","soy flour",1,"tfidf",85,"FOOD00085","Soy bean","956",8598
+"Mushrooms, canned","mushroom canned",1,"tfidf",561,"FOOD00547","Common mushroom","0171",4454
+"Bran, oat","oat bran raw",0.947843686031964,"tfidf",22,"FOOD00022","Oat","20033",349
+"Cauliflower, cooked","cauliflower",0.924178300050089,"tfidf",31,"FOOD00031","Cauliflower","",9045
+"Parsley, raw","parsley raw",1,"tfidf",131,"FOOD00131","Parsley","0209",1007
+"Cheese, gruyere","cheese gruyere",1,"tfidf",631,"FOOD00617","Cheese","01023",4753
+"Lemons, raw","lemon raw",1,"tfidf",54,"FOOD00054","Lemon","0040",574
+"Cheese, cheddar, nonfat","cheese cheddar",0.779297761258042,"tfidf",631,"FOOD00617","Cheese","01009",4739
+"Beets, cooked","beet",0.924178300050089,"tfidf",264,"FOOD00264","Red beetroot","157",143
+"Radishes, daikon, cooked","daikon radish",0.968381442636742,"tfidf",261,"FOOD00261","Daikon radish","",9699
+"Asparagus, canned/cooked","asparagus canned",0.933469402147418,"tfidf",21,"FOOD00021","Asparagus","0009",332
+"Garlic, canned","garlic",0.879776658315417,"tfidf",880,"FOOD00850","Soft-necked garlic","54",216
+"Pears, asian, raw","pears asian raw",1,"tfidf",292,"FOOD00291","Asian pear","09340",2381
+"Radishes, raw","radish raw",1,"tfidf",153,"FOOD00153","Radish","0217",1297
+"Beans, mung, mature, cooked","mung beans mature seeds raw",0.847832598729304,"tfidf",200,"FOOD00200","Mung bean","16080",1571
+"Mollusks, oysters, raw","mollusks oyster pacific raw",0.812200031491116,"tfidf",433,"FOOD00425","Pacific oyster","15171",2738
+"Beans, white, mature, raw (consumed cooked/heat-treated)","beans white mature seeds raw",0.548289198214755,"tfidf",134,"FOOD00134","Common bean","16049",1107
+"Christophine/chayote, cooked","chayote",0.944137712599099,"tfidf",330,"FOOD00325","Chayote","921",155
+"Kiwis, raw","kiwi",0.943712189464448,"tfidf",4,"FOOD00004","Kiwi","29",1
+"Pineapple, raw/frozen","pineapple raw",0.858750077367933,"tfidf",12,"FOOD00012","Pineapple","0003",262
+"Pears, canned (pears only)","pear canned",0.964510383992009,"tfidf",152,"FOOD00152","Pear","0215",1280
+"Turnip greens, cooked","turnip greens raw",0.898360137225215,"tfidf",36,"FOOD00036","Turnip","11568",447
+"Brussels sprouts, canned/cooked","brussels sprouts",0.911140666723432,"tfidf",32,"FOOD00032","Brussel sprouts","",9154
+"Epazote, cooked","epazote",0.949783092198908,"tfidf",566,"FOOD00552","Epazote","",9771
+"Seeds, alfalfa, sprouted, raw","alfalfa seeds sprouted raw",1,"tfidf",287,"FOOD00286","Alfalfa","0683",2369
+"Nuts, hazelnuts or filberts, unroasted","nuts hazelnuts filberts",0.801767534793884,"tfidf",381,"FOOD00376","Hazelnut","12120",2615
+"Turtle, cooked","turtle green raw",0.767475636500118,"tfidf",726,"FOOD00702","Green turtle","93600",6984
+"Strawberries, raw/frozen","strawberries raw",0.850813427493488,"tfidf",83,"FOOD00083","Strawberry","09316",761
+"Syrup, malt","syrups malt",1,"tfidf",695,"FOOD00673","Syrup","19352",6685
+"Fish, salmon, raw","salmon raw",0.827214901882322,"tfidf",504,"FOOD00493","Salmonidae (Salmon, Trout)","0135",2917
+"Cheese, Mexican blend, reduced fat","cheese mexican blend reduced fat",1,"tfidf",631,"FOOD00617","Cheese","01209",4788
+"Beans, green/snap, raw","beans snap green raw",1,"tfidf",134,"FOOD00134","Common bean","11052",1044
+"Kale, canned/cooked","kale canned",0.94241380312793,"tfidf",395,"FOOD00390","Kale","0513",2651
+"Onions, green/spring/scallions, cooked","onions spring raw",0.821965402415749,"tfidf",241,"FOOD00241","Welsh onion","0663",225
+"Spices, paprika","spices paprika",1,"tfidf",40,"FOOD00040","Pepper","02028",496
+"Cheese, monterey","cheese monterey",1,"tfidf",631,"FOOD00617","Cheese","01025",4755
+"Cucumber, canned","cucumber",0.890095325498063,"tfidf",65,"FOOD00065","Cucumber","325",46
+"Crab, canned/cooked","crab boiled",0.716432071960542,"tfidf",587,"FOOD00573","Crab","0128",4543
+"Papayas, canned/cooked (papaya only)","papaya",0.957544988231227,"tfidf",41,"FOOD00041","Papaya","209",27
+"Cauliflower, raw","cauliflower raw",1,"tfidf",31,"FOOD00031","Cauliflower","11135",405
+"Broccoli raab, raw","broccoli raab raw",1,"tfidf",314,"FOOD00311","Rapini","11096",2431
+"Plantains, raw","plantains raw",1,"tfidf",444,"FOOD00436","French plantain","09277",2753
+"Onions, dehydrated","onions dehydrated flakes",0.811035679778909,"tfidf",226,"FOOD00226","Garden onion (var.)","11284",229
+"Flour, potato","potato flour",1,"tfidf",175,"FOOD00175","Potato","0116",1408
+"Rhubarb, raw","rhubarb raw",1,"tfidf",154,"FOOD00154","Garden rhubarb","0216",1303
+"Leeks, (bulb and lower-leaf portion), dehydrated","leeks bulb lower leaf portion raw",0.911112312793548,"tfidf",401,"FOOD00396","Wild leek","11246",2671
+"Beans, pinto, mature, raw (consumed cooked/heat-treated)","beans pinto mature seeds raw",0.643282763631894,"tfidf",134,"FOOD00134","Common bean","16042",1100
+"Juice, beet, concentrate","beet",0.701118173711653,"tfidf",264,"FOOD00264","Red beetroot","157",143
+"Asparagus, canned","asparagus canned",1,"tfidf",21,"FOOD00021","Asparagus","0009",332
+"Juice, ginger root","ginger root raw",0.888206587678245,"tfidf",206,"FOOD00206","Ginger","0667",1664
+"Cauliflower, canned","cauliflower",0.887251735815431,"tfidf",31,"FOOD00031","Cauliflower","",9045
+"Beans, green/snap, canned","beans snap green raw",0.895638888264214,"tfidf",134,"FOOD00134","Common bean","11052",1044
+"Spinach, canned/cooked","spinach",0.813228030448455,"tfidf",178,"FOOD00178","Spinach","957",124
+"Pork, variety meat, heart, cooked","pork fresh variety meats by products heart cooked braised",0.735436104878707,"tfidf",549,"FOOD00536","Domestic pig","10104",4181
+"Parsley, cooked","parsley",0.936422837654091,"tfidf",131,"FOOD00131","Parsley","712",89
+"Mint, fresh","mint",0.872952679008503,"tfidf",109,"FOOD00109","Mentha","2009",8689
+"Cheese, swiss","cheese swiss",1,"tfidf",631,"FOOD00617","Cheese","01040",4770
+"Cheese, provolone","cheese provolone",1,"tfidf",631,"FOOD00617","Cheese","01035",4765
+"Cheese, edam","cheese edam",1,"tfidf",631,"FOOD00617","Cheese","01018",4748
+"Fennel bulb, cooked","fennel bulb raw",0.936636507898098,"tfidf",82,"FOOD00082","Fennel","11957",752
+"Acai, cooked","acai berries purple fresh",0.656463113930093,"manual",743,"FOOD00718","Heart of palm","",8747
+"Apples, cooked/applesauce","applesauce canned sweetened without salt includes usda commodity",0.557725091169277,"manual",105,"FOOD00105","Apple","09020",907
+"Apples, dehydrated","apples dehydrated low moisture sulfured uncooked",0.602854282947123,"manual",105,"FOOD00105","Apple","09009",896
+"Armadillo, lean and fat, cooked",NA,0.503756430744915,"manual",NA,NA,NA,NA,NA
+"Artificial sweeteners","sweeteners for baking contains sugar sucralose",0.493019206164149,"manual",676,"FOOD00656","Sugar substitute","19907",5696
+"Balsam-pear (bitter melon/gourd)/horseradish/jute/radish leaves, cooked","balsam pear bitter gourd leafy tips raw",0.566751586679626,"manual",115,"FOOD00115","Bitter gourd","11022",921
+"Barley groats, uncooked (consumed cooked/heat-treated)","cereals quaker scotch barley regular quick dry",0.613275033442879,"manual",270,"FOOD00270","Breakfast cereal","08232",1918
+"Barley, malted, uncooked (consumed cooked/heat-treated)","cereals quaker scotch barley regular quick dry",0.421893613972023,"manual",270,"FOOD00270","Breakfast cereal","08232",1918
+"Barley, pearled, uncooked (consumed cooked/heat-treated)","cereals quaker scotch barley regular quick dry",0.68580106986458,"manual",270,"FOOD00270","Breakfast cereal","08232",1918
+"Beans, black, mature, canned","beans black mature seeds cooked boiled with salt",0.793396309398319,"manual",134,"FOOD00134","Common bean","16315",1117
+"Beans, black, mature, canned/cooked","beans black mature seeds cooked boiled with salt",0.758587593192576,"manual",134,"FOOD00134","Common bean","16315",1117
+"Beans, black, mature, cooked","beans black mature seeds cooked boiled with salt",0.816017903782858,"manual",134,"FOOD00134","Common bean","16315",1117
+"Beans, fava/broad, mature, canned","broadbeans fava beans mature seeds canned",0.665860549867391,"manual",197,"FOOD00197","Broad bean","16054",1553
+"Beans, fava/broad, mature, canned/cooked","broadbeans fava beans mature seeds canned",0.65136921618512,"manual",197,"FOOD00197","Broad bean","16054",1553
+"Beans, fava/broad, mature, cooked","broadbeans fava beans mature seeds canned",0.67475943490935,"manual",197,"FOOD00197","Broad bean","16054",1553
+"Beans, kidney, mature, cooked","beans kidney all types mature seeds cooked boiled without salt",0.766873322027639,"manual",134,"FOOD00134","Common bean","16028",1086
+"Beans, kidney, mature, raw (consumed cooked/heat-treated)","beans kidney all types mature seeds raw",0.570279928748298,"manual",134,"FOOD00134","Common bean","16027",1085
+"Beans, lima, immature, canned/cooked","beans lima immature seeds cooked boiled drained without salt",0.810235275350846,"manual",NA,NA,NA,NA,NA
+"Beans, lima, mature, canned/cooked","lima beans large mature seeds cooked boiled without salt",0.769941541441696,"manual",133,"FOOD00133","Lima bean","16072",1023
+"Beans, lima, mature, raw (consumed cooked/heat-treated)","lima beans large mature seeds raw",0.552103001299198,"manual",133,"FOOD00133","Lima bean","16071",1022
+"Beans, mung, mature, canned","mung beans mature seeds cooked boiled without salt",0.828666693219665,"manual",200,"FOOD00200","Mung bean","16081",1572
+"Beans, mung, mature, canned/cooked","beans mung mature seeds sprouted canned drained solids",0.798586975223872,"manual",200,"FOOD00200","Mung bean","11626",1569
+"Beans, mung, mature, dehydrated","beans mung dried raw",0.720842207567697,"manual",200,"FOOD00200","Mung bean","0485",1565
+"Beans, navy, mature, cooked","beans navy mature seeds cooked boiled without salt",0.859021006728083,"manual",134,"FOOD00134","Common bean","16038",1096
+"Beans, pink, mature, canned","beans pink mature seeds cooked boiled without salt",0.822678493423404,"manual",134,"FOOD00134","Common bean","16041",1099
+"Beans, pink, mature, canned/cooked","beans pink mature seeds cooked boiled without salt",0.791760026020943,"manual",134,"FOOD00134","Common bean","16041",1099
+"Beans, soy, immature, cooked","soybeans green cooked boiled drained without salt",0.700984105411784,"manual",85,"FOOD00085","Soy bean","11451",783
+"Beans, soy, mature, cooked","soybeans mature cooked boiled without salt",0.76972691619183,"manual",85,"FOOD00085","Soy bean","16109",791
+"Beans, soy, mature, sprouted, cooked","soybeans mature seeds sprouted cooked steamed",0.622636715292432,"manual",85,"FOOD00085","Soy bean","11453",785
+"Beans, soy, mature, uncooked (consumed cooked/heat-treated)","soybeans mature seeds raw",0.455910375347482,"manual",85,"FOOD00085","Soy bean","16108",790
+"Beans, white, mature, cooked","beans white mature seeds cooked boiled without salt",0.780175702368268,"manual",134,"FOOD00134","Common bean","16050",1108
+"Beans, white, mature, uncooked (consumed cooked/heat-treated)","beans white dried",0.438223402326147,"manual",134,"FOOD00134","Common bean","0025",1037
+"Beans, yellow, mature, canned","beans yellow mature seeds cooked boiled without salt",0.790692636989634,"manual",134,"FOOD00134","Common bean","16048",1106
+"Beans, yellow, mature, cooked","beans yellow mature seeds cooked boiled without salt",0.813571176529264,"manual",134,"FOOD00134","Common bean","16048",1106
+"Bear, lean and fat, cooked",NA,0.403758196351131,"manual",NA,NA,NA,NA,NA
+"Beaver, lean and fat, cooked",NA,0.503756430744915,"manual",NA,NA,NA,NA,NA
+"Bee pollen",NA,0,"manual",NA,NA,NA,NA,NA
+"Beef, lean and fat, canned","usda commodity beef canned",0.583718291302266,"manual",506,"FOOD00495","Cattle (Beef, Veal)","13166",3002
+"Beef, lean and fat, canned/cooked","usda commodity beef canned",0.532687599674788,"manual",506,"FOOD00495","Cattle (Beef, Veal)","13166",3002
+"Beef, lean and fat, cooked","beef meat lean <5  fat raw",0.621164208397645,"manual",506,"FOOD00495","Cattle (Beef, Veal)","0199",2940
+"Beef, lean and fat, raw","beef retail cuts separable fat raw",0.797605077107941,"manual",506,"FOOD00495","Cattle (Beef, Veal)","13019",2980
+"Beef, variety meat, brains, cooked","beef variety meats by products brain cooked pan fried",0.779241169920803,"manual",506,"FOOD00495","Cattle (Beef, Veal)","13319",3011
+"Beef, variety meat, heart, cooked","beef variety meats by products heart cooked simmered",0.755630602315958,"manual",506,"FOOD00495","Cattle (Beef, Veal)","13322",3014
+"Beef, variety meat, kidney, cooked","beef variety meats by products kidneys cooked simmered",0.753458932175853,"manual",506,"FOOD00495","Cattle (Beef, Veal)","13324",3016
+"Beef, variety meat, tongue, cooked","beef variety meats by products tongue cooked simmered",0.773381289294781,"manual",506,"FOOD00495","Cattle (Beef, Veal)","13340",3031
+"Beef, variety meat, tripe, canned","beef variety meats by products tripe cooked simmered",0.781754000887433,"manual",506,"FOOD00495","Cattle (Beef, Veal)","23640",3811
+"Beef, variety meat, tripe, cooked","beef variety meats by products tripe cooked simmered",0.795192512032564,"manual",506,"FOOD00495","Cattle (Beef, Veal)","23640",3811
+"Beets, dehydrated","beets raw",0.709611582972543,"manual",25,"FOOD00025","Common beet","11080",356
+"Beverage, alcoholic, distilled","alcoholic beverage distilled gin 90 proof",0.720174232730951,"manual",642,"FOOD00625","Gin","14049",4982
+"Beverage, alcoholic, liqueur","liqueur average values",0.716782731016487,"manual",630,"FOOD00616","Liquor","1069",4663
+"Blueberries, dried, unsweetened","blueberry",0.779783261866304,"manual",191,"FOOD00191","Highbush blueberry","1038",133
+"Broccoflower, canned/cooked","broccoli water cooked",0.470069554807599,"manual",34,"FOOD00034","Broccoli","",9056
+"Broccoflower, raw","broccoli florets raw",0.541774853455338,"manual",34,"FOOD00034","Broccoli","",9178
+"Broccoli, canned/cooked","broccoli cooked boiled drained without salt",0.794645668567682,"manual",34,"FOOD00034","Broccoli","11091",429
+"Buckwheat groats, uncooked (consumed cooked/heat-treated)","buckwheat groats roasted cooked",0.681083639649892,"manual",79,"FOOD00079","Common buckwheat","20010",738
+"Butter","butter salted",0.772124848607997,"manual",667,"FOOD00648","Butter","01001",5489
+"Celery, canned/cooked","celery cooked boiled drained without salt",0.815843578172705,"manual",215,"FOOD00215","Celery stalks","11144",287
+"Cereal, infant, barley, whole grain","babyfood cereal barley dry",0.730239202548963,"manual",690,"FOOD00668","Baby food","03181",5920
+"Cereal, infant, oat","babyfood cereal oatmeal dry",0.65285769433092,"manual",690,"FOOD00668","Baby food","03189",5926
+"Cereal, infant, rice, brown","babyfood cereal brown rice dry instant",0.708186232725683,"manual",690,"FOOD00668","Baby food","42285",6105
+"Cereal, infant, rice, white","babyfood cereal rice dry",0.542678910448317,"manual",690,"FOOD00668","Baby food","03194",5931
+"Cereal, infant, wheat, whole grain","babyfood cereal mixed dry",0.67022312945065,"manual",690,"FOOD00668","Baby food","03185",5922
+"Chamnamul, cooked",NA,0.435849940121787,"manual",NA,NA,NA,NA,NA
+"Cheese, cheddar, reduced fat","usda commodity cheese cheddar reduced fat",0.791532016487007,"manual",631,"FOOD00617","Cheese","01182",4784
+"Cheese, cottage, low fat","cheese cottage lowfat 2 milkfat",0.729035806784722,"manual",631,"FOOD00617","Cheese","01015",4745
+"Cheese, cream, nonfat","cheese cream low fat",0.700784197029104,"manual",631,"FOOD00617","Cheese","43274",4800
+"Cheese, goat","cheese goat soft type",0.82603482382324,"manual",631,"FOOD00617","Cheese","01159",4778
+"Cheese, parmesan, reduced fat/fat free","cheese parmesan dry grated reduced fat",0.761232489403672,"manual",631,"FOOD00617","Cheese","01204",4786
+"Cherries, canned/cooked (cherries only)","cherries canned water pack solids and liquids",0.828471718770903,"manual",NA,NA,NA,NA,NA
+"Cherries, cooked","cherries sweet canned pitted heavy syrup drained",0.797276928036385,"manual",145,"FOOD00145","Sweet cherry","09367",1216
+"Chicken, lean and fat, canned","chicken",0.750451916529251,"manual",334,"FOOD00329","Chicken","",9840
+"Chicken, lean and fat, canned/cooked","chicken",0.696861908544892,"manual",334,"FOOD00329","Chicken","",9840
+"Chicken, lean and fat, cooked","chicken",0.787996439386034,"manual",334,"FOOD00329","Chicken","",9840
+"Chicken, lean and fat, cooked, dried",NA,0.649425159902087,"manual",NA,NA,NA,NA,NA
+"Chicken, lean and fat, dried",NA,0.692135983268651,"manual",NA,NA,NA,NA,NA
+"Chickpeas (garbanzo beans), mature, canned","chickpeas garbanzo beans bengal gram mature seeds cooked boiled without salt",0.711663124470895,"manual",47,"FOOD00047","Chickpea","16057",553
+"Chickpeas (garbanzo beans), mature, canned/cooked","chickpeas garbanzo beans bengal gram mature seeds cooked boiled without salt",0.695218274531871,"manual",47,"FOOD00047","Chickpea","16057",553
+"Chickpeas (garbanzo beans), mature, cooked","chickpeas garbanzo beans bengal gram mature seeds cooked boiled without salt",0.719138738337609,"manual",47,"FOOD00047","Chickpea","16057",553
+"Chickpeas (garbanzo beans), mature, raw (consumed cooked/heat-treated)","chickpea whole raw",0.587555717564299,"manual",47,"FOOD00047","Chickpea","584",8450
+"Chocolate, unsweetened","baking chocolate unsweetened squares",0.651938554867503,"manual",709,"FOOD00687","Chocolate","19078",6826
+"Citron, dried",NA,0.683581545501752,"manual",NA,NA,NA,NA,NA
+"Collards, canned/cooked","collards cooked boiled drained without salt",0.814995969187812,"manual",247,"FOOD00247","Black cabbage","11162",1685
+"Corn (vegetable), canned","sweetcorn kernels canned",0.633653177537169,"manual",205,"FOOD00205","Corn","0151",1593
+"Corn (vegetable), canned/cooked","sweetcorn kernels canned",0.592916301840372,"manual",205,"FOOD00205","Corn","0151",1593
+"Corn (vegetable), cooked","corn sweet yellow cooked boiled drained without salt",0.661629194034609,"manual",205,"FOOD00205","Corn","11168",1598
+"Corn (vegetable), dried, cooked",NA,0.556091551333303,"manual",NA,NA,NA,NA,NA
+"Corn (vegetable), raw","corn sweet yellow raw",0.665203183170426,"manual",205,"FOOD00205","Corn","11167",1597
+"Corn grain, uncooked (consumed cooked/heat-treated)","cornmeal whole grain yellow",0.459858723846485,"manual",205,"FOOD00205","Corn","20020",1637
+"Corn grits, uncooked (consumed cooked/heat-treated)","cornmeal whole grain yellow",0.550394372476036,"manual",205,"FOOD00205","Corn","20020",1637
+"Cowpeas (black-eyed peas), immature, canned","cowpeas blackeyes immature seeds raw",0.772728219883495,"manual",534,"FOOD00523","Black-eyed pea","11191",3922
+"Cowpeas (black-eyed peas), immature, canned/cooked","cowpeas blackeyes immature seeds cooked boiled drained without salt",0.76004853418833,"manual",534,"FOOD00523","Black-eyed pea","11192",3923
+"Cowpeas (black-eyed peas), immature, cooked","cowpeas blackeyes immature seeds cooked boiled drained without salt",0.780411909240096,"manual",534,"FOOD00523","Black-eyed pea","11192",3923
+"Cowpeas (black-eyed peas), mature, canned/cooked","cowpeas common blackeyes crowder southern mature seeds canned plain",0.785827002073183,"manual",534,"FOOD00523","Black-eyed pea","16064",3930
+"Cowpeas (black-eyed peas), mature, cooked","cowpeas common blackeyes crowder southern mature seeds cooked boiled without salt",0.808396582547561,"manual",534,"FOOD00523","Black-eyed pea","16063",3929
+"Cowpeas (black-eyed peas), mature, raw (consumed cooked/heat-treated)","cowpeas common blackeyes crowder southern mature seeds raw",0.664873984769899,"manual",534,"FOOD00523","Black-eyed pea","16062",3928
+"Cranberries, dried, unsweetened","cranberries dried sweetened",0.780696458906314,"manual",192,"FOOD00192","American cranberry","09079",1539
+"Cream, fluid","cream fluid heavy whipping",0.727574955761177,"manual",669,"FOOD00650","Cream","01053",5506
+"Cream, fluid, fat free",NA,0.687257959782207,"manual",NA,NA,NA,NA,NA
+"Cream, sour, light/reduced fat/imitation/fat free","cream sour cultured",0.704367642886067,"manual",669,"FOOD00650","Cream","01056",5509
+"Cress, raw","garden cress raw",0.782992612083334,"manual",99,"FOOD00099","Garden cress","780",8523
+"Crustaceans, crab, cooked","crab boiled",0.791887640047452,"manual",587,"FOOD00573","Crab","0128",4543
+"Crustaceans, crayfish/crawfish, cooked","crustaceans crayfish mixed species wild cooked moist heat",0.704546126558784,"manual",547,"FOOD00534","Crayfish","15146",3988
+"Crustaceans, lobster, canned","crustaceans lobster northern cooked moist heat",0.788373756354889,"manual",404,"FOOD00399","American lobster","15148",2683
+"Crustaceans, lobster, cooked","crustaceans lobster northern cooked moist heat",0.781264611341441,"manual",404,"FOOD00399","American lobster","15148",2683
+"Crustaceans, shrimp, dried",NA,0.859341217700986,"manual",NA,NA,NA,NA,NA
+"Dewberries, raw","blackberry raw",0.541774853455338,"manual",160,"FOOD00160","Rubus (Blackberry, Raspberry)","0022",1324
+"Dragon fruit, raw",NA,0.454972667798707,"manual",NA,NA,NA,NA,NA
+"Egg, white, cooked","egg white raw fresh",0.747107527527988,"manual",633,"FOOD00619","Eggs","01124",4852
+"Escarole, cooked","endive escarole raw",0.671994284261913,"manual",48,"FOOD00048","Endive","0671",559
+"Fat, animal, beef","fat beef tallow",0.58716127180575,"manual",696,"FOOD00674","Tallow","0930",6695
+"Fat, animal, chicken","fat chicken",0.554202350074322,"manual",704,"FOOD00682","Other animal fat","04542",6798
+"Fat, animal, lamb","fat mutton tallow",0.51254076947509,"manual",696,"FOOD00674","Tallow","04520",6696
+"Fat, animal, pork","lard",0.573534465931368,"manual",703,"FOOD00681","Lard","04002",6795
+"Fat, milk","butter without salt",1,"manual",667,"FOOD00648","Butter","01145",5491
+"Fish roe, herring, raw","fish roe mixed species raw",0.630074850151267,"manual",722,"FOOD00698","Roe","15072",6908
+"Fish roe, shad, cooked","fish roe mixed species cooked dry heat",0.616676994824882,"manual",722,"FOOD00698","Roe","15207",6909
+"Fish roe, sturgeon, raw","fish roe mixed species raw",0.618715526418781,"manual",722,"FOOD00698","Roe","15072",6908
+"Fish, anchovy, canned","fish anchovy european canned oil drained solids",0.736148080833893,"manual",367,"FOOD00362","European anchovy","15002",2563
+"Fish, anchovy, canned/cooked","fish anchovy european canned oil drained solids",0.708630641503488,"manual",367,"FOOD00362","European anchovy","15002",2563
+"Fish, anchovy, cooked","fish anchovy european canned oil drained solids",0.753730503924562,"manual",367,"FOOD00362","European anchovy","15002",2563
+"Fish, catfish, cooked","fish catfish channel farmed cooked dry heat",0.622007612475925,"manual",329,"FOOD00324","Channel catfish","15235",2465
+"Fish, cod, canned/cooked","fish cod pacific cooked dry heat",0.655189635016223,"manual",342,"FOOD00337","Pacific cod","15192",2510
+"Fish, cod, cooked","fish cod atlantic cooked dry heat",0.710289510858089,"manual",343,"FOOD00338","Atlantic cod","15016",2512
+"Fish, cod, raw","fish cod pacific raw",0.79569509242491,"manual",342,"FOOD00337","Pacific cod","15019",2509
+"Fish, cod, smoked","fish cod atlantic cooked dry heat",0.73731714638534,"manual",343,"FOOD00338","Atlantic cod","15016",2512
+"Fish, croaker, cooked","fish croaker atlantic cooked breaded fried",0.776577311342634,"manual",350,"FOOD00345","Atlantic croaker","15021",2533
+"Fish, eel, cooked","fish eel mixed species cooked dry heat",0.796619574442788,"manual",362,"FOOD00357","Freshwater eel","15026",2556
+"Fish, flatfish, smoked","fish flatfish flounder sole species cooked dry heat",0.507911691625384,"manual",548,"FOOD00535","Flatfish","15029",3993
+"Fish, halibut, cooked","fish halibut atlantic pacific cooked dry heat",0.700975951718342,"manual",380,"FOOD00375","Hippoglossus (Common halibut)","15037",2610
+"Fish, halibut, raw","fish halibut atlantic pacific raw",0.747532491590036,"manual",380,"FOOD00375","Hippoglossus (Common halibut)","15036",2609
+"Fish, halibut, smoked","fish halibut atlantic pacific cooked dry heat",0.740218443690473,"manual",380,"FOOD00375","Hippoglossus (Common halibut)","15037",2610
+"Fish, herring, dried","fish herring atlantic cooked dry heat",0.752445765892663,"manual",293,"FOOD00292","Atlantic herring","15040",2383
+"Fish, mackerel, canned","fish mackerel jack canned drained solids",0.730780356630491,"manual",388,"FOOD00383","Pacific jack mackerel","15048",2636
+"Fish, mackerel, canned/cooked","fish mackerel jack canned drained solids",0.697494135956423,"manual",388,"FOOD00383","Pacific jack mackerel","15048",2636
+"Fish, mackerel, cooked","fish mackerel atlantic cooked dry heat",0.752508365902426,"manual",294,"FOOD00293","Atlantic mackerel","15047",2388
+"Fish, mullet, cooked","fish mullet striped cooked dry heat",0.717950709269137,"manual",418,"FOOD00412","Striped mullet","15056",2709
+"Fish, pike, cooked","fish pike northern cooked dry heat",0.78375326262403,"manual",439,"FOOD00431","Northern pike","15063",2745
+"Fish, pompano, cooked","fish pompano florida cooked dry heat",0.733554649183403,"manual",371,"FOOD00366","Florida pompano","15069",2576
+"Fish, pompano, smoked","fish pompano florida cooked dry heat",0.659016872635836,"manual",371,"FOOD00366","Florida pompano","15069",2576
+"Fish, salmon, canned/cooked","fish salmon atlantic farmed cooked dry heat",0.795434524069808,"manual",465,"FOOD00455","Atlantic salmon","15237",2829
+"Fish, salmon, cooked","fish salmon atlantic farmed cooked dry heat",0.795493754132549,"manual",465,"FOOD00455","Atlantic salmon","15237",2829
+"Fish, salmon, dried","fish salmon chum dried alaska native",0.720653342119345,"manual",461,"FOOD00451","Chum salmon","35171",2798
+"Fish, sardines, canned","sardine oil canned",0.827014521012375,"manual",531,"FOOD00520","Clupeinae (Herring, Sardine, Sprat)","0240",3910
+"Fish, sardines, canned/cooked","sardine oil canned",0.79275429335402,"manual",531,"FOOD00520","Clupeinae (Herring, Sardine, Sprat)","0240",3910
+"Fish, sardines, dried",NA,0.789573681894131,"manual",NA,NA,NA,NA,NA
+"Fish, sea bass, cooked","fish sea bass mixed species cooked dry heat",0.788446602714319,"manual",537,"FOOD00526","Percoidei (Bass and others)","15092",3949
+"Fish, shad, cooked","fish shad american cooked dry heat",0.775409586961918,"manual",480,"FOOD00470","American shad","15215",2866
+"Fish, smelt, cooked","fish smelt rainbow cooked dry heat",0.724281777141967,"manual",453,"FOOD00443","Rainbow smelt","15100",2768
+"Fish, snapper, cooked","fish snapper mixed species cooked dry heat",0.731778241130059,"manual",487,"FOOD00477","Snapper","15102",2876
+"Fish, sturgeon, cooked","fish sturgeon mixed species cooked dry heat",0.722475945088662,"manual",494,"FOOD00483","Greater sturgeon","15105",2885
+"Fish, trout, cooked","fish trout mixed species cooked dry heat",0.760738929208328,"manual",504,"FOOD00493","Salmonidae (Salmon, Trout)","15219",2923
+"Fish, trout, smoked","fish trout mixed species cooked dry heat",0.667002919715047,"manual",504,"FOOD00493","Salmonidae (Salmon, Trout)","15219",2923
+"Fish, tuna, canned","fish tuna white canned water drained solids",0.769848477802535,"manual",525,"FOOD00514","Albacore tuna","15126",3877
+"Fish, tuna, canned/cooked","fish tuna white canned water drained solids",0.732674802272662,"manual",525,"FOOD00514","Albacore tuna","15126",3877
+"Fish, tuna, cooked","fish tuna light canned water drained solids",0.794290994715461,"manual",621,"FOOD00607","Thunnus","15121",4606
+"Fish, tuna, dried","fish tuna fresh bluefin cooked dry heat",0.729263728534806,"manual",308,"FOOD00305","Northern bluefin tuna","15118",2419
+"Fish, tuna, smoked","fish tuna fresh bluefin cooked dry heat",0.687672944114693,"manual",308,"FOOD00305","Northern bluefin tuna","15118",2419
+"Fish, whiting, cooked","fish whiting mixed species cooked dry heat",0.796619574442788,"manual",515,"FOOD00504","Whiting","15133",3853
+"Flour, oat","oat flour partially debranned",0.744634352754238,"manual",22,"FOOD00022","Oat","20132",351
+"Flour, tapioca",NA,0.603970009550919,"manual",NA,NA,NA,NA,NA
+"Flowers or blossoms of sesbania, squash, or lily, cooked","sesbania flower cooked steamed without salt",0.605067112423339,"manual",479,"FOOD00469","Sesbania flower","11448",2863
+"Goat, variety meat, brains, cooked","veal variety meats by products brain cooked braised",0.605914170233725,"manual",506,"FOOD00495","Cattle (Beef, Veal)","17189",3408
+"Groundhog, lean and fat, cooked",NA,0.503756430744915,"manual",NA,NA,NA,NA,NA
+"Hops",NA,0,"manual",NA,NA,NA,NA,NA
+"Huckleberries, raw/frozen","black huckleberry",0.733936924965831,"manual",84,"FOOD00084","Black huckleberry","110",8577
+"Juice, acai","acai berries purple fresh",0.614759522496802,"manual",743,"FOOD00718","Heart of palm","",8747
+"Juice, alfalfa seeds",NA,0.905814573947036,"manual",NA,NA,NA,NA,NA
+"Juice, aloe vera",NA,0.682481967687838,"manual",NA,NA,NA,NA,NA
+"Juice, apple (alcoholic)","cider",0.633117058790985,"manual",629,"FOOD00615","Apple cider","28",8428
+"Juice, apple, concentrate","apple [cider] juice from concentrate",0.754710126103815,"manual",105,"FOOD00105","Apple","36",8404
+"Juice, apricot","apricot nectar",0.818274833745351,"manual",144,"FOOD00144","Apricot","198",8397
+"Juice, banana",NA,0.800937494197676,"manual",NA,NA,NA,NA,NA
+"Juice, barley grass",NA,0.59688260783033,"manual",NA,NA,NA,NA,NA
+"Juice, celery","celery stalks raw",0.831650894961105,"manual",215,"FOOD00215","Celery stalks","409",8518
+"Juice, elderberry","elderberry juice concentrated sugar not added",0.872881766170357,"manual",363,"FOOD00358","Elderberry","1159",2558
+"Juice, grape, concentrate","grape juice cocktail frozen concentrate undiluted with added ascorbic acid",0.790013125889244,"manual",374,"FOOD00369","Grape","09136",2589
+"Juice, grapefruit","juice grapefruit white raw",0.847097709598889,"manual",256,"FOOD00256","Grapefruit","",8861
+"Juice, kiwi","kiwi pure juice",0.876236841023424,"manual",4,"FOOD00004","Kiwi","930",8423
+"Juice, lettuce",NA,0.834227106880558,"manual",NA,NA,NA,NA,NA
+"Juice, lime, concentrate","lime pure juice",0.788987558954513,"manual",53,"FOOD00053","Lime","207",8495
+"Juice, orange, concentrate","juice orange frozen concentrate unsweetened diluted with 3 volume water",0.733176542568571,"manual",57,"FOOD00057","Sweet orange","",8867
+"Juice, passionfruit","passion fruit juice yellow raw",0.682481967687838,"manual",128,"FOOD00128","Passion fruit","09233",996
+"Juice, peach","peach nectar canned with added ascorbic acid",0.805675395305235,"manual",149,"FOOD00149","Peach","09407",1272
+"Juice, pear","pear pure juice",0.834882283924826,"manual",152,"FOOD00152","Pear","38",8425
+"Juice, pear, concentrate","pear pure juice",0.650392942540216,"manual",152,"FOOD00152","Pear","38",8425
+"Juice, pepper",NA,0.777060938326192,"manual",NA,NA,NA,NA,NA
+"Juice, pineapple, concentrate","pineapple juice frozen concentrate unsweetened undiluted",0.721913404738678,"manual",12,"FOOD00012","Pineapple","09274",271
+"Juice, tomato","tomato juice canned without salt added",0.767133449812384,"manual",171,"FOOD00171","Garden tomato","11886",1394
+"Juice, wheat grass",NA,0.640954434346486,"manual",NA,NA,NA,NA,NA
+"Juice, wolfberry","goji berries dried",0.682481967687838,"manual",1014,"FOOD00982","Goji","",9458
+"Juneberries, raw/frozen","saskatoon berry",0.592219849525098,"manual",916,"FOOD00884","Saskatoon berry","",9643
+"Lamb, lean and fat, cooked","lambs quarters cooked boiled drained with salt",0.658124640785337,"manual",399,"FOOD00394","Lambsquarters","11794",2667
+"Leavening agents, yeast","leavening agents yeast baker's active dry",0.723386599983219,"manual",682,"FOOD00661","Leavening agent","18375",5733
+"Lentils, canned","lentil",0.88864682522256,"manual",98,"FOOD00098","Lentils","549",69
+"Lentils, canned/cooked","lentil",0.834896877795855,"manual",98,"FOOD00098","Lentils","549",69
+"Lentils, cooked","lentil",0.92517390732829,"manual",98,"FOOD00098","Lentils","549",69
+"Lettuce, iceberg/butterhead, cooked","lettuce butterhead includes boston bibb types raw",0.759065604979826,"manual",95,"FOOD00095","Lettuce","11250",857
+"Lettuce, iceberg/butterhead, raw","lettuce butterhead includes boston bibb types raw",0.760157155648517,"manual",95,"FOOD00095","Lettuce","11250",857
+"Litchis/lychees, dried","litchis dried",0.683581545501752,"manual",103,"FOOD00103","Lichee","09165",883
+"Litchis/lychees, raw","lychee raw",0.541774853455338,"manual",103,"FOOD00103","Lichee","0638",881
+"Malt extract, dried","barley malt flour",0.567522011491957,"manual",88,"FOOD00088","Barley","20131",829
+"Mangoes, dried, unsweetened","mangos raw",0.7168054806826,"manual",106,"FOOD00106","Mango","0523",916
+"Milk, 1% fat, dried","milk dry skimmed powder",0.742049413383272,"manual",711,"FOOD00689","Dried milk","0366",6845
+"Milk, 1% fat, fluid","milk 1 fat",0.677536977413418,"manual",632,"FOOD00618","Milk (Cow)","",9247
+"Milk, 2% fat, fluid","milk 2 fat",0.677536977413418,"manual",632,"FOOD00618","Milk (Cow)","",9248
+"Milk, buttermilk, nonfat, fluid","milk buttermilk 0.3  fat",0.771153879122373,"manual",714,"FOOD00692","Buttermilk","0168",6860
+"Milk, goat, whole, fluid","goat milk",0.781316980172822,"manual",712,"FOOD00690","Milk (Other mammals)","0516",6854
+"Milk, nonfat, dried","milk dry nonfat calcium reduced",0.617318404825127,"manual",711,"FOOD00689","Dried milk","01093",6850
+"Milk, nonfat, fluid","milk nonfat fluid with added vitamin a vitamin d fat free skim",0.693425380064524,"manual",632,"FOOD00618","Milk (Cow)","01085",4828
+"Milk, whole, dried","milk dry whole without added vitamin d",0.794131964164259,"manual",711,"FOOD00689","Dried milk","01212",6853
+"Milk, whole, fluid","whole milk vitamin d3",0.805690512018364,"manual",632,"FOOD00618","Milk (Cow)","",9197
+"Milk, whole, with 77% moisture loss (for dulce de leche and condensed milk)","milk canned condensed sweetened",0.694251863227793,"manual",871,"FOOD00842","Condensed milk","01095",8275
+"Millet, uncooked (consumed cooked/heat-treated)","millet raw",0.564368004643094,"manual",126,"FOOD00126","Millet","20031",987
+"Mollusks, abalone, cooked","mollusks abalone mixed species cooked fried",0.76829820851969,"manual",280,"FOOD00279","Abalone","15156",2347
+"Mollusks, clam, cooked","mollusks clam mixed species cooked moist heat",0.710320004976898,"manual",544,"FOOD00531","Bivalvia (Clam, Mussel, Oyster)","15159",3965
+"Mollusks, clam, smoked","mollusks clam mixed species cooked moist heat",0.631390402605137,"manual",544,"FOOD00531","Bivalvia (Clam, Mussel, Oyster)","15159",3965
+"Mollusks, mussels, cooked","mollusks mussel blue cooked moist heat",0.785791133643441,"manual",307,"FOOD00304","Blue mussel","15165",2417
+"Mollusks, octopus, smoked","mollusks octopus common cooked moist heat",0.740776588901591,"manual",344,"FOOD00339","Common octopus","15230",2517
+"Mollusks, oysters, cooked","mollusks oyster eastern farmed cooked dry heat",0.743312649199635,"manual",361,"FOOD00356","Eastern oyster","15246",2554
+"Mollusks, oysters, smoked","mollusks oyster eastern farmed cooked dry heat",0.661086225712166,"manual",361,"FOOD00356","Eastern oyster","15246",2554
+"Mollusks, scallops, cooked","mollusks scallop bay sea cooked steamed",0.739353433807038,"manual",472,"FOOD00462","Scallop","90240",2842
+"Mollusks, squid, canned","mollusks squid mixed species cooked fried",0.752647477123414,"manual",545,"FOOD00532","Squid","15176",3972
+"Mollusks, squid, canned/cooked","mollusks squid mixed species cooked fried",0.729893451834491,"manual",545,"FOOD00532","Squid","15176",3972
+"Mollusks, squid, cooked","mollusks squid mixed species cooked fried",0.766921802020763,"manual",545,"FOOD00532","Squid","15176",3972
+"Mollusks, squid, dried","mollusks squid mixed species cooked fried",0.727740713208351,"manual",545,"FOOD00532","Squid","15176",3972
+"Moose, lean and fat, cooked",NA,0.58400327102335,"manual",NA,NA,NA,NA,NA
+"Mushrooms, dried","mushrooms shiitake dried",0.694660333082384,"manual",562,"FOOD00548","Shiitake","11268",4470
+"Mushrooms, dried, cooked","mushrooms shiitake dried",0.647600104858588,"manual",562,"FOOD00548","Shiitake","11268",4470
+"Nuts, almonds, roasted/heat-treated","nuts almonds dry roasted without salt added",0.587929407926294,"manual",148,"FOOD00148","Almond","12063",1245
+"Nuts, cashew, roasted/heat-treated","nuts cashew nuts dry roasted without salt added",0.649018014229307,"manual",11,"FOOD00011","Cashew nut","12085",253
+"Nuts, cashew, unroasted","nuts cashew nuts raw",0.693342896798021,"manual",11,"FOOD00011","Cashew nut","12087",255
+"Nuts, chestnuts, roasted/heat-treated","nuts chestnuts european roasted",0.581261098475741,"manual",368,"FOOD00363","European chestnut","12167",2569
+"Nuts, coconut meat, dried (desiccated)","nuts coconut meat dried desiccated toasted",0.904448780920987,"manual",341,"FOOD00336","Coconut","12114",2500
+"Nuts, coconut milk","nuts coconut milk canned liquid expressed from grated meat water",0.731873935272735,"manual",341,"FOOD00336","Coconut","12118",2504
+"Nuts, hazelnuts or filberts, roasted/heat-treated","nuts hazelnuts filberts dry roasted without salt added",0.746521456083134,"manual",381,"FOOD00376","Hazelnut","12122",2617
+"Nuts, macadamia, roasted/heat-treated","nuts macadamia nuts dry roasted without salt added",0.638358289801086,"manual",536,"FOOD00525","Macadamia nut","12132",3943
+"Nuts, macadamia, unroasted","nuts macadamia nuts raw",0.704127343089723,"manual",536,"FOOD00525","Macadamia nut","12131",3942
+"Nuts, pecans, roasted/heat-treated","nuts pecans dry roasted without salt added",0.616310606228373,"manual",44,"FOOD00044","Pecan nut","12143",546
+"Nuts, pistachio, roasted/heat-treated","nuts pistachio nuts raw",0.662377923979568,"manual",140,"FOOD00140","Pistachio","12151",1147
+"Nuts, walnuts, raw","nuts walnuts english",0.780197391717101,"manual",94,"FOOD00094","Common walnut","12155",851
+"Nuts, walnuts, roasted/heat-treated","nuts walnuts english",0.508325070165792,"manual",94,"FOOD00094","Common walnut","12155",851
+"Nuts, walnuts, unroasted","nuts walnuts english",0.56305526929449,"manual",94,"FOOD00094","Common walnut","12155",851
+"Oat groats (oatmeal), uncooked (consumed cooked/heat-treated)","oats",0.479218888092935,"manual",22,"FOOD00022","Oat","144",15
+"Oil, vegetable/nut/seed (other than cocoa butter)","usda commodity oil vegetable low saturated fat",0.600483037396513,"manual",804,"FOOD00779","Cooking oil","04670",7794
+"Olives, ripe, pickled","olives pickled canned bottled kalamata",0.678277409608287,"manual",121,"FOOD00121","Olive","",8886
+"Onions, canned/cooked","onions canned solids liquids",0.769433046421312,"manual",226,"FOOD00226","Garden onion (var.)","11285",230
+"Opossum, lean and fat, cooked",NA,0.503756430744915,"manual",NA,NA,NA,NA,NA
+"Orange peel, cooked","orange peel raw",0.910868149860432,"manual",57,"FOOD00057","Sweet orange","09216",606
+"Orange peel, dried","orange peel raw",0.84762380617575,"manual",57,"FOOD00057","Sweet orange","09216",606
+"Parsnips, dehydrated","parsnips raw",0.759398887766218,"manual",129,"FOOD00129","Parsnip","11298",998
+"Peaches, raw/frozen","peach raw",0.853476570988174,"manual",149,"FOOD00149","Peach","0049",1255
+"Peanuts, roasted/otherwise heat treated","peanuts all types dry roasted without salt",0.575391493622792,"manual",16,"FOOD00016","Peanut","16390",316
+"Peanuts, unroasted","peanuts all types raw",0.516407973428592,"manual",16,"FOOD00016","Peanut","16087",296
+"Pears, dried","pears dried sulfured uncooked",0.753289210369342,"manual",152,"FOOD00152","Pear","09259",1289
+"Pears, dried, cooked","pear canned",0.699023913550533,"manual",152,"FOOD00152","Pear","0215",1280
+"Peas, green, split, uncooked (consumed cooked/heat-treated)","peas green raw",0.525299601974515,"manual",141,"FOOD00141","Common pea","0342",1152
+"Peppers, non-bell, canned","pepper sweet canned",0.760611858623127,"manual",40,"FOOD00040","Pepper","0524",491
+"Peppers, non-bell, canned/cooked","pepper sweet canned",0.738521003749629,"manual",40,"FOOD00040","Pepper","0524",491
+"Peppers, non-bell, cooked","peppers sweet green cooked boiled drained with salt",0.77442834429024,"manual",40,"FOOD00040","Pepper","11822",511
+"Peppers, non-bell, raw","peppers sweet red raw",0.77611947319238,"manual",40,"FOOD00040","Pepper","11821",510
+"Peppers, sweet/bell, dehydrated","peppers sweet red freeze dried",0.723155062891187,"manual",40,"FOOD00040","Pepper","11931",520
+"Peppers, sweet/bell, dried","pepper sweet canned",0.793570038832565,"manual",40,"FOOD00040","Pepper","0524",491
+"Pig, wild, lean and fat, cooked","game meat boar wild raw",0.754579097630999,"manual",310,"FOOD00307","Wild boar","",9403
+"Pigeonpeas, immature, canned/cooked","pigeonpeas immature seeds cooked boiled drained without salt",0.81959401355627,"manual",37,"FOOD00037","Pigeon pea","11345",461
+"Pigeonpeas, mature, canned/cooked","pigeon peas red gram mature seeds cooked boiled without salt",0.548646445818002,"manual",37,"FOOD00037","Pigeon pea","16102",464
+"Plantains, dehydrated","french plantain",0.704679483611068,"manual",444,"FOOD00436","French plantain","",9474
+"Pork, lean and fat, canned","usda commodity pork canned",0.484792041538137,"manual",549,"FOOD00536","Domestic pig","10158",4221
+"Pork, lean and fat, canned/cooked","usda commodity pork canned",0.549823589412262,"manual",549,"FOOD00536","Domestic pig","10158",4221
+"Pork, lean and fat, cooked","pork meat approx. 20  fat raw",0.63238757448806,"manual",549,"FOOD00536","Domestic pig","0287",4046
+"Pork, lean and fat, dehydrated","pork meat approx. 20  fat raw",0.57596911538419,"manual",549,"FOOD00536","Domestic pig","0287",4046
+"Pork, lean and fat, dried","pork oriental style dehydrated",0.442457581601622,"manual",549,"FOOD00536","Domestic pig","43297",4421
+"Pork, variety meat, blood",NA,0.60775190501745,"manual",NA,NA,NA,NA,NA
+"Pork, variety meat, chitterlings, cooked","pork fresh variety meats by products chitterlings cooked simmered",0.771021032773126,"manual",549,"FOOD00536","Domestic pig","10099",4176
+"Pork, variety meat, feet, cooked","pork fresh variety meats by products feet cooked simmered",0.76529449863031,"manual",549,"FOOD00536","Domestic pig","10173",4229
+"Pork, variety meat, skin, cooked","pork fresh variety meats by products kidneys cooked braised",0.49797377248869,"manual",549,"FOOD00536","Domestic pig","10107",4184
+"Pork, variety meat, skin, dehydrated (pork rinds)","snacks pork skins plain",0.540190645736395,"manual",549,"FOOD00536","Domestic pig","19041",4417
+"Pork, variety meat, stomach, cooked","pork fresh variety meats by products stomach cooked simmered",0.771021032773126,"manual",549,"FOOD00536","Domestic pig","10863",4299
+"Potatoes, canned, peel not eaten or unknown","potatoes canned drained solids no salt added",0.462935397784552,"manual",175,"FOOD00175","Potato","43311",1496
+"Potatoes, canned/cooked, peel not eaten or unknown","potatoes canned drained solids",0.452029006968276,"manual",175,"FOOD00175","Potato","11376",1436
+"Potatoes, cooked, peel not eaten or unknown","potatoes microwaved cooked skin flesh skin with salt",0.414722493875436,"manual",175,"FOOD00175","Potato","11834",1472
+"Potatoes, cooked, with peel","potatoes microwaved cooked skin flesh skin with salt",0.589651587752259,"manual",175,"FOOD00175","Potato","11834",1472
+"Potatoes, dehydrated","potatoes mashed instant powder without dry milk",0.61163319604784,"manual",175,"FOOD00175","Potato","1120",1415
+"Protein, chickpea",NA,0.791476949285243,"manual",NA,NA,NA,NA,NA
+"Protein, hydrolyzed corn",NA,0.62520852905038,"manual",NA,NA,NA,NA,NA
+"Protein, milk/whey concentrate/isolate","whey",0.599417358117567,"manual",679,"FOOD00658","Whey","",9803
+"Protein, pea",NA,0.697747965528172,"manual",NA,NA,NA,NA,NA
+"Protein, soy concentrate","soy protein isolate",0.598686062905154,"manual",272,"FOOD00271","Other soy product","16122",2157
+"Protein, textured vegetable",NA,0.484034637725302,"manual",NA,NA,NA,NA,NA
+"Quail, lean and fat, cooked","quail cooked total edible",0.704249396183388,"manual",555,"FOOD00541","Quail","43282",4444
+"Rabbit, wild, lean and fat, cooked","game meat rabbit wild cooked stewed",0.686008813780711,"manual",540,"FOOD00528","Rabbit","17181",3958
+"Rabbit, domesticated, lean and fat, cooked","game meat rabbit wild cooked stewed",0.50120108233425,"manual",540,"FOOD00528","Rabbit","17181",3958
+"Raccoon, lean and fat, cooked",NA,0.503756430744915,"manual",NA,NA,NA,NA,NA
+"Raisins","raisins seedless",0.726551930623844,"manual",204,"FOOD00204","Common grape","09298",1584
+"Raisins, cooked","raisins seedless",0.656177344196367,"manual",204,"FOOD00204","Common grape","09298",1584
+"Raspberries, dried, unsweetened","raspberry",0.720813069456857,"manual",162,"FOOD00162","Red raspberry","878",114
+"Rice, white, uncooked (consumed cooked/heat-treated)","rice white short grain raw",0.395638836799874,"manual",125,"FOOD00125","Rice","20052",965
+"Rye grain, uncooked (consumed cooked/heat-treated)","rye kernels whole/cracked",0.550114064265626,"manual",169,"FOOD00169","Rye","0862",1344
+"Sauce, pepper","sauce peppers hot chili mature red canned",0.72883708264815,"manual",665,"FOOD00646","Sauce","06961",5454
+"Sauce, tomato","tomato sauce canned no salt added",0.76009421426437,"manual",665,"FOOD00646","Sauce","43217",5483
+"Seaweed, nori, dried",NA,0.731587832912401,"manual",NA,NA,NA,NA,NA
+"Seeds, flax, unroasted","seeds flaxseed",0.642034674798311,"manual",101,"FOOD00101","Flaxseed","12220",879
+"Seeds, sunflower, roasted","seeds sunflower seed kernels dry roasted without salt",0.765824932901129,"manual",86,"FOOD00086","Sunflower","12037",814
+"Seeds, sunflower, unroasted","seeds sunflower seed kernels dried",0.577465235637673,"manual",86,"FOOD00086","Sunflower","12036",813
+"Spices, chives, dehydrated","chives freeze dried",0.639753030045807,"manual",9,"FOOD00009","Chives","11615",250
+"Starches, gums, nutrients, other additives, misc spices","cornstarch",0.437953835738945,"manual",205,"FOOD00205","Corn","20027",1642
+"Strawberries, dried, unsweetened","strawberry",0.780697210523507,"manual",83,"FOOD00083","Strawberry","70",8343
+"Sugars","sugars granulated",0.709026300304925,"manual",670,"FOOD00651","Sugar","19335",5521
+"Syrup, brown rice",NA,0.769574293144385,"manual",NA,NA,NA,NA,NA
+"Syrup, corn","syrups corn high fructose",0.799839424631209,"manual",695,"FOOD00673","Syrup","19351",6684
+"Tapioca, dried",NA,0.528773034918705,"manual",NA,NA,NA,NA,NA
+"Tea, green, instant powder","green tea",0.748272278367265,"manual",940,"FOOD00908","Green tea","",9878
+"Tea, oolong, leaves","tea leaves",0.747769902992048,"manual",38,"FOOD00038","Tea","0304",466
+"Tomatoes, canned","tomato",0.821205804609376,"manual",173,"FOOD00173","Garden tomato (var.)","576",121
+"Tomatoes, canned/cooked","tomatoes crushed canned",0.747857365479844,"manual",171,"FOOD00171","Garden tomato","11693",1389
+"Tomatoes, cooked","tomato",0.875331484541982,"manual",173,"FOOD00173","Garden tomato (var.)","576",121
+"Tomatoes, dehydrated","tomatoes sun dried",0.601803266493029,"manual",171,"FOOD00171","Garden tomato","11955",1397
+"Tomatoes, raw","tomato",0.882494976783123,"manual",173,"FOOD00173","Garden tomato (var.)","576",121
+"Triticale grain, uncooked (consumed cooked/heat-treated)","wheat",0.539352592785391,"manual",187,"FOOD00187","Common wheat","1025",132
+"Turkey, lean and fat, canned/cooked","turkey",0.754254618904989,"manual",505,"FOOD00494","Turkey","",9841
+"Turkey, lean and fat, cooked","turkey",0.834282079096947,"manual",505,"FOOD00494","Turkey","",9841
+"Turkey, lean and fat, canned","turkey",0.801955219847807,"manual",505,"FOOD00494","Turkey","",9841
+"Turkey, variety meat, giblets (incl liver/gizzard), cooked","turkey",0.543210505936584,"manual",505,"FOOD00494","Turkey","",9841
+"Veal, lean and fat, cooked","veal leg top round separable lean fat cooked roasted",0.750239983024887,"manual",506,"FOOD00495","Cattle (Beef, Veal)","17098",3361
+"Water, bottled","water bottled generic",0.641767147667825,"manual",685,"FOOD00664","Water","14555",5752
+"Water, bottled (amount based on powder)","water bottled generic",0.38094295100418,"manual",685,"FOOD00664","Water","14555",5752
+"Water, tap","water tap municipal",0.697293624367984,"manual",685,"FOOD00664","Water","14429",5743
+"Water, tap (amount based on powder)","water tap municipal",0.442412683302809,"manual",685,"FOOD00664","Water","14429",5743
+"Wax gourd/winter melon, cooked","waxgourd chinese preserving melon cooked boiled drained without salt",0.72460980403834,"manual",510,"FOOD00499","Wax gourd","11594",3838
+"Wheat endosperm, uncooked (consumed cooked/heat-treated)","wheat flour white all purpose unenriched",0.416497574234132,"manual",575,"FOOD00561","Wheat","20481",4509
+"Wheat grain, uncooked (consumed cooked/heat-treated)","wheat",0.460856075818949,"manual",187,"FOOD00187","Common wheat","1025",132
+"Wild rice, uncooked (consumed cooked/heat-treated)","wild rice raw",0.565929700333285,"manual",516,"FOOD00505","Wild rice","20088",3854
+"Wine, sweet, NS as to red/white","wine dessert sweet",0.874852640916984,"manual",955,"FOOD00923","Dessert wine","",9450
+"Yeast extract",NA,0.847738395406569,"manual",NA,NA,NA,NA,NA
+"Youngberries, raw","raspberry",0.541774853455338,"manual",162,"FOOD00162","Red raspberry","878",114

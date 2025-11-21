@@ -1,0 +1,137 @@
+---
+title: "Calculate Class-Level Polypenol Intakes"
+author: "Stephanie Wilson"
+date: "November 2025"
+output:
+  md_document:
+    variant: gfm
+    toc: true
+    number_sections: false
+    df_print: kable
+    preserve_yaml: true
+  html_document:
+    toc: true
+    toc_depth: 3
+    number_sections: false
+    theme: sandstone
+    highlight: tango
+    df_print: paged
+---
+
+## Calculate Class-Level Polypenol Intakes
+This script calculates class polyphenol intake (mg, mg/1000kcal) for provided dietary data.
+
+### INPUTS
+- **Input_FooDB_polyphenol_content.csv.bz2**: Disaggregated dietary data, mapped to FooDB polyphenol content, at the compound-level
+- **Input_total_nutrients.csv** - total daily nutrient data to go with dietary data.
+- **FooDB_polyphenol_classtax_3072.csv** - class taxonomy is derived from FooDB which uses ClassyFire, an automated chemical taxonomic classification application based on chemical structure
+
+### OUTPUTS
+- **Input_FooDB_polyphenol_content_class_by_recall.csv**, polyphenol class intakes by recall for each participant
+- **Input_FooDB_polyphenol_content_class_by_subject.csv**, polyphenol class intakes for each participant, provided in wide format (classes as rows)
+- **Input_FooDB_polyphenol_content_class_by_subject_wide.csv**, polyphenol class intakes for each participant, provided in wide format (classes as columns)
+
+## SCRIPTS
+
+```{r echo = FALSE}
+# Clears all objects from memory
+rm(list = ls())
+```
+
+```{r setup, include=FALSE}
+knitr::opts_knit$set(root.dir = "..") # project root relative to scripts/
+```
+
+```{r message = FALSE, warning = FALSE}
+library(tidyverse)
+```
+
+```{r}
+# Load user-defined input paths
+source("specify_inputs.R")
+
+#Content and kcal data
+input_polyphenol_content = vroom::vroom('outputs/Input_FooDB_polyphenol_content.csv.bz2',
+                                        show_col_types = FALSE)
+input_kcal = vroom::vroom('outputs/Input_total_nutrients.csv', show_col_types = FALSE) %>%
+  # Ensure consistent KCAL naming whether ASA24 or NHANES
+  rename_with(~ "Total_KCAL", .cols = any_of(c("Total_KCAL", # Specific to ASA24
+                                               "Total_DRXIKCAL"))) %>%  # Specific to NHANES
+  select(c(subject, RecallNo, Total_KCAL))
+
+# Class taxonomy for FooDB compounds
+class_tax = vroom::vroom(class_tax, show_col_types = FALSE) %>%
+  select(c(compound_public_id, class))
+
+# Merge the two files
+input_polyphenol_kcal = left_join(input_polyphenol_content, input_kcal)  %>%
+  left_join(class_tax, by = "compound_public_id")
+```
+
+### Daily Class Polyphenol Intake Numbers BY RECALL
+
+```{r}
+class_intakes_recall = input_polyphenol_kcal%>%
+  
+  #Group by Taxonomic Class
+  group_by(subject, RecallNo, class) %>%
+  
+  #gets the sum of each compound for each participant's recall
+  mutate(class_intake_mg = sum(pp_consumed, na.rm = TRUE)) %>% 
+  select(c(subject, RecallNo, class, class_intake_mg, Total_KCAL)) %>%
+  ungroup()%>%
+  
+  #Remove duplicates since we've summed each polyphenol per recall
+  distinct(subject, RecallNo, class, .keep_all = TRUE)  %>%
+  
+  #Filter out missing class, this is for foods that did not map
+  filter(!is.na(class)) %>%
+  
+  #Standardize Intakes to caloric intake
+  mutate(class_intake_mg1000kcal = class_intake_mg/(Total_KCAL/1000))
+
+vroom::vroom_write(class_intakes_recall, "outputs/Input_FooDB_polyphenol_content_class_by_recall.csv")
+```
+
+### Daily Class Intakes by SUBJECT
+
+```{r}
+# First average caloric intakes
+kcal_subject = input_kcal %>%
+  group_by(subject) %>%
+  summarise(avg_Total_KCAL = mean(Total_KCAL, na.rm = TRUE))
+
+# Then let's average the class intakes
+class_intakes_subject = class_intakes_recall %>%
+  # We will replace these with the subject average
+  select(-c(Total_KCAL,class_intake_mg1000kcal)) %>%
+  
+  #Average polyphenol intake across recalls for each class
+  group_by(subject, class) %>%
+  mutate(Avg_class_intake_mg = mean(class_intake_mg)) %>%
+  ungroup() %>%
+  
+  #Remove duplicates
+  distinct(subject, class, .keep_all = TRUE) %>%
+  select(-class_intake_mg) %>%
+  
+  # Add kcal data
+  left_join(kcal_subject, by = 'subject') %>%
+  mutate(class_intake_mg1000kcal = Avg_class_intake_mg/(avg_Total_KCAL/1000)) 
+
+vroom::vroom_write(class_intakes_subject,
+                   "outputs/Input_FooDB_polyphenol_content_class_by_subject.csv")
+```
+
+Available for users who prefer wide format
+```{r}
+class_intakes_subject_wide = class_intakes_subject %>%
+  
+  #Transpose dataframe where each column is a participant
+  pivot_wider(id_cols = subject, names_from = class, 
+              values_from = class_intake_mg1000kcal, values_fill = 0)
+
+vroom::vroom_write(class_intakes_subject_wide,
+                   "outputs/Input_FooDB_polyphenol_content_class_by_subject_wide.csv")
+```
+

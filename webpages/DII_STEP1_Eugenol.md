@@ -1,0 +1,87 @@
+---
+layout: default
+title: Step 1 Eugenol
+parent: DII Calculation
+nav_order: 1
+has_toc: true
+---
+
+- [Calculate Eugenol Intake](#calculate-eugenol-intake)
+  - [INPUTS](#inputs)
+  - [OUTPUTS](#outputs)
+- [SCRIPT](#script)
+  - [Merge FooDB-matched Ingredient Codes to FooDB Eugenol Content
+    File.](#merge-foodb-matched-ingredient-codes-to-foodb-eugenol-content-file.)
+  - [Export Eugenol Intake File for DII
+    Calculation](#export-eugenol-intake-file-for-dii-calculation)
+
+## Calculate Eugenol Intake
+
+This script takes in your disaggregated dietary data and FooDB-linked
+descriptions to calculate eugenol intake per recall and subject.
+
+### INPUTS
+
+- **Input_Disaggregated_mapped.csv.bz2** - Disaggregated dietary data,
+  mapped to FooDB foods, From Step 2 of the polyphenol estimation
+  pipeline
+- **FooDB_Eugenol_Content_Final.csv** - Eugenol Content for foods in
+  FooDB, Provided File
+
+### OUTPUTS
+
+- **Input_FooDB_DII_eugenol_by_recall.csv**: Sum eugenol content for
+  each participant recall
+
+## SCRIPT
+
+Load packages
+
+``` r
+library(tidyverse)
+```
+
+Load data
+
+``` r
+# Load user-defined input paths
+source("specify_inputs.R")
+
+# Load Dietary data that has been disaggregated and connected to FooDB
+input_mapped = vroom::vroom('outputs/Input_Disaggregated_mapped.csv.bz2', 
+                            show_col_types = FALSE)
+
+# Eugenol Content in FooDB
+# Note: Eugenol doesn't have retention factors from Phenol Explorer
+eugenol = vroom::vroom(FooDB_eugenol, show_col_types = FALSE) %>%
+  select(-c(source_type, food_name:orig_source_name))
+```
+
+### Merge FooDB-matched Ingredient Codes to FooDB Eugenol Content File.
+
+- Link between FooDB Polyphenol Content and code-matched data is
+  *food_id*.
+
+``` r
+input_mapped_content = input_mapped %>%
+  # Bring in the Polyphenol Content
+  dplyr::left_join(eugenol, by = 'food_id') %>%
+  # Remove content that is NA
+  filter(!is.na(orig_content_avg)) %>%
+  # Calculate eugenol amount consumed in milligrams
+  mutate(eugenol_mg = (orig_content_avg * 0.01) * FoodAmt_Ing_g) %>%
+  # Sum eugenol content by subject and recall
+  group_by(subject, RecallNo) %>%
+  # Calculate EUGENOL summed per recall, and rename for dietaryindex function
+  mutate(EUGENOL= sum(eugenol_mg)) %>%
+  ungroup() %>%
+  select(c(subject, RecallNo, EUGENOL)) %>%
+  # Keep distinct entries
+  distinct(subject, RecallNo, .keep_all = TRUE)
+```
+
+### Export Eugenol Intake File for DII Calculation
+
+``` r
+vroom::vroom_write(input_mapped_content, 'outputs/Input_FooDB_DII_eugenol_by_recall.csv')
+```

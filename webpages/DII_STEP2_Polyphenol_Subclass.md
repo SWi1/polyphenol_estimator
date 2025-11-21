@@ -1,0 +1,105 @@
+---
+layout: default
+title: Step 2 Polyphenol subclasses
+parent: DII Calculation
+nav_order: 2
+has_toc: true
+---
+
+- [Calculate DII Polyphenol
+  Subclasses](#calculate-dii-polyphenol-subclasses)
+  - [INPUTS](#inputs)
+  - [OUTPUTS](#outputs)
+- [SCRIPT](#script)
+  - [Filter in relevant DII subclass
+    polyphenols](#filter-in-relevant-dii-subclass-polyphenols)
+  - [SUM subclass intake](#sum-subclass-intake)
+  - [Export Polyphenol Subclass Intakes for DII
+    Calculation](#export-polyphenol-subclass-intakes-for-dii-calculation)
+
+## Calculate DII Polyphenol Subclasses
+
+This script takes your data that has been mapped to FooDB polyphenol
+content, extracts compounds categorized under the six required DII
+subclasses (flavan-3-ols, Flavones, Flavonols, Flavonones,
+Anthocyanidins, Isoflavones), and calculates the total intake of these
+subclasses per participant recall.
+
+### INPUTS
+
+- **Input_FooDB_polyphenol_content.csv.bz2**: Disaggregated dietary
+  data, mapped to FooDB polyphenol content, at the compound-level
+- **FooDB_DII_polyphenol_list.csv** - Polyphenols under the six
+  polyphenol subclasses required for DII-2014, Provided File
+
+### OUTPUTS
+
+- **Input_FooDB_DII_subclass_by_recall.csv**: Sum DII polyphenol
+  subclass content for each participant recall
+
+## SCRIPT
+
+Load packages
+
+``` r
+library(tidyverse)
+```
+
+Load data
+
+``` r
+# Load user-defined input paths
+source("specify_inputs.R")
+
+# Load dietary data mapped to polyphenol content
+input_polyphenol_content = vroom::vroom('outputs/Input_FooDB_polyphenol_content.csv.bz2',
+                                        show_col_types = FALSE)
+
+# Eugenol Content in FooDB
+# Note: Eugenol doesn't have retention factors from Phenol Explorer
+subclasses = vroom::vroom(FooDB_DII_subclasses, show_col_types = FALSE)
+```
+
+### Filter in relevant DII subclass polyphenols
+
+``` r
+input_polyphenol_content_filtered = input_polyphenol_content %>%
+  filter(compound_public_id %in% subclasses$compound_public_id) %>%
+  # Merge the class information so subclasses are grouped correctly
+  left_join(subclasses)
+```
+
+    ## Joining with `by = join_by(compound_public_id,
+    ## compound_name)`
+
+### SUM subclass intake
+
+The column `component` contains the DII category.
+
+``` r
+subclass_intakes = input_polyphenol_content_filtered %>%
+  group_by(subject, RecallNo, component) %>%
+  # Sum polyphenol category intake, mg by recall
+  mutate(component_sum = sum(pp_consumed)) %>%
+  ungroup() %>%
+  # Keep distinct entries
+  distinct(subject, RecallNo, component, .keep_all = TRUE) %>%
+  # Minimize the number of columns for pivoting to wide format
+  select(c(subject, RecallNo, component, component_sum)) %>%
+  # pivot to wide version
+  pivot_wider(names_from = component, values_from = component_sum) %>%
+  # Rename the columns to match the DII category names in the DietaryIndex function
+  rename(
+    ISOFLAVONES = Isoflavones,
+    "FLA3OL" = "Flavan-3-ols",
+    "FLAVONES" = "Flavones",
+    "FLAVONOLS" =  "Flavonols",
+    "FLAVONONES" = "Flavanones",
+    "ANTHOC" = "Anthocyanidins")
+```
+
+### Export Polyphenol Subclass Intakes for DII Calculation
+
+``` r
+vroom::vroom_write(subclass_intakes, 'outputs/Input_FooDB_DII_subclass_by_recall.csv')
+```
