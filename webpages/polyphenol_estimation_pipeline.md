@@ -23,6 +23,7 @@ For simplicity, STEPS 2 - 6 in this tutorial show the output from the demo ASA24
 ### Steps Specific to NHANES
 1. STEP1_NHANES_FDD_Disaggregation.Rmd
     - For provided NHANES data, WWEIA food codes are disaggregated to ingredients. A new ingredient amound is calculated based off percentages included in the [FDA's Food Dissagregation Database](https://pub-connect.foodsafetyrisk.org/fda-fdd/). Total nutrient intake is also calculated across recalls for later standardization of polyphenol intake. 
+    
 ### Steps used on both ASA24 and NHANES
 2. STEP2_FDD_FooDB_Content_Mapping.Rmd
     - Connects each of your disaggregated ASA24 Foods to their equivalent food description in FooDB so that polyphenol intake can be estimated.  
