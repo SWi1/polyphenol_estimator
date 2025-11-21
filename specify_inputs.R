@@ -8,7 +8,7 @@
 # USER INPUT REQUIRED===========
 # ASA24 Data, standard NCI export Items file format OR
 # NHANES Dietary Data, Cleaned as Recommended in 'Obtain_NHANES_Diet_Data.Rmd'
-diet_input_file = "user_inputs/NHANES_2021_2023_diet_adults.csv.bz2"
+diet_input_file = "user_inputs/VVKAJ_Items.csv"
 
 # PROVIDED FILES================
 # Unless moved, you do not have to change these
