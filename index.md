@@ -28,10 +28,10 @@ Don't save it in any subdirectories.
 
 ``` r
 # Polyphenol Estimation Pipeline
-source('functions/run_polyphenol_pipeline_function.R')
+source('functions/estimate_polyphenols.R')
 
 # DII Calculation Pipeline
-source('functions/run_DII_function.R')
+source('functions/calculate_DII.R')
 ```
 ### 5. Copy and run the R code below to run the polyphenol estimation pipeline.
 We are specifying that we are running ASA24 data and would like html reports from each pipeline step.
