@@ -45,7 +45,11 @@ knitr::opts_knit$set(root.dir = "..") # project root relative to scripts/
 
 ```{r warning = FALSE, message = FALSE}
 # Load packages
-library(tidyverse); library(readxl)
+suppressMessages(library(dplyr))
+suppressMessages(library(vroom))
+suppressMessages(library(tidyr))
+suppressMessages(library(stringr))
+suppressMessages(library(readxl))
 ```
 
 Load Example Dietary Data and FDA-FDD V3.6

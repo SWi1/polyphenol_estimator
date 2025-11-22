@@ -41,7 +41,10 @@ knitr::opts_knit$set(root.dir = "..") # project root relative to scripts/
 ```
 
 ```{r warning = FALSE, message = FALSE}
-library(tidyverse)
+suppressMessages(library(dplyr))
+suppressMessages(library(vroom))
+suppressMessages(library(tidyr))
+suppressMessages(library(stringr))
 ```
 
 ```{r}

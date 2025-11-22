@@ -7,10 +7,12 @@ calculate_DII = function(output_type = c("html", "md")) {
   
   # Install and load required packages
   source("functions/startup_functions.R")     # defines install_if_missing()
-  install_if_missing(c("tidyverse", "readxl", "rmarkdown"))
+  ensure_packages(pkgs = c("dplyr", "vroom", "tidyr", "stringr", "ggplot2", "readxl", "rmarkdown"))
   
   # Load package
-  library(rmarkdown)
+  suppressMessages(library(rmarkdown))
+  suppressMessages(library(dplyr))
+  suppressMessages(library(vroom))
   
   # The Polyphenol Estimation Pipeline Needs to run first.
   # Output from this pipeline kicks off the DII calculation scripts

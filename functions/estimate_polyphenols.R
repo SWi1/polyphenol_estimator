@@ -6,9 +6,10 @@ estimate_polyphenols = function(data = c("ASA24", "NHANES"), output = c("html", 
   
   # Install and load required packages
   source("functions/startup_functions.R")
-  install_if_missing(c("tidyverse", "readxl", "rmarkdown"))
-  suppressMessages(library(tidyverse))
-  library(rmarkdown)
+  ensure_packages(pkgs = c("dplyr", "vroom", "tidyr", "stringr", "ggplot2", "readxl", "rmarkdown"))
+  suppressMessages(library(dplyr))
+  suppressMessages(library(vroom))
+  suppressMessages(library(rmarkdown))
   
   ##########################################
   # Check if we have dietary data

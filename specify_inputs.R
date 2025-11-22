@@ -32,3 +32,6 @@ FooDB_eugenol = "provided_files/FooDB_Eugenol_Content_Final.csv"
 
 # FooDB polyphenol taxonomic classes relevant to DII
 FooDB_DII_subclasses = "provided_files/FooDB_DII_polyphenol_list.csv"
+
+# Location where any R package not found would be downloaded to
+Local_R_packages = "functions"
