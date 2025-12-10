@@ -20,20 +20,20 @@ output:
 ## Disaggregation of ASA24 Foods
 This script takes in ASA24 ITEMS files, disaggregates WWEIA food codes to ingredients, and calculates the new ingredient weight. This script also calculates total caloric intake & other nutrients for each participant recall so polyphenol intakes can be standardized to caloric intake later on. 
 
-### INPUTS
+#### INPUTS
 
 -   **Your Dietary Data** - This script does not provide filtering for portion or nutrient outliers. These may be performed in advance. The ASA24 website has cleaning recommendations here: ["Reviewing and Cleaning ASA24 Data"](https://epi.grants.cancer.gov/asa24/resources/cleaning.html).
 
 -   **FDA_FDD_All_Records_v_3.1.xlsx** - FDD FoodCodes to Ingredients and Ingredient Percentages
 
-### OUTPUTS
+#### OUTPUTS
 
 -   **Recall_Disaggregated.csv.bz2**: Dietary data that has been disaggregated using FDD.
 -   **Recall_total_nutrients.csv**: Total daily kcal intakes for unique subject and recall combination.
 
 ## SCRIPT
 
-```{r echo = FALSE}
+```{r echo = FALSE, purl=FALSE}
 # Clears all objects from memory
 rm(list = ls())
 ```
@@ -42,9 +42,13 @@ rm(list = ls())
 knitr::opts_knit$set(root.dir = "..") # project root relative to scripts/
 ```
 
-```{r warning = FALSE, message = FALSE}
+```{r warning = FALSE}
 # Load packages
-library(tidyverse); library(readxl)
+suppressMessages(library(dplyr))
+suppressMessages(library(vroom))
+suppressMessages(library(tidyr))
+suppressMessages(library(stringr))
+suppressMessages(library(readxl))
 ```
 
 Load Example Dietary Data and FDA-FDD V3.6

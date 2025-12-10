@@ -20,17 +20,17 @@ output:
 ## Food Contributors to Total Polyphenol Intake
 This script examines food contributors to total polyphenol intake.
 
-### INPUTS
+#### INPUTS
 - **Recall_Disaggregated_mapped.csv.bz2**; Dissagregated dietary data, mapped to FooDB foods
 - **Recall_FooDB_polyphenol_content.csv.bz2**: Disaggregated dietary data, mapped to FooDB foods and polyphenol content
 - **Recall_total_nutrients.csv** - total daily nutrient data to go with dietary data.
 
-### OUTPUTS
+#### OUTPUTS
 - **summary_total_polyphenol_food_contributors.csv**
 
 ## SCRIPTS
 
-```{r echo = FALSE}
+```{r echo = FALSE, purl = FALSE}
 # Clears all objects from memory
 rm(list = ls())
 ```
@@ -39,9 +39,12 @@ rm(list = ls())
 knitr::opts_knit$set(root.dir = "..") # project root relative to scripts/
 ```
 
-```{r warning = FALSE, message = FALSE}
+```{r warning = FALSE}
 # Load packages
-library(tidyverse)
+suppressMessages(library(dplyr))
+suppressMessages(library(vroom))
+suppressMessages(library(tidyr))
+suppressMessages(library(stringr))
 ```
 
 ```{r}

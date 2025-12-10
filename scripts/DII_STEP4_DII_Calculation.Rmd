@@ -26,14 +26,14 @@ This script adapts the DII_ASA24.R from the `dietaryindex` package to include 14
     - Compounds: EUGENOL, ISOFLAVONES, FLA3OL, FLAVONES, ANTHOC, FLAVONONES, FLAVONOLS
     - Foods: GARLIC, GINGER, ONION, PEPPER, TEA, TURMERIC, THYME
 
-### INPUTS
+#### INPUTS
 
 -   **Recall_total_nutrients.csv**: Total nutrient intakes for unique participant and recall combination. Generated from step 1 of the polyphenol estimation pipeline.
 -   **Recall_FooDB_DII_eugenol_by_recall.csv**: Sum eugenol intake for each participant recall
 -   **Recall_FooDB_DII_subclass_by_recall.csv**: Sum of 6 DII polyphenol subclass intakes for each participant recall
 -   **Recall_DII_foods_by_recall.csv** - Intake of 7 DII 2014 food categories by participant recall
 
-### OUTPUTS
+#### OUTPUTS
 
 -   **summary_DII_final_scores_by_recall.csv** - Total DII scores and 42 individual component scores
 
@@ -51,7 +51,10 @@ knitr::opts_knit$set(root.dir = "..") # project root relative to scripts/
 Load package
 
 ```{r warning = FALSE}
-library(tidyverse)
+suppressMessages(library(dplyr))
+suppressMessages(library(vroom))
+suppressMessages(library(tidyr))
+suppressMessages(library(stringr))
 ```
 
 Load dietary test data

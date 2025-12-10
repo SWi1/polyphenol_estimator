@@ -4,8 +4,8 @@ title: Step 3d Summary - Food Contributors
 parent: Polyphenol Estimation Pipeline
 nav_order: 7
 has_toc: true
----
-
+---                              
+                              
 - [Food Contributors to Total Polyphenol
   Intake](#food-contributors-to-total-polyphenol-intake)
 - [SCRIPTS](#scripts)
@@ -38,7 +38,10 @@ This script examines food contributors to total polyphenol intake.
 
 ``` r
 # Load packages
-library(tidyverse)
+suppressMessages(library(dplyr))
+suppressMessages(library(vroom))
+suppressMessages(library(tidyr))
+suppressMessages(library(stringr))
 ```
 
 ``` r

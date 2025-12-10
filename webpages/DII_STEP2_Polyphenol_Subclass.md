@@ -4,8 +4,8 @@ title: Step 2 Polyphenol subclasses
 parent: DII Calculation
 nav_order: 2
 has_toc: true
----
-
+---                              
+                              
 - [Calculate DII Polyphenol
   Subclasses](#calculate-dii-polyphenol-subclasses)
 - [SCRIPT](#script)
@@ -40,7 +40,10 @@ subclasses per participant recall.
 Load packages
 
 ``` r
-library(tidyverse)
+suppressMessages(library(dplyr))
+suppressMessages(library(vroom))
+suppressMessages(library(tidyr))
+suppressMessages(library(stringr))
 ```
 
 Load data
@@ -67,8 +70,7 @@ input_polyphenol_content_filtered = input_polyphenol_content %>%
   left_join(subclasses)
 ```
 
-    ## Joining with `by = join_by(compound_public_id,
-    ## compound_name)`
+    ## Joining with `by = join_by(compound_public_id, compound_name)`
 
 ### SUM subclass intake
 

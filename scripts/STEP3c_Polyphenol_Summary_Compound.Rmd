@@ -20,11 +20,11 @@ output:
 ## Calculate Compound-Level Polypenol Intakes
 This script calculates compound-level polyphenol intake (mg, mg/1000kcal) for provided dietary data. 
 
-### INPUTS
+#### INPUTS
 - **Recall_FooDB_polyphenol_content.csv.bz2**: Disaggregated dietary data, mapped to FooDB polyphenol content, at the compound-level
 - **Recall_total_nutrients.csv** - total daily nutrient data to go with dietary data.
 
-### OUTPUTS
+#### OUTPUTS
 - **summary_compound_intake_by_recall.csv**, polyphenol compound intakes by recall for each participant
 - **summary_compound_intake_by_subject.csv**, polyphenol compound intakes for each participant, provided in long format (compounds as rows)
 - **summary_compound_intake_by_subject_wide.csv**, polyphenol compound intakes for each participant, provided in wide format (compounds as columns)
@@ -40,9 +40,12 @@ rm(list = ls())
 knitr::opts_knit$set(root.dir = "..") # project root relative to scripts/
 ```
 
-```{r message = FALSE, warning = FALSE}
+```{r warning = FALSE}
 # Load packages
-library(tidyverse)
+suppressMessages(library(dplyr))
+suppressMessages(library(vroom))
+suppressMessages(library(tidyr))
+suppressMessages(library(stringr))
 ```
 
 ```{r}

@@ -4,8 +4,8 @@ title: Step 3c Summary - Compound
 parent: Polyphenol Estimation Pipeline
 nav_order: 6
 has_toc: true
----
-
+---                              
+                              
 - [Calculate Compound-Level Polypenol
   Intakes](#calculate-compound-level-polypenol-intakes)
 - [SCRIPTS](#scripts)
@@ -40,7 +40,10 @@ mg/1000kcal) for provided dietary data.
 
 ``` r
 # Load packages
-library(tidyverse)
+suppressMessages(library(dplyr))
+suppressMessages(library(vroom))
+suppressMessages(library(tidyr))
+suppressMessages(library(stringr))
 ```
 
 ``` r

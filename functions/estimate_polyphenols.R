@@ -1,18 +1,19 @@
 estimate_polyphenols = function(
     diet_input_file = "user_inputs/VVKAJ_Items.csv",  # default path
     type = c("ASA24", "NHANES"), 
-    output = c("html", "md")
+    report = c("none", "html", "md")
 ) {
 
   # Match user input
   type = match.arg(type)   # ensures type is a single string
-  output = match.arg(output)
-  
+  report = match.arg(report)
+
   # Install and load required packages
   source("functions/startup_functions.R")
-  install_if_missing(c("tidyverse", "readxl", "rmarkdown"))
-  suppressMessages(library(tidyverse))
-  library(rmarkdown)
+  ensure_packages(pkgs = c("dplyr", "vroom", "tidyr", "stringr", "readxl", "rmarkdown"))
+  suppressMessages(library(dplyr))
+  suppressMessages(library(vroom))
+  suppressMessages(library(rmarkdown))
   
   # Confirm dietary type file exists
   if (!file.exists(diet_input_file)) {
@@ -29,6 +30,13 @@ estimate_polyphenols = function(
   
   # Make diet_input_file visible everywhere
   assign("diet_input_file", diet_input_file, envir = .GlobalEnv)
+  
+  # report function
+  render_fun = switch(report,
+                      html = run_create_html_report,
+                      md   = run_create_md_report,
+                      none = "none",   # marker for if/else branch
+                      stop("Unknown report type: ", report))
   
   ##########################################
   # Data Check Status Message
@@ -85,35 +93,71 @@ estimate_polyphenols = function(
       "STEP3d_Polyphenol_Summary_Food_Contributors.Rmd"
     ))
   }
+
+  ###########################################################################
+  # Case 1: Produce reports (html/md) with Rmd files
+  ###########################################################################
   
-  # Ensure we have flexibility to render different reports
-  render_fun = switch(output, 
-                      html = run_create_html_report, 
-                      md = run_create_md_report)
-  
-  # Creates a report directory
-  if (!dir.exists("reports")) dir.create("reports", recursive = TRUE)
-  
-  message("Pipeline will now start and generate ", output, " reports.\n")
+  message("Polyphenol estimation will now begin. The following scripts will also be rendered as ", report, " files.\n")
   start_time = Sys.time()
   
-  ##########################################
-  # Run scripts
-  ##########################################
-  for (script in polyphenol_steps) {
-    tryCatch({
-      render_fun(script)
-      message("Completed: ", script, "\n")
-    }, error = function(e) {
-      stop("Error in ", script, ": ", e$message)
-    })
+  if (report != "none") {
+    
+    for (script in polyphenol_steps) {
+      tryCatch(
+        {
+          message("Running: ", script)
+          render_fun(script)
+          message("Done. Moving to next script.\n")
+        },
+        error = function(e) {
+          stop("Error in ", script, ": ", e$message)
+        }
+      )
+    }
+    
+    ###########################################################################
+    # Case 2: Run .R scripts when report == "none"
+    ###########################################################################
+  } else {
+    
+    if (!dir.exists("reports")) dir.create("reports", recursive = TRUE)
+    
+    # Convert Rmd to R quietly
+    scripts = character(length(polyphenol_steps))
+    for (i in seq_along(polyphenol_steps)) {
+      
+      # Construct .R path
+      scripts[i] = file.path(
+        dirname(polyphenol_steps[i]),
+        paste0(tools::file_path_sans_ext(basename(polyphenol_steps[i])), ".R")
+      )
+      
+      # Convert without printing anything
+      knitr::purl(
+        input  = polyphenol_steps[i],
+        output = scripts[i],
+        quiet  = TRUE)
+    }
+    
+    # Execute each R script without showing messages or warnings
+    for (rfile in scripts) {
+      message("Running: ", rfile)
+      tryCatch({
+        suppressMessages(suppressWarnings(source(rfile, local = FALSE)))
+        message("Done. Moving to next script.\n")
+      },
+      error = function(e) stop("Error running ", rfile, ": ", e$message))
+    }
+    
+    # Remove temporary R scripts
+    removed = file.remove(scripts)
+    if (!all(removed)) warning("Some temporary R scripts could not be deleted.")
   }
-  
-  ##########################################
+    
   # Runtime summary
-  ##########################################
   end_time = Sys.time()
   total_seconds = as.numeric(difftime(end_time, start_time, units = "secs"))
-  message("Polyphenol estimation pipeline completed successfully.")
+  message("Polyphenol estimation completed successfully.")
   message("Total runtime: ", floor(total_seconds/60), " min ", round(total_seconds %% 60), " sec")
 }

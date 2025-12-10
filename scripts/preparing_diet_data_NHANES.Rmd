@@ -25,7 +25,7 @@ NHANES is a nationally representative sample of non-institutionalized individual
 
 Users interested in analyzing multiple cycles of NHANES dietary data should utilize cross-walks to harmonize changes in FNDDS foods and beverages over different cycles. Crosswalk information is available in the 'Documentation' File for each FNDDS release. Visit the USDA Food Survey Research Group for more information [here](https://www.ars.usda.gov/northeast-area/beltsville-md-bhnrc/beltsville-human-nutrition-research-center/food-surveys-research-group/docs/fndds-download-databases/). 
 
-### INPUT
+#### INPUT
 1.  **2021 - 2023 Demographic Data** 
     -   [Official Documentation & Codebook](https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2021/DataFiles/DEMO_L.htm)
 2.  **2021 - 2023 Dietary Interview** - Featuring two separate diet recalls
@@ -34,7 +34,7 @@ Users interested in analyzing multiple cycles of NHANES dietary data should util
 3.  **Dietary Interview Technical Support File - Food Codes** 
     -   [Official Documentation](https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2021/DataFiles/DRXFCD_L.htm)
     
-### OUTPUT
+#### OUTPUT
 
 - **NHANES_2021_2023_diet_adults.csv.bz2** - NHANES 2021-2023 ingredient-level diet data, first and second recalls combined, filtered for adults >=20 years old. Each participant has two complete recalls.
 - **(Optional) NHANES_2021_2023_demographics_adults.csv.bz** - NHANES 2021-2023 demographic data 
@@ -127,10 +127,10 @@ With the recalls now cleaned and merged into a singular dataframe, we will apply
   - 5, Not done
   - ., Missing
 
-**Note**: This is not an exhaustive list of data filtering steps for 24-hour recall data. Users may want to filter for specific populations or perform additional diet cleaning steps (e.g. Calorie or Portion Outliers).
+**Note**: This is not an exhaustive list of data filtering steps for 24-hour recall data. Users may want to filter for specific populations or perform diet cleaning steps (e.g. Nutrient or Portion Outliers). Diet cleaning cut points based off NHANES data are provided in Appendix A of the CDC's ["Reviewing and Cleaning ASA24 Data"][https://epi.grants.cancer.gov/asa24/resources/asa24-data-cleaning-2020.pdf].
 
 ```{r}
-# Adults we want to include
+# Filtering for age
 demo_adults = demo_data %>%
   filter(RIDAGEYR >= 20)
 

@@ -20,11 +20,11 @@ output:
 ## Calculate Total Polypenol Intakes
 This script calculates total polyphenol intake (mg, mg/1000kcal) for provided dietary data. 
 
-### INPUTS
+#### INPUTS
 - **Recall_FooDB_polyphenol_content.csv.bz2**: Disaggregated dietary data, mapped to FooDB polyphenol content, at the compound-level
 - **Recall_total_nutrients.csv** - total daily nutrient data to go with dietary data.
 
-### OUTPUTS
+#### OUTPUTS
 - **summary_total_intake_by_subject.csv**
 - **summary_total_intake_by_recall.csv**
 
@@ -40,7 +40,10 @@ knitr::opts_knit$set(root.dir = "..") # project root relative to scripts/
 ```
 
 ```{r warning = FALSE, message = FALSE}
-library(tidyverse)
+suppressMessages(library(dplyr))
+suppressMessages(library(vroom))
+suppressMessages(library(tidyr))
+suppressMessages(library(stringr))
 ```
 
 ```{r}

@@ -4,8 +4,8 @@ title: Step 1 Eugenol
 parent: DII Calculation
 nav_order: 1
 has_toc: true
----
-
+---                              
+                              
 - [Calculate Eugenol Intake](#calculate-eugenol-intake)
 - [SCRIPT](#script)
   - [Merge FooDB-matched Ingredient Codes to FooDB Eugenol Content
@@ -36,7 +36,10 @@ descriptions to calculate eugenol intake per recall and subject.
 Load packages
 
 ``` r
-library(tidyverse)
+suppressMessages(library(dplyr))
+suppressMessages(library(vroom))
+suppressMessages(library(tidyr))
+suppressMessages(library(stringr))
 ```
 
 Load data

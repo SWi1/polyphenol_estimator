@@ -4,8 +4,8 @@ title: Step 4 42-component DII
 parent: DII Calculation
 nav_order: 4
 has_toc: true
----
-
+---                              
+                              
 - [Calculate 42-component Dietary Inflammatory
   Index](#calculate-42-component-dietary-inflammatory-index)
 - [SCRIPT](#script)
@@ -56,7 +56,10 @@ subclasses, and 7 additional food groups (10 possible).
 Load package
 
 ``` r
-library(tidyverse)
+suppressMessages(library(dplyr))
+suppressMessages(library(vroom))
+suppressMessages(library(tidyr))
+suppressMessages(library(stringr))
 ```
 
 Load dietary test data
@@ -310,8 +313,8 @@ DII_scores = COHORT2 %>%
             EUGENOL = sum(EUGENOL, na.rm = TRUE))
 ```
 
-    ## `summarise()` has grouped output by 'subject'. You can
-    ## override using the `.groups` argument.
+    ## `summarise()` has grouped output by 'subject'. You can override using the
+    ## `.groups` argument.
 
 ``` r
             # Can add with future updats

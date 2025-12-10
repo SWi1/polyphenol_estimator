@@ -14,12 +14,13 @@ source('functions/calculate_DII.R')
 
 # RUN THE POLYPHENOL ESTIMATION PIPELINE
 # ------------------------------------------------------------
-# diet_input_file = 'user_inputs/update_this_path.csv'
+# diet_input_file = 'user_inputs/UPDATE_THIS_PATH.csv'
 # type, specify "ASA24" or "NHANES"
-# output, specify "html" or "md" for your reports
+# report, specify "none", "html", or "md" for your reports
 estimate_polyphenols(diet_input_file = 'user_inputs/VVKAJ_Items.csv',
-                     type = "ASA24", output = "md") 
+                     type = "ASA24", report = "md") 
 
 # CALCULATE DIETARY INFLAMMATORY INDEX
 # ------------------------------------------------------------
-calculate_DII(output = "md")
+# report, specify "none", "html", or "md" for your reports
+calculate_DII(report = "md")

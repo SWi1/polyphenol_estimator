@@ -184,10 +184,7 @@ participants we will analyze.
 - 5, Not done
 - ., Missing
 
-**Note**: This is not an exhaustive list of data filtering steps for
-24-hour recall data. Users may want to filter for specific populations
-or perform additional diet cleaning steps (e.g. Calorie or Portion
-Outliers).
+**Note**: This is not an exhaustive list of data filtering steps for 24-hour recall data. Users may want to filter for specific populations or perform diet cleaning steps (e.g. Nutrient or Portion Outliers). Diet cleaning cut points based off NHANES data are provided in Appendix A of the CDC's ["Reviewing and Cleaning ASA24 Data"](https://epi.grants.cancer.gov/asa24/resources/asa24-data-cleaning-2020.pdf).
 
 ``` r
 # Adults we want to include

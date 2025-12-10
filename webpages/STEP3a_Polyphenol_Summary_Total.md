@@ -1,18 +1,18 @@
----
+ ---
 layout: default
 title: Step 3a Summary - Total
 parent: Polyphenol Estimation Pipeline
 nav_order: 4
 has_toc: true
----
-
+---                             
+                              
 - [Calculate Total Polypenol
   Intakes](#calculate-total-polypenol-intakes)
 - [SCRIPTS](#scripts)
-  - [Total daily Polyphenol Intake Numbers BY
-    RECALL](#total-daily-polyphenol-intake-numbers-by-recall)
-  - [Total daily Polyphenol Intake Numbers AVERAGE FOR
-    SUBJECT](#total-daily-polyphenol-intake-numbers-average-for-subject)
+- [Total daily Polyphenol Intake Numbers BY
+  RECALL](#total-daily-polyphenol-intake-numbers-by-recall)
+- [Total daily Polyphenol Intake Numbers AVERAGE FOR
+  SUBJECT](#total-daily-polyphenol-intake-numbers-average-for-subject)
 
 ## Calculate Total Polypenol Intakes
 
@@ -34,7 +34,10 @@ provided dietary data.
 ## SCRIPTS
 
 ``` r
-library(tidyverse)
+suppressMessages(library(dplyr))
+suppressMessages(library(vroom))
+suppressMessages(library(tidyr))
+suppressMessages(library(stringr))
 ```
 
 ``` r
@@ -57,7 +60,7 @@ input_polyphenol_kcal = left_join(input_polyphenol_content, input_kcal)
 
     ## Joining with `by = join_by(subject, RecallNo)`
 
-### Total daily Polyphenol Intake Numbers BY RECALL
+## Total daily Polyphenol Intake Numbers BY RECALL
 
 ``` r
 content_by_recall = input_polyphenol_kcal %>%
@@ -74,7 +77,7 @@ content_by_recall = input_polyphenol_kcal %>%
 vroom::vroom_write(content_by_recall, "outputs/summary_total_intake_by_recall.csv", delim = ",")
 ```
 
-### Total daily Polyphenol Intake Numbers AVERAGE FOR SUBJECT
+## Total daily Polyphenol Intake Numbers AVERAGE FOR SUBJECT
 
 ``` r
 content_by_subject = content_by_recall %>%

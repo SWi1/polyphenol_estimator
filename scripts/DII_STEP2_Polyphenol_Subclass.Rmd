@@ -20,12 +20,12 @@ output:
 ## Calculate DII Polyphenol Subclasses
 This script takes your data that has been mapped to FooDB polyphenol content, extracts compounds categorized under the six required DII subclasses (flavan-3-ols, Flavones, Flavonols, Flavonones, Anthocyanidins, Isoflavones), and calculates the total intake of these subclasses per participant recall. 
 
-### INPUTS
+#### INPUTS
 
 -   **Recall_FooDB_polyphenol_content.csv.bz2**: Disaggregated dietary data, mapped to FooDB polyphenol content, at the compound-level
 -   **FooDB_DII_polyphenol_list.csv** - Polyphenols under the six polyphenol subclasses required for DII-2014, Provided File
 
-### OUTPUTS
+#### OUTPUTS
 
 -   **Recall_DII_subclass_by_recall.csv**: Sum DII polyphenol subclass content for each participant recall
 
@@ -41,8 +41,11 @@ knitr::opts_knit$set(root.dir = "..") # project root relative to scripts/
 ```
 
 Load packages
-```{r}
-library(tidyverse)
+```{r warning = FALSE}
+suppressMessages(library(dplyr))
+suppressMessages(library(vroom))
+suppressMessages(library(tidyr))
+suppressMessages(library(stringr))
 ```
 
 Load data

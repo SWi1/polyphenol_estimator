@@ -20,12 +20,12 @@ output:
 ## Calculate Eugenol Intake
 This script takes in your disaggregated dietary data and FooDB-linked descriptions to calculate eugenol intake per recall and subject.
 
-### INPUTS
+#### INPUTS
 
 -   **Recall_Disaggregated_mapped.csv.bz2** - Disaggregated dietary data, mapped to FooDB foods, From Step 2 of the polyphenol estimation pipeline
 -   **FooDB_Eugenol_Content_Final.csv** - Eugenol Content for foods in FooDB, Provided File
 
-### OUTPUTS
+#### OUTPUTS
 
 -   **Recall_DII_eugenol_by_recall.csv**: Sum eugenol content for each participant recall
 
@@ -41,8 +41,11 @@ knitr::opts_knit$set(root.dir = "..") # project root relative to scripts/
 ```
 
 Load packages 
-```{r}
-library(tidyverse)
+```{r warning = FALSE}
+suppressMessages(library(dplyr))
+suppressMessages(library(vroom))
+suppressMessages(library(tidyr))
+suppressMessages(library(stringr))
 ```
 
 Load data
@@ -84,6 +87,6 @@ input_mapped_content = input_mapped %>%
 ```
 
 ### Export Eugenol Intake File for DII Calculation
-```{r EXPORT}
+```{r}
 vroom::vroom_write(input_mapped_content, 'outputs/Recall_DII_eugenol_by_recall.csv', delim = ",")
 ```

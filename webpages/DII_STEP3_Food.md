@@ -4,8 +4,8 @@ title: Step 3 Foods and food components
 parent: DII Calculation
 nav_order: 3
 has_toc: true
----
-
+---                              
+                              
 - [Calculate DII Foods and Food
   Components](#calculate-dii-foods-and-food-components)
 - [SCRIPT](#script)
@@ -38,7 +38,11 @@ tea, pepper, turmeric, thyme/oregano).
 Load packages
 
 ``` r
-library(tidyverse); library(readxl)
+suppressMessages(library(dplyr))
+suppressMessages(library(vroom))
+suppressMessages(library(tidyr))
+suppressMessages(library(stringr))
+suppressMessages(library(readxl))
 ```
 
 Load data

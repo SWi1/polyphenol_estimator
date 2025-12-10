@@ -46,7 +46,11 @@ polyphenol intakes can be standardized to caloric intake later on.
 
 ``` r
 # Load packages
-library(tidyverse); library(readxl)
+suppressMessages(library(dplyr))
+suppressMessages(library(vroom))
+suppressMessages(library(tidyr))
+suppressMessages(library(stringr))
+suppressMessages(library(readxl))
 ```
 
 Load Example Dietary Data and FDA-FDD V3.6

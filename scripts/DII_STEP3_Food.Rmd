@@ -20,11 +20,11 @@ output:
 ## Calculate DII Foods and Food Components
 This script takes in your disaggregated and FooDB-linked descriptions to calculate intake of 7 specific food categories (onion, ginger, garlic, tea, pepper, turmeric, thyme/oregano).
 
-### INPUTS
+#### INPUTS
 -   **Recall_Disaggregated_mapped.csv.bz2** - Disaggregated dietary data, mapped to FooDB foods, From Step 2 of the polyphenol estimation pipeline
 -   **FDA-FDD V3.1** - All of FDA FDD descriptions
 
-### OUTPUTS
+#### OUTPUTS
 -   **Recall_DII_foods_by_recall.csv** - Intake of 7 DII food categories by participant recall
 
 ## SCRIPT
@@ -40,7 +40,11 @@ knitr::opts_knit$set(root.dir = "..") # project root relative to scripts/
 
 Load packages
 ```{r warning = FALSE}
-library(tidyverse); library(readxl)
+suppressMessages(library(dplyr))
+suppressMessages(library(vroom))
+suppressMessages(library(tidyr))
+suppressMessages(library(stringr))
+suppressMessages(library(readxl))
 ```
 
 Load data

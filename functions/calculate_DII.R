@@ -2,15 +2,18 @@
 # Stephanie Wilson
 
 # DII pipeline runner for beginners
-calculate_DII = function(output_type = c("html", "md")) {
-  output_type = match.arg(output_type)
+calculate_DII = function(report = c("none", "html", "md")) {
+  
+  report = match.arg(report)
   
   # Install and load required packages
   source("functions/startup_functions.R")     # defines install_if_missing()
-  install_if_missing(c("tidyverse", "readxl", "rmarkdown"))
+  ensure_packages(pkgs = c("dplyr", "vroom", "tidyr", "stringr", "ggplot2", "readxl", "rmarkdown"))
   
   # Load package
-  library(rmarkdown)
+  suppressMessages(library(rmarkdown))
+  suppressMessages(library(dplyr))
+  suppressMessages(library(vroom))
   
   # The Polyphenol Estimation Pipeline Needs to run first.
   # Output from this pipeline kicks off the DII calculation scripts
@@ -20,7 +23,7 @@ calculate_DII = function(output_type = c("html", "md")) {
   if (!file.exists(starting_file)) {
     stop("\n Please run the polyphenol estimation pipeline before running the DII calculation.")
   } else {
-    message("Polyphenol estimation pipeline was run.\n")
+    message("Confirmed polyphenol estimation pipeline was run.\n")
   }
   
   # List of DII scripts in order
@@ -34,40 +37,82 @@ calculate_DII = function(output_type = c("html", "md")) {
   # Step 4: Calculate the Dietary Inflammatory Index
   "DII_STEP4_DII_Calculation.Rmd"))
   
-  # Map output_type to function
-  render_fun = switch(output_type,
-                       html = run_create_html_report,
-                       md   = run_create_md_report)
+  # Map report to function
+  render_fun = switch(report,
+                      html = run_create_html_report,
+                      md   = run_create_md_report,
+                      none = NULL)
   
   # Check if reports directory exists, and if not, Create one
   if (!dir.exists("reports")) dir.create("reports", recursive = TRUE)
   
   # Message saying which report is getting made
-  message("DII calculation will now begin and generate ", output_type, " reports.\n")
+  message("DII calculation will now begin and also generate ", report, " reports.\n")
   
-  # Record start time
+  # Start timing
   start_time = Sys.time()
   
-  # Run all scripts sequentially
-  for (script in dii_steps) {
-    tryCatch(
-      {
-        render_fun(script)
-        message("Completed: ", script, "\n")
+  ###########################################################################
+  # Case 1: Produce reports (html/md) with Rmd files
+  ###########################################################################
+  if (report != "none") {
+    
+    for (script in dii_steps) {
+      tryCatch(
+        {
+          render_fun(script)
+          message("Completed: ", script, "\n")
+        },
+        error = function(e) {
+          stop("Error in ", script, ": ", e$message)
+        }
+      )
+    }
+    
+    ###########################################################################
+    # Case 2: Run .R scripts when report == "none"
+    ###########################################################################
+  } else {
+    
+    # Convert Rmd to R quietly
+    scripts = character(length(dii_steps))
+    for (i in seq_along(dii_steps)) {
+      
+      # Construct .R path
+      scripts[i] = file.path(
+        dirname(dii_steps[i]),
+        paste0(tools::file_path_sans_ext(basename(dii_steps[i])), ".R")
+      )
+      
+      # Convert without printing anything
+      knitr::purl(
+        input  = dii_steps[i],
+        output = scripts[i],
+        quiet  = TRUE)
+    }
+    
+    # Execute each R script without showing messages or warnings
+    for (rfile in scripts) {
+      message("Running: ", rfile)
+      tryCatch({
+        suppressMessages(suppressWarnings(source(rfile, local = FALSE)))
+        message("Done. Moving to next script.\n")
       },
-      error = function(e) {
-        stop("Error in ", script, ": ", e$message)  # stop if any step fails
-      }
-    )
+      error = function(e) stop("Error running ", rfile, ": ", e$message))
+    }
+    
+    # Remove temporary R scripts
+    removed = file.remove(scripts)
+    if (!all(removed)) warning("Some temporary R scripts could not be deleted.")
   }
   
-  # End time and duration
+  # End timing
   end_time = Sys.time()
   total_seconds = as.numeric(difftime(end_time, start_time, units = "secs"))
   minutes = floor(total_seconds / 60)
   seconds = round(total_seconds %% 60)
   
-  
-  message("42-Component DII Calculation completed successfully.")
+  # Completion messages
+  message("42-Component DII Calculation completed successfully.\n")
   message("Total runtime: ", minutes, " min ", seconds, " sec")
 }

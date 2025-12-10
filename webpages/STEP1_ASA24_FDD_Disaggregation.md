@@ -4,8 +4,8 @@ title: Step 1 Disaggregate food codes (ASA24)
 parent: Polyphenol Estimation Pipeline
 nav_order: 1
 has_toc: true
----
-
+---                            
+                              
 - [Disaggregation of ASA24 Foods](#disaggregation-of-asa24-foods)
 - [SCRIPT](#script)
   - [Dietary Data Filtering](#dietary-data-filtering)
@@ -49,7 +49,11 @@ intake later on.
 
 ``` r
 # Load packages
-library(tidyverse); library(readxl)
+suppressMessages(library(dplyr))
+suppressMessages(library(vroom))
+suppressMessages(library(tidyr))
+suppressMessages(library(stringr))
+suppressMessages(library(readxl))
 ```
 
 Load Example Dietary Data and FDA-FDD V3.6
@@ -101,8 +105,8 @@ input_total_nutrients = input_data_clean %>%
   ungroup()
 ```
 
-    ## `summarise()` has grouped output by 'subject'. You can
-    ## override using the `.groups` argument.
+    ## `summarise()` has grouped output by 'subject'. You can override using the
+    ## `.groups` argument.
 
 ### Minimize the number of columns to the essential data
 

@@ -4,8 +4,8 @@ title: Step 3b Summary - Class
 parent: Polyphenol Estimation Pipeline
 nav_order: 5
 has_toc: true
----
-
+---                              
+                              
 - [Calculate Class-Level Polypenol
   Intakes](#calculate-class-level-polypenol-intakes)
 - [SCRIPTS](#scripts)
@@ -40,7 +40,10 @@ provided dietary data.
 ## SCRIPTS
 
 ``` r
-library(tidyverse)
+suppressMessages(library(dplyr))
+suppressMessages(library(vroom))
+suppressMessages(library(tidyr))
+suppressMessages(library(stringr))
 ```
 
 ``` r

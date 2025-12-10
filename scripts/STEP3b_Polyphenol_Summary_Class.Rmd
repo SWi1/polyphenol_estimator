@@ -20,12 +20,12 @@ output:
 ## Calculate Class-Level Polypenol Intakes
 This script calculates class polyphenol intake (mg, mg/1000kcal) for provided dietary data.
 
-### INPUTS
+#### INPUTS
 - **Recall_FooDB_polyphenol_content.csv.bz2**: Disaggregated dietary data, mapped to FooDB polyphenol content, at the compound-level
 - **Recall_total_nutrients.csv** - total daily nutrient data to go with dietary data.
 - **FooDB_polyphenol_classtax_3072.csv** - class taxonomy is derived from FooDB which uses ClassyFire, an automated chemical taxonomic classification application based on chemical structure
 
-### OUTPUTS
+#### OUTPUTS
 - **summary_class_intake_by_recall.csv**, polyphenol class intakes by recall for each participant
 - **summary_class_intake_by_subject.csv**, polyphenol class intakes for each participant, provided in wide format (classes as rows)
 - **summary_class_intake_by_subject_wide.csv**, polyphenol class intakes for each participant, provided in wide format (classes as columns)
@@ -41,8 +41,11 @@ rm(list = ls())
 knitr::opts_knit$set(root.dir = "..") # project root relative to scripts/
 ```
 
-```{r message = FALSE, warning = FALSE}
-library(tidyverse)
+```{r warning = FALSE}
+suppressMessages(library(dplyr))
+suppressMessages(library(vroom))
+suppressMessages(library(tidyr))
+suppressMessages(library(stringr))
 ```
 
 ```{r}
