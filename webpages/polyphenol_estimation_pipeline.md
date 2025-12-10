@@ -34,6 +34,7 @@ The polyphenol estimation pipeline takes either ASA24 Items Files or NHANES "Ind
 ## Outputs
 
 ### Mapping
+#### Intermediate Files
 Our mapping output files are large feature-rich datasets, which we have compressed.
 - Recall_Disaggregated.csv.bz2
     - Food codes are shown with their underlying ingredients and newly calculated gram intakes
@@ -42,20 +43,25 @@ Our mapping output files are large feature-rich datasets, which we have compress
 - Recall_FooDB_polyphenol_content.csv.bz2
     - Food codes are shown with their underlying ingredients and newly calculated gram intakes, and FooDB food names and polyphenol content
 
-### Intake Summaries
+#### Unmapped Foods
+- summary_missing_foods_overview.txt
+    - Summary of the number of unmapped foods between FDA-FDD and FooDB across ALL recalls
+- summary_missing_foods_detailed.csv
+    - Summary of the number of unmapped foods between FDA-FDD and FooDB BY recall
 
+### Intake Summaries
 #### Total 
 - Recall_total_nutrients.csv
 - summary_total_intake_by_recall.csv
 - summary_total_intake_by_subject.csv
 - summary_total_polyphenol_food_contributors.csv
 
-### Class
+#### Class
 - summary_class_intake_by_recall.csv
 - summary_class_intake_by_subject_wide.csv
 - summary_class_intake_by_subject.csv
 
-### Compound
+#### Compound
 - summary_compound_intake_by_recall.csv
 - summary_compound_intake_by_subject_wide.csv
 - summary_compound_intake_by_subject.csv
