@@ -21,7 +21,7 @@ The polyphenol estimation pipeline takes either ASA24 Items Files or NHANES "Ind
 ### Steps used on both ASA24 and NHANES
 2. STEP2_FDD_FooDB_Content_Mapping.Rmd
     - Connects each of your disaggregated ASA24 Foods to their equivalent food description in FooDB so that polyphenol intake can be estimated.  
-    - **IMPORTANT**- Provides summary information about the number of foods in your data that did not map to FooDB.
+    - Provides summary information about the number of foods in your data that did not map to FooDB.
 3. STEP3a_Polyphenol_Summary_Total.Rmd
     - Calculates total polyphenol intake (mg, mg/1000kcal) for each recall as well as an overall subject summary.
 4. STEP3b_Polyphenol_Summary_Class.Rmd

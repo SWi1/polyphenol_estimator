@@ -18,9 +18,9 @@ source('functions/calculate_DII.R')
 # type, specify "ASA24" or "NHANES"
 # report, specify "none", "html", or "md" for your reports
 estimate_polyphenols(diet_input_file = 'user_inputs/VVKAJ_Items.csv',
-                     type = "ASA24", report = "md") 
+                     type = "ASA24", report = "none") 
 
 # CALCULATE DIETARY INFLAMMATORY INDEX
 # ------------------------------------------------------------
 # report, specify "none", "html", or "md" for your reports
-calculate_DII(report = "md")
+calculate_DII(report = "none")
