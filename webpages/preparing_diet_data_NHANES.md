@@ -12,6 +12,7 @@ has_toc: true
     website](#extract-2021-2023-nhanes-data-from-cdc-website)
   - [Clean Column Names](#clean-column-names)
   - [Data Filtering](#data-filtering)
+  - [Remove Nutrient Outliers](#remove-nutrient-outliers)
 - [Export Data Files](#export-data-files)
 
 ## Prepare NHANES diet recall data
@@ -45,22 +46,28 @@ Survey Research Group for more information
 1.  **2021 - 2023 Demographic Data**
     - [Official Documentation &
       Codebook](https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2021/DataFiles/DEMO_L.htm)
-2.  **2021 - 2023 Dietary Interview** - Featuring two separate diet
-    recalls
+2.  **2021 - 2023 Dietary Interview** - Itemized foods from two separate
+    diet recalls
     - [Official Documentation & Codebook- First
-      Day](https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2021/DataFiles/DR1TOT_L.htm)
+      Day](https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2021/DataFiles/DR1IFF_L.htm)
     - [Official Documentation & Codebook- Second
-      Day](https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2021/DataFiles/DR2TOT_L.htm)
+      Day](https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2021/DataFiles/DR2IFF_L.htm)
 3.  **Dietary Interview Technical Support File - Food Codes**
     - [Official
       Documentation](https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2021/DataFiles/DRXFCD_L.htm)
+4.  **Dietary Totals** - Total Nutrient Intakes, two separate recalls
+    - [Official Documentation & Codebook - First
+      Day](https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2021/DataFiles/DR1TOT_L.htm)
+    - [Official Documentation & Codebook- Second
+      Day](https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2021/DataFiles/DR2TOT_L.htm)
 
 #### OUTPUT
 
 - **NHANES_2021_2023_diet_adults.csv.bz2** - NHANES 2021-2023
   ingredient-level diet data, first and second recalls combined,
-  filtered for adults \>=20 years old. Each participant has two complete
-  recalls.
+  filtered for adults \>=20 years old and nutrient outliers (kcal, fat,
+  protein, vitamin C, and beta-carotene). Each participant has two
+  complete recalls.
 - **(Optional) NHANES_2021_2023_demographics_adults.csv.bz** - NHANES
   2021-2023 demographic data
 
@@ -69,9 +76,9 @@ Survey Research Group for more information
 Load packages
 
 ``` r
-# tidyverse: helps with data wrangling and visualization
+# dplyr: helps with data wrangling
 # haven: loads SAS files
-required = c("tidyverse", "haven")
+required = c("dplyr", "haven")
 
 # Loop to install and load packages
 for (pkg in required) {
@@ -94,10 +101,14 @@ but for our purposes, we will pull down several key files:
     individuals we analyze.
 2.  **Dietary Interview** - “Individual Foods, First Day” and
     “Individual Foods, Second Day” - Diet data is stored in separate
-    files which we will combine later.
+    files which we will combine.
 3.  **Dietary Interview Technical Support File - Food Codes** - Contains
     three columns (food codes, a short food description, and a long food
     description)
+4.  **Dietary Total** - “Total Nutrient Intakes, First Day” and “Total
+    Nutrient Intakes, Second Day”, data is stored in separate files
+    which we will combine. We will use select total nutrients to QC our
+    dietary data.
 
 ``` r
 # 1. Demographic data
@@ -109,6 +120,10 @@ recall2 = read_xpt("https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2021/DataFiles/
 
 # 3. Food Codes
 diet_codes = read_xpt("https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2021/DataFiles/DRXFCD_L.xpt")
+
+# 4. Dietary Totals
+tot_recall1 = read_xpt("https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2021/DataFiles/DR1TOT_L.xpt")
+tot_recall2 = read_xpt("https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2021/DataFiles/DR2TOT_L.xpt")
 ```
 
 **Checkpoint**: How many participants (`SEQN`) are in our starting
@@ -126,6 +141,8 @@ longer specific to the recall and we can merge dataframes together (Ex:
 `DR1DBIH` and `DR2DBIH` turn into `DRXDBIH`). To make sure we still know
 which recall the data came from, we can create a new column specifying
 this information.
+
+#### Individual Food Files
 
 ``` r
 recall1_clean = recall1 %>%
@@ -166,6 +183,55 @@ recall_merge_clean = full_join(recall1_clean, recall2_clean) %>%
     ## DRXIS160, DRXIS180, DRXIM161, DRXIM181, DRXIM201, DRXIM221, DRXIP182, DRXIP183,
     ## DRXIP184, DRXIP204, DRXIP205, DRXIP225, DRXIP226, RecallNo)`
 
+#### Total Files
+
+We will repeat this column cleaning process for total nutrient intake
+files.
+
+``` r
+tot_recall1_clean = tot_recall1 %>%
+  # replace column recall labels
+  rename_with(~ sub("^DR1", "DRX", .x), starts_with("DR1")) %>%
+  # Create Recall Column
+  mutate(RecallNo = 1)
+
+# Repeat for Recall 2
+tot_recall2_clean = tot_recall2 %>%
+  rename_with(~ sub("^DR2", "DRX", .x), starts_with("DR2")) %>%
+  mutate(RecallNo = 2)
+```
+
+Now that names are cleaned, we can merge our recalls together and pull
+out our columns of interest, notably our total nutrient outliers for
+dietary cleaning (kcal, protein, fat, vitamin C, and beta-carotene).
+
+``` r
+qc_nutrients = c("DRXTKCAL", # kcal
+                 "DRXTPROT", # protein
+                 "DRXTTFAT", # Fat
+                 "DRXTVC", # Vitamin C
+                 "DRXTBCAR") #Beta Carotene
+
+# Dataframe of total select nutrients needed for nutrient QC
+tot_recall_merge_clean = full_join(tot_recall1_clean, tot_recall2_clean) %>%
+  # Move RecallNo Column up
+  relocate(RecallNo, .after = SEQN) %>%
+  # keep relevant columns and for nutrient outlier determination
+  select(c(SEQN, RecallNo, all_of(qc_nutrients)))
+```
+
+    ## Joining with `by = join_by(SEQN, WTDRD1, WTDR2D, DRXDRSTZ, DRXEXMER, DRABF,
+    ## DRDINT, DRXDBIH, DRXDAY, DRXLANG, DRXMRESP, DRXHELP, DRXSTY, DRXSKY, DRXTNUMF,
+    ## DRXTKCAL, DRXTPROT, DRXTCARB, DRXTSUGR, DRXTFIBE, DRXTTFAT, DRXTSFAT, DRXTMFAT,
+    ## DRXTPFAT, DRXTCHOL, DRXTATOC, DRXTATOA, DRXTRET, DRXTVARA, DRXTACAR, DRXTBCAR,
+    ## DRXTCRYP, DRXTLYCO, DRXTLZ, DRXTVB1, DRXTVB2, DRXTNIAC, DRXTVB6, DRXTFOLA,
+    ## DRXTFA, DRXTFF, DRXTFDFE, DRXTCHL, DRXTVB12, DRXTB12A, DRXTVC, DRXTVD, DRXTVK,
+    ## DRXTCALC, DRXTPHOS, DRXTMAGN, DRXTIRON, DRXTZINC, DRXTCOPP, DRXTSODI, DRXTPOTA,
+    ## DRXTSELE, DRXTCAFF, DRXTTHEO, DRXTALCO, DRXTMOIS, DRXTS040, DRXTS060, DRXTS080,
+    ## DRXTS100, DRXTS120, DRXTS140, DRXTS160, DRXTS180, DRXTM161, DRXTM181, DRXTM201,
+    ## DRXTM221, DRXTP182, DRXTP183, DRXTP184, DRXTP204, DRXTP205, DRXTP225, DRXTP226,
+    ## DRX_300, DRX_320Z, DRX_330Z, DRXBWATZ, DRXTWSZ, RecallNo)`
+
 ### Data Filtering
 
 With the recalls now cleaned and merged into a singular dataframe, we
@@ -184,11 +250,9 @@ participants we will analyze.
 - 5, Not done
 - ., Missing
 
-**Note**: This is not an exhaustive list of data filtering steps for 24-hour recall data. Users may want to filter for specific populations or perform diet cleaning steps (e.g. Nutrient or Portion Outliers). Diet cleaning cut points based off NHANES data are provided in Appendix A of the CDC's ["Reviewing and Cleaning ASA24 Data"](https://epi.grants.cancer.gov/asa24/resources/asa24-data-cleaning-2020.pdf).
-
 ``` r
-# Adults we want to include
-demo_adults = demo_data %>%
+# Filtering for age
+demo_adults = demo_data  %>%
   filter(RIDAGEYR >= 20)
 
 # Let us apply our filters
@@ -210,13 +274,72 @@ diet_data_filtered = recall_merge_clean %>%
 
     ## Participants post-filtering, n = 4284
 
+### Remove Nutrient Outliers
+
+Nutrient cleaning cut points are based off NHANES data are provided in
+Appendix A of the CDC’s [“Reviewing and Cleaning ASA24
+Data”](https://epi.grants.cancer.gov/asa24/resources/asa24-data-cleaning-2020.pdf).
+
+**Note**: What this script provides is not an exhaustive list of
+cleaning steps for 24-hour recall data. Users may want to filter for
+specific populations or perform other diet cleaning steps (e.g. Portion
+Outliers).
+
+| Sex    | Nutrient            | Minimum | Maximum |
+|--------|---------------------|---------|---------|
+| Female | Energy (kcal)       | 600     | 4400    |
+| Female | Protein (g)         | 10      | 180     |
+| Female | Fat (g)             | 15      | 185     |
+| Female | Vitamin C (mg)      | 5       | 350     |
+| Female | Beta-carotene (mcg) | 15      | 7100    |
+| Male   | Energy (kcal)       | 650     | 5700    |
+| Male   | Protein (g)         | 25      | 240     |
+| Male   | Fat (g)             | 25      | 230     |
+| Male   | Vitamin C (mg)      | 5       | 400     |
+| Male   | Beta-carotene (mcg) | 15      | 8200    |
+
+``` r
+# Let's reduce the number of columns for merging into other dataframes
+metadata = demo_adults %>%
+  select(c(SEQN, RIDAGEYR, RIAGENDR)) %>%
+  left_join(tot_recall_merge_clean, by = "SEQN") 
+
+diet_data_filtered_QC = left_join(diet_data_filtered, metadata, by = c("SEQN", "RecallNo")) %>%
+  relocate(RIDAGEYR, RIAGENDR, DRXTKCAL, DRXTPROT, DRXTTFAT, DRXTVC, DRXTBCAR, .after = RecallNo) %>%
+  # Apply Nutrient QC Filters
+  filter(
+    case_when(
+      RIAGENDR == "2" ~ # Female
+        DRXTKCAL >= 600 & DRXTKCAL <= 4400 &
+        DRXTPROT >= 10 & DRXTPROT <= 180 &
+        DRXTTFAT >= 15 & DRXTTFAT <= 185 &
+        DRXTVC >= 5 & DRXTVC <= 350 &
+        DRXTBCAR >= 15 & DRXTBCAR <= 7100,
+
+      RIAGENDR == "1" ~ # male
+        DRXTKCAL >= 650 & DRXTKCAL <= 5700 &
+        DRXTPROT >= 25 & DRXTPROT <= 240 &
+        DRXTTFAT >= 25 & DRXTTFAT <= 230 &
+        DRXTVC >= 5 & DRXTVC <= 400 &
+        DRXTBCAR >= 15 & DRXTBCAR <= 8200,
+      # removes anyone with a missing RIAGENDR
+      TRUE ~ FALSE)) %>% 
+  # Remove meta data columns
+  select(-c(RIDAGEYR, RIAGENDR, DRXTKCAL, DRXTPROT, DRXTTFAT, DRXTVC, DRXTBCAR))
+```
+
+**Checkpoint**: How many participants (`SEQN`) remain after nutrient
+outlier control?
+
+    ## Participants post-QC, n = 3976
+
 ## Export Data Files
 
 Given the number of entries, we will compress this file to reduce file
 size.
 
 ``` r
-vroom::vroom_write(diet_data_filtered,
+vroom::vroom_write(diet_data_filtered_QC,
                    'user_inputs/NHANES_2021_2023_diet_adults.csv.bz2', delim = ",")
 
 # Optional for users who want to keep the filtered demographic data
