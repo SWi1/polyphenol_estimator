@@ -37,8 +37,7 @@ subclasses, and 7 additional food groups (10 possible).
 #### INPUTS
 
 - **Recall_total_nutrients.csv**: Total nutrient intakes for unique
-  participant and recall combination. Generated from step 1 of the
-  polyphenol estimation pipeline.
+  participant and recall combination. Generated from step 1 of Polyphenol Estimator.
 - **Recall_FooDB_DII_eugenol_by_recall.csv**: Sum eugenol intake for
   each participant recall
 - **Recall_FooDB_DII_subclass_by_recall.csv**: Sum of 6 DII polyphenol

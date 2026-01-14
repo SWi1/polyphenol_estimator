@@ -24,8 +24,7 @@ tea, pepper, turmeric, thyme/oregano).
 #### INPUTS
 
 - **Recall_Disaggregated_mapped.csv.bz2** - Disaggregated dietary data,
-  mapped to FooDB foods, From Step 2 of the polyphenol estimation
-  pipeline
+  mapped to FooDB foods, From Step 2 of Polyphenol Estimator
 - **FDA-FDD V3.1** - All of FDA FDD descriptions
 
 #### OUTPUTS

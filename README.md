@@ -1,4 +1,4 @@
-# Polyphenol Estimation Pipeline
+# Polyphenol Estimator
 
 This repository contains scripts to automate the estimation of dietary polyphenol intake and calculation of the dietary inflammatory index from ASA24 or NHANES diet recalls. 
 
@@ -8,11 +8,11 @@ This repository contains scripts to automate the estimation of dietary polypheno
 ## How it Works
 
 <figure>
-  <img src="workflow_images/Polyphenol_Estimation_Pipeline_Overview.png" alt="brief overview of steps in the pipeline" width="500">
+  <img src="workflow_images/Polyphenol_Estimator_Overview.png" alt="brief overview of steps in Polyphenol Estimator" width="500">
 </figure>
 
 ## Get Started
-Want to estimate polyphenols in your dietary data? Please review our start-up guide [here](https://swi1.github.io/polyphenol_pipeline/). If you are new to R and RStudio, you will need to download these free programs first in order to run the pipeline:
+Want to estimate polyphenols in your dietary data? Please review our start-up guide [here](https://swi1.github.io/polyphenol_pipeline/). If you are new to R and RStudio, you will need to download these free programs first in order to run Polyphenol Estimator:
 - **R** - available from [CRAN](https://cran.rstudio.com/)
 - **RStudio** - available from [Posit](https://posit.co/download/rstudio-desktop/)
 

@@ -18,7 +18,7 @@ has_toc: true
 ## Prepare NHANES diet recall data
 
 This is a tutorial to help users access NHANES dietary data for
-downstream utilization in the polyphenol estimation pipeline. The R
+downstream utilization in Polyphenol Estimator. The R
 scripts below walk you through how to directly download one cycle of
 NHANES dietary data from the CDC website and perform several diet
 cleaning steps. Users can directly download this code

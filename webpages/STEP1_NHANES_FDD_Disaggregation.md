@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Step 1 Disaggregate food codes (NHANES)
-parent: Polyphenol Estimation Pipeline
+parent: Polyphenol Estimator
 nav_order: 2
 has_toc: true
 ---

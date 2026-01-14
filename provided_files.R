@@ -1,6 +1,6 @@
 # ==============================
 # PROVIDED file paths for
-# Polyphenol Estimation Pipeline
+# Polyphenol Estimator
 # DII Calculation
 # Built by: Stephanie Wilson
 # Date: November 2025
@@ -9,7 +9,7 @@
 # PROVIDED FILES================
 # Unless moved, you do not have to change these
 
-# Files for Polyphenol Estimation Pipeline
+# Files for Polyphenol Estimator
 # FDA-FDD Database Version 3.1
 FDD_file = "provided_files/FDA_FDD_All_Records_v_3.1.xlsx"
 

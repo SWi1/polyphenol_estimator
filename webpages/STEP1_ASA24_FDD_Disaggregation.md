@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Step 1 Disaggregate food codes (ASA24)
-parent: Polyphenol Estimation Pipeline
+parent: Polyphenol Estimator
 nav_order: 1
 has_toc: true
 ---                            

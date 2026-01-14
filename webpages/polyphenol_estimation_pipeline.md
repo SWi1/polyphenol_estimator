@@ -1,14 +1,14 @@
 ---
 layout: default
-title: Polyphenol Estimation Pipeline
+title: Polyphenol Estimator
 nav_order: 3
 show_toc: true
 has_children: true
 ---
 
-# Polyphenol Estimation Pipeline
+# Polyphenol Estimator
 
-The polyphenol estimation pipeline takes either ASA24 Items Files or NHANES "Individual Foods" Recall Files. Based on the data type, STEP 1 will differ but STEPS 2 - 6 are the same. For simplicity, STEPS 2 - 6 in this tutorial show the output from the demo ASA24 data. The report for STEP 2 shows summary information about the number of unmapped foods, which will vary between datasets.
+Polyphenol Estimator takes either ASA24 Items Files or NHANES "Individual Foods" Recall Files. Based on the data type, STEP 1 will differ but STEPS 2 - 6 are the same. For simplicity, STEPS 2 - 6 in this tutorial show the output from the demo ASA24 data. The report for STEP 2 shows summary information about the number of unmapped foods, which will vary between datasets.
 
 ### Steps Specific to ASA24
 1. STEP1_ASA24_FDD_Disaggregation.Rmd

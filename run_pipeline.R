@@ -1,5 +1,5 @@
 # ============================================================
-# Run the Polyphenol Estimation Pipeline
+# Run Polyphenol Estimator
 # Built by: Stephanie Wilson
 # Date: November 2025
 # ============================================================
@@ -12,7 +12,7 @@ setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 source('functions/estimate_polyphenols.R')
 source('functions/calculate_DII.R')
 
-# RUN THE POLYPHENOL ESTIMATION PIPELINE
+# RUN POLYPHENOL ESTIMATOR
 # ------------------------------------------------------------
 # diet_input_file = 'user_inputs/UPDATE_THIS_PATH.csv'
 # type, specify "ASA24" or "NHANES"

@@ -6,7 +6,7 @@ nav_order: 6
 
 <h2>Contact Us</h2>
 
-<p>Have a question or want to provide feedback on the polyphenol estimation pipeline? Use the form below to get in touch, or create an issue on GitHub (<a href="https://docs.github.com/en/issues/tracking-your-work-with-issues/using-issues/creating-an-issue">more</a>).</p>
+<p>Have a question or want to provide feedback on Polyphenol Estimator? Use the form below to get in touch, or create an issue on GitHub (<a href="https://docs.github.com/en/issues/tracking-your-work-with-issues/using-issues/creating-an-issue">more</a>).</p>
 
 
 <style>

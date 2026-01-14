@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Step 2 Map foods to FooDB
-parent: Polyphenol Estimation Pipeline
+parent: Polyphenol Estimator
 nav_order: 3
 has_toc: true
 ---                              

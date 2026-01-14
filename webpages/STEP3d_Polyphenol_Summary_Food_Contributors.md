@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Step 3d Summary - Food Contributors
-parent: Polyphenol Estimation Pipeline
+parent: Polyphenol Estimator
 nav_order: 7
 has_toc: true
 ---                              
