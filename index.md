@@ -22,7 +22,7 @@ In our usage case of ASA24 data, we have specified that the input is ASA24 data 
 
 ### 5. Check out the resulting files in your output directory!
 Find a list of expected outputs below:
-- [Polyphenol Estimator Outputs](https://swi1.github.io/polyphenol_pipeline/webpages/polyphenol_estimator.html#outputs)
+- [Polyphenol Estimator Outputs](https://swi1.github.io/polyphenol_pipeline/webpages/polyphenol_estimation_pipeline.html#outputs)
 - [DII Calculation Outputs](https://swi1.github.io/polyphenol_pipeline/webpages/DII_calculation.html#outputs)
 
 <details>
