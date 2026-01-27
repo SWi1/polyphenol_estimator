@@ -13,6 +13,8 @@ has_toc: true
   - [Clean Column Names](#clean-column-names)
   - [Data Filtering](#data-filtering)
   - [Remove Nutrient Outliers](#remove-nutrient-outliers)
+  - [Update demographic file to include only filtered
+    subjects](#update-demographic-file-to-include-only-filtered-subjects)
 - [Export Data Files](#export-data-files)
 
 ## Prepare NHANES diet recall data
@@ -78,7 +80,7 @@ Load packages
 ``` r
 # dplyr: helps with data wrangling
 # haven: loads SAS files
-required = c("dplyr", "haven")
+required = c("dplyr", "haven", "vroom")
 
 # Loop to install and load packages
 for (pkg in required) {
@@ -113,7 +115,20 @@ but for our purposes, we will pull down several key files:
 ``` r
 # 1. Demographic data
 demo_data = read_xpt('https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2021/DataFiles/DEMO_L.xpt')
+```
 
+    ## Registered S3 methods overwritten by 'readr':
+    ##   method                    from 
+    ##   as.data.frame.spec_tbl_df vroom
+    ##   as_tibble.spec_tbl_df     vroom
+    ##   format.col_spec           vroom
+    ##   print.col_spec            vroom
+    ##   print.collector           vroom
+    ##   print.date_names          vroom
+    ##   print.locale              vroom
+    ##   str.col_spec              vroom
+
+``` r
 # 2. Dietary Interview Data
 recall1 = read_xpt("https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2021/DataFiles/DR1IFF_L.xpt")
 recall2 = read_xpt("https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2021/DataFiles/DR2IFF_L.xpt")
@@ -131,6 +146,7 @@ files?
 
     ## 2021-2023 demographic file, n = 11933
     ## 2021-2023 diet recall 1, n = 6751
+    ## 2021-2023 diet recall 2, n = 5879
 
 ### Clean Column Names
 
@@ -333,6 +349,18 @@ outlier control?
 
     ## Participants post-QC, n = 3976
 
+### Update demographic file to include only filtered subjects
+
+Our data cleaning removed a lot of individuals for analysis. The code
+below ensures we have the demographic data only for the individuals who
+passed our quality control and nutrient outlier checks.
+
+``` r
+demo_adults_filtered_QC = demo_adults %>%
+  # Apply filtering
+  filter(SEQN %in% diet_data_filtered_QC$SEQN)
+```
+
 ## Export Data Files
 
 Given the number of entries, we will compress this file to reduce file
@@ -342,6 +370,6 @@ size.
 vroom::vroom_write(diet_data_filtered_QC,
                    'user_inputs/NHANES_2021_2023_diet_adults.csv.bz2', delim = ",")
 
-# Optional for users who want to keep the filtered demographic data
-#vroom::vroom_write(demo_adults, 'user_inputs/NHANES_2021_2023_demographics_adults.csv.bz2', , delim = ",")
+# For users who want to keep the filtered, QC'd demographic data
+vroom::vroom_write(demo_adults_filtered_QC, 'user_inputs/NHANES_2021_2023_demographics_adults.csv', delim = ",")
 ```
