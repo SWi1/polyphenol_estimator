@@ -23,9 +23,12 @@ This is a tutorial to help users access NHANES dietary data for
 downstream utilization in Polyphenol Estimator. The R
 scripts below walk you through how to directly download one cycle of
 NHANES dietary data from the CDC website and perform several diet
-cleaning steps. Users can directly download this code
-[here](https://github.com/SWi1/polyphenol_pipeline/blob/main/scripts/preparing_diet_data_NHANES.Rmd)
-and generate the same outputs by running the R code in RStudio.
+cleaning steps. To generate the same outputs, users are encouraged to
+download the entire GitHub Repository
+[here](https://github.com/SWi1/polyphenol_pipeline/archive/refs/heads/main.zip)
+and run this script in RStudio. The NHANES preparation script is located
+within the scripts folder
+[here](https://github.com/SWi1/polyphenol_pipeline/blob/main/scripts/preparing_diet_data_NHANES.Rmd).
 
 **About NHANES**  
 NHANES is a nationally representative sample of non-institutionalized
@@ -70,8 +73,8 @@ Survey Research Group for more information
   filtered for adults \>=20 years old and nutrient outliers (kcal, fat,
   protein, vitamin C, and beta-carotene). Each participant has two
   complete recalls.
-- **(Optional) NHANES_2021_2023_demographics_adults.csv.bz** - NHANES
-  2021-2023 demographic data
+- **NHANES_2021_2023_demographics_adults.csv** - NHANES 2021-2023
+  demographic data
 
 ## SCRIPTS
 
@@ -115,20 +118,7 @@ but for our purposes, we will pull down several key files:
 ``` r
 # 1. Demographic data
 demo_data = read_xpt('https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2021/DataFiles/DEMO_L.xpt')
-```
 
-    ## Registered S3 methods overwritten by 'readr':
-    ##   method                    from 
-    ##   as.data.frame.spec_tbl_df vroom
-    ##   as_tibble.spec_tbl_df     vroom
-    ##   format.col_spec           vroom
-    ##   print.col_spec            vroom
-    ##   print.collector           vroom
-    ##   print.date_names          vroom
-    ##   print.locale              vroom
-    ##   str.col_spec              vroom
-
-``` r
 # 2. Dietary Interview Data
 recall1 = read_xpt("https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2021/DataFiles/DR1IFF_L.xpt")
 recall2 = read_xpt("https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2021/DataFiles/DR2IFF_L.xpt")
@@ -341,13 +331,17 @@ diet_data_filtered_QC = left_join(diet_data_filtered, metadata, by = c("SEQN", "
       # removes anyone with a missing RIAGENDR
       TRUE ~ FALSE)) %>% 
   # Remove meta data columns
-  select(-c(RIDAGEYR, RIAGENDR, DRXTKCAL, DRXTPROT, DRXTTFAT, DRXTVC, DRXTBCAR))
+  select(-c(RIDAGEYR, RIAGENDR, DRXTKCAL, DRXTPROT, DRXTTFAT, DRXTVC, DRXTBCAR)) %>%
+  # Ensure we still have two recalls per participant
+  group_by(SEQN) %>%
+  filter(n_distinct(RecallNo) == 2) %>%
+  ungroup()
 ```
 
 **Checkpoint**: How many participants (`SEQN`) remain after nutrient
 outlier control?
 
-    ## Participants post-QC, n = 3976
+    ## Participants post-QC, n = 2788
 
 ### Update demographic file to include only filtered subjects
 
@@ -363,8 +357,12 @@ demo_adults_filtered_QC = demo_adults %>%
 
 ## Export Data Files
 
-Given the number of entries, we will compress this file to reduce file
-size.
+Given the number of entries, we will compress the dietary file to reduce
+file size.
+
+If you receive the error “No such file or directory” when running this
+code, ensure “preparing_diet_data_NHANES.Rmd” is in the scripts folder
+of the downloaded repository.
 
 ``` r
 vroom::vroom_write(diet_data_filtered_QC,
