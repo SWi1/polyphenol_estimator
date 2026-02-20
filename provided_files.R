@@ -3,11 +3,13 @@
 # Polyphenol Estimator
 # DII Calculation
 # Built by: Stephanie Wilson
-# Date: November 2025
+# Date: February 2026
 # ==============================
 
 # PROVIDED FILES================
-# Unless moved, you do not have to change these
+# Unless moved, you do not have to change any file paths
+Local_R_packages = "local_library"
+dir.create(Local_R_packages, showWarnings = FALSE)
 
 # Files for Polyphenol Estimator
 # FDA-FDD Database Version 3.1
