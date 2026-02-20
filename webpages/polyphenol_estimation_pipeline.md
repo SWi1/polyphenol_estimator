@@ -65,6 +65,3 @@ Our mapping output files are large feature-rich datasets, which we have compress
 - summary_compound_intake_by_entry.csv
 - summary_compound_intake_by_subject_wide.csv
 - summary_compound_intake_by_subject.csv
-
-
-

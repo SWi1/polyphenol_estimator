@@ -25,4 +25,4 @@ An example ASA24 Recalls Items File is provided from [DietDiveR](https://github.
   - Polyphenol Estimator will run example ASA24 file **unless** you change the input data.
 
 ### 4. Run Polyphenol Estimator for your ASA24 data. 
-  - See our [Start Guide](https://swi1.github.io/polyphenol_pipeline) for instructions.
+  - See our [Start Guide](https://swi1.github.io/polyphenol_estimator) for instructions.

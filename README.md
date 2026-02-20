@@ -12,7 +12,7 @@ This repository contains scripts to automate the estimation of dietary polypheno
 </figure>
 
 ## Get Started
-Want to estimate polyphenols in your dietary data? Please review our start-up guide [here](https://swi1.github.io/polyphenol_pipeline/). If you are new to R and RStudio, you will need to download these free programs first in order to run Polyphenol Estimator:
+Want to estimate polyphenols in your dietary data? Please review our start-up guide [here](https://swi1.github.io/polyphenol_estimator/). If you are new to R and RStudio, you will need to download these free programs first in order to run Polyphenol Estimator:
 - **R** - available from [CRAN](https://cran.rstudio.com/)
 - **RStudio** - available from [Posit](https://posit.co/download/rstudio-desktop/)
 

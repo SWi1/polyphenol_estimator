@@ -8,7 +8,7 @@ nav_order: 1
 
 This start guide shows you how to take your ASA24 or NHANES dietary data and estimate polyphenol intake using the [FooDB](https://foodb.ca/) and calculate the dietary inflammatory index [(Shivapppa et al. 2013)](10.1017/S1368980013002115). Example ASA24 data, borrowed from the [DietDiveR Repository](https://computational-nutrition-lab.github.io/DietDiveR/), is provided for you to test. Check out [the example file here](https://github.com/SWi1/polyphenol_pipeline/blob/main/user_inputs/VVKAJ_Items.csv) to see the input structure required for Polyphenol Estimator.
 
-### 1. Download the entire repository directly [here](https://github.com/SWi1/polyphenol_pipeline/archive/refs/heads/main.zip) then unzip the folder. 
+### 1. Download the entire repository directly [here](https://github.com/SWi1/polyphenol_estimator/archive/refs/heads/main.zip) then unzip the folder. 
 The repository contains files and scripts used in the tutorial.
 
 ###  2. Open 'run_pipeline.R' in RStudio.
@@ -22,8 +22,8 @@ In our usage case of ASA24 data, we have specified that the input is ASA24 data 
 
 ### 5. Check out the resulting files in your output directory!
 Find a list of expected outputs below:
-- [Polyphenol Estimator Outputs](https://swi1.github.io/polyphenol_pipeline/webpages/polyphenol_estimation_pipeline.html#outputs)
-- [DII Calculation Outputs](https://swi1.github.io/polyphenol_pipeline/webpages/DII_calculation.html#outputs)
+- [Polyphenol Estimator Outputs](https://swi1.github.io/polyphenol_estimator/webpages/polyphenol_estimation_pipeline.html#outputs)
+- [DII Calculation Outputs](https://swi1.github.io/polyphenol_estimator/webpages/DII_calculation.html#outputs)
 
 <details>
 <summary>Reports: See What's in Each Script</summary>
@@ -33,7 +33,7 @@ Find a list of expected outputs below:
 </details>
 
 ### Want to test NHANES data instead?
-`estimate_polyphenols` can also be run on NHANES WWEIA data. To generate NHANES WWEIA data, follow the instructions in ["Preparing Diet Data - NHANES diet recalls"](https://swi1.github.io/polyphenol_pipeline/webpages/preparing_diet_data_NHANES.html#prepare-nhanes-diet-recall-data). When you've finished: 
+`estimate_polyphenols` can also be run on NHANES WWEIA data. To generate NHANES WWEIA data, follow the instructions in ["Preparing Diet Data - NHANES diet recalls"](https://swi1.github.io/polyphenol_estimator/webpages/preparing_diet_data_NHANES.html#prepare-nhanes-diet-recall-data). When you've finished: 
 1. Come back to run_pipeline.R and update `diet_input_file` with the NHANES output file name. 
 2. In `estimate_polyphenols`, change type to "NHANES"
 3. Run the script. 

@@ -3,7 +3,7 @@ description: A tutorial on how to obtain estimates of polyphenol intake and DII 
 theme: just-the-docs
 markdown: kramdown
 
-url: https://swi1.github.io/polyphenol_pipeline/
+url: https://swi1.github.io/polyphenol_estimator/
 
 aux_links:
-  GitHub Repository: https://github.com/SWi1/polyphenol_pipeline
+  GitHub Repository: https://github.com/SWi1/polyphenol_estimator
