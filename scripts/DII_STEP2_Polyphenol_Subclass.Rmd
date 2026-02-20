@@ -1,7 +1,7 @@
 ---
 title: "DII_PREP - Polyphenol Subclasses"
 author: "Stephanie Wilson"
-date: "November 2025"
+date: "February 2026"
 output:
   md_document:
     variant: gfm
@@ -18,16 +18,16 @@ output:
 ---
 
 ## Calculate DII Polyphenol Subclasses
-This script takes your data that has been mapped to FooDB polyphenol content, extracts compounds categorized under the six required DII subclasses (flavan-3-ols, Flavones, Flavonols, Flavonones, Anthocyanidins, Isoflavones), and calculates the total intake of these subclasses per participant recall. 
+This script takes your data that has been mapped to FooDB polyphenol content, extracts compounds categorized under the six required DII subclasses (flavan-3-ols, Flavones, Flavonols, Flavonones, Anthocyanidins, Isoflavones), and calculates the total intake of these subclasses per participant recall or record. 
 
 #### INPUTS
 
--   **Recall_FooDB_polyphenol_content.csv.bz2**: Disaggregated dietary data, mapped to FooDB polyphenol content, at the compound-level
+-   **Diet_FooDB_polyphenol_content.csv.bz2**: Disaggregated dietary data, mapped to FooDB polyphenol content, at the compound-level
 -   **FooDB_DII_polyphenol_list.csv** - Polyphenols under the six polyphenol subclasses required for DII-2014, Provided File
 
 #### OUTPUTS
 
--   **Recall_DII_subclass_by_recall.csv**: Sum DII polyphenol subclass content for each participant recall
+-   **Diet_DII_subclass_by_entry.csv**: Sum DII polyphenol subclass content for each participant recall or record
 
 ## SCRIPT
 
@@ -54,20 +54,33 @@ Load data
 source("provided_files.R")
 
 # Load dietary data mapped to polyphenol content
-input_polyphenol_content = vroom::vroom('outputs/Recall_FooDB_polyphenol_content.csv.bz2',
+input_polyphenol_content = vroom::vroom('outputs/Diet_FooDB_polyphenol_content.csv.bz2',
                                         show_col_types = FALSE)
 
-# Eugenol Content in FooDB
-# Note: Eugenol doesn't have retention factors from Phenol Explorer
+# Polyphenol classifications
 subclasses = vroom::vroom(FooDB_DII_subclasses, show_col_types = FALSE)
 ```
 
 ### Filter in relevant DII subclass polyphenols
 ```{r}
 input_polyphenol_content_filtered = input_polyphenol_content %>%
-  filter(compound_public_id %in% subclasses$compound_public_id) %>%
+  dplyr::filter(compound_public_id %in% subclasses$compound_public_id) %>%
   # Merge the class information so subclasses are grouped correctly
-  left_join(subclasses)
+  dplyr::left_join(subclasses)
+```
+
+### Specify grouping variables
+Column grouping depends on whether output is from a record or recall.
+```{r}
+if ("RecallNo" %in% names(input_polyphenol_content_filtered)) {
+  group_vars = c("subject", "RecallNo", "component")
+  
+} else if ("RecordNo" %in% names(input_polyphenol_content_filtered)) {
+  group_vars = c("subject", "RecordNo", "RecordDayNo", "component")
+  
+} else {
+  stop("Data must contain RecallNo or RecordNo.")
+}
 ```
 
 
@@ -76,18 +89,20 @@ The column `component` contains the DII category.
 
 ```{r}
 subclass_intakes = input_polyphenol_content_filtered %>%
-  group_by(subject, RecallNo, component) %>%
+  dplyr::group_by(across(all_of(group_vars))) %>%
   # Sum polyphenol category intake, mg by recall
-  mutate(component_sum = sum(pp_consumed)) %>%
-  ungroup() %>%
+  dplyr::mutate(component_sum = sum(pp_consumed)) %>%
+  dplyr::ungroup() %>%
   # Keep distinct entries
-  distinct(subject, RecallNo, component, .keep_all = TRUE) %>%
+  dplyr::distinct(across(all_of(group_vars)), .keep_all = TRUE) %>%
   # Minimize the number of columns for pivoting to wide format
-  select(c(subject, RecallNo, component, component_sum)) %>%
+  dplyr::select(c(subject,
+                  any_of(c("RecallNo", "RecordNo", "RecordDayNo")),
+                  component, component_sum)) %>%
   # pivot to wide version
-  pivot_wider(names_from = component, values_from = component_sum) %>%
+  tidyr::pivot_wider(names_from = component, values_from = component_sum) %>%
   # Rename the columns to match the DII category names in the DietaryIndex function
-  rename(
+  dplyr::rename(
     ISOFLAVONES = Isoflavones,
     "FLA3OL" = "Flavan-3-ols",
     "FLAVONES" = "Flavones",
@@ -98,6 +113,6 @@ subclass_intakes = input_polyphenol_content_filtered %>%
 
 ### Export Polyphenol Subclass Intakes for DII Calculation
 ```{r EXPORT}
-vroom::vroom_write(subclass_intakes, 'outputs/Recall_DII_subclass_by_recall.csv', delim = ",")
+vroom::vroom_write(subclass_intakes, 'outputs/Diet_DII_subclass_by_entry.csv', delim = ",")
 ```
 

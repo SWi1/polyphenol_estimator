@@ -1,7 +1,7 @@
 ---
 title: "Obtaining and Cleaning NHANES Dietary Data"
 author: "Stephanie M.G. Wilson"
-date: "November 2025"
+date: "January 2026"
 output:
   md_document:
     variant: gfm

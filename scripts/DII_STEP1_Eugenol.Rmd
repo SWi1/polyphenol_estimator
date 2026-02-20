@@ -1,7 +1,7 @@
 ---
 title: "DII_PREP - Eugenol"
 author: "Stephanie Wilson"
-date: "November 2025"
+date: "February 2026"
 output:
   md_document:
     variant: gfm
@@ -18,16 +18,16 @@ output:
 ---
 
 ## Calculate Eugenol Intake
-This script takes in your disaggregated dietary data and FooDB-linked descriptions to calculate eugenol intake per recall and subject.
+This script takes in your disaggregated dietary data and FooDB-linked descriptions to calculate eugenol intake per recall (or record) and subject.
 
 #### INPUTS
 
--   **Recall_Disaggregated_mapped.csv.bz2** - Disaggregated dietary data, mapped to FooDB foods, From Step 2 of the polyphenol estimation pipeline
+-   **Diet_Disaggregated_mapped.csv.bz2** - Disaggregated dietary data, mapped to FooDB foods, From Step 2 of the polyphenol estimation pipeline
 -   **FooDB_Eugenol_Content_Final.csv** - Eugenol Content for foods in FooDB, Provided File
 
 #### OUTPUTS
 
--   **Recall_DII_eugenol_by_recall.csv**: Sum eugenol content for each participant recall
+-   **Diet_DII_eugenol_by_entry.csv**: Sum eugenol content for each participant recall or record
 
 ## SCRIPT
 
@@ -54,15 +54,29 @@ Load data
 source("provided_files.R")
 
 # Load Dietary data that has been disaggregated and connected to FooDB
-input_mapped = vroom::vroom('outputs/Recall_Disaggregated_mapped.csv.bz2', 
+input_mapped = vroom::vroom('outputs/Diet_Disaggregated_mapped.csv.bz2', 
                             show_col_types = FALSE)
 
 # Eugenol Content in FooDB
 # Note: Eugenol doesn't have retention factors from Phenol Explorer
 eugenol = vroom::vroom(FooDB_eugenol, show_col_types = FALSE) %>%
-  select(-c(source_type, food_name:orig_source_name))
+  dplyr::select(-c(source_type, food_name:orig_source_name))
 ```
 
+
+### Specify grouping variables
+Column grouping depends on whether output is from a record or recall.
+```{r}
+if ("RecallNo" %in% names(input_mapped)) {
+  group_vars = c("subject", "RecallNo")
+  
+} else if ("RecordNo" %in% names(input_mapped)) {
+  group_vars = c("subject", "RecordNo", "RecordDayNo")
+  
+} else {
+  stop("Data must contain RecallNo or RecordNo.")
+}
+```
 
 ### Merge FooDB-matched Ingredient Codes to FooDB Eugenol Content File.
 
@@ -73,20 +87,22 @@ input_mapped_content = input_mapped %>%
   # Bring in the Polyphenol Content
   dplyr::left_join(eugenol, by = 'food_id') %>%
   # Remove content that is NA
-  filter(!is.na(orig_content_avg)) %>%
+  dplyr::filter(!is.na(orig_content_avg)) %>%
   # Calculate eugenol amount consumed in milligrams
-  mutate(eugenol_mg = (orig_content_avg * 0.01) * FoodAmt_Ing_g) %>%
-  # Sum eugenol content by subject and recall
-  group_by(subject, RecallNo) %>%
-  # Calculate EUGENOL summed per recall, and rename for dietaryindex function
-  mutate(EUGENOL= sum(eugenol_mg)) %>%
-  ungroup() %>%
-  select(c(subject, RecallNo, EUGENOL)) %>%
+  dplyr::mutate(eugenol_mg = (orig_content_avg * 0.01) * FoodAmt_Ing_g) %>%
+  # Recall - Sum by Subject, Recall
+  # Record - Sum by Subject, Record Number, Day in Record Number
+  dplyr::group_by(across(all_of(group_vars))) %>%
+  # Calculate EUGENOL summed per recal or record
+  # with rename for dietaryindex function
+  dplyr::mutate(EUGENOL = sum(eugenol_mg)) %>%
+  dplyr::ungroup() %>%
+  dplyr::select(c(subject, any_of(c("RecallNo", "RecordNo", "RecordDayNo")), EUGENOL)) %>%
   # Keep distinct entries
-  distinct(subject, RecallNo, .keep_all = TRUE)
+  dplyr::distinct(across(all_of(group_vars)), .keep_all = TRUE)
 ```
 
 ### Export Eugenol Intake File for DII Calculation
 ```{r}
-vroom::vroom_write(input_mapped_content, 'outputs/Recall_DII_eugenol_by_recall.csv', delim = ",")
+vroom::vroom_write(input_mapped_content, 'outputs/Diet_DII_eugenol_by_entry.csv', delim = ",")
 ```

@@ -17,7 +17,7 @@ calculate_DII = function(report = c("none", "html", "md")) {
   
   # The Polyphenol Estimation Pipeline Needs to run first.
   # Output from this pipeline kicks off the DII calculation scripts
-  starting_file = "outputs/Recall_Disaggregated_mapped.csv.bz2"
+  starting_file = "outputs/Diet_Disaggregated_mapped.csv.bz2"
   
   # Check if it was by confirming Disaggregated Dietary Data File exists
   if (!file.exists(starting_file)) {

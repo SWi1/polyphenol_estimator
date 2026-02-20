@@ -37,9 +37,9 @@ polyphenol intakes can be standardized to caloric intake later on.
 
 #### OUTPUTS
 
-- **Recall_Disaggregated.csv.bz2**: Dietary data that has been
+- **Diet_Disaggregated.csv.bz2**: Dietary data that has been
   disaggregated using FDD.
-- **Recall_total_nutrients.csv**: Total daily kcal intakes for unique
+- **Diet_total_nutrients.csv**: Total daily kcal intakes for unique
   subject and recall combination.
 
 ## SCRIPT
@@ -154,6 +154,6 @@ if (!dir.exists("outputs")) dir.create("outputs", recursive = TRUE)
 Write Files
 
 ``` r
-vroom::vroom_write(merge, 'outputs/Recall_Disaggregated.csv.bz2', delim = ",")
-vroom::vroom_write(input_total_nutrients, 'outputs/Recall_total_nutrients.csv', delim = ",")
+vroom::vroom_write(merge, 'outputs/Diet_Disaggregated.csv.bz2', delim = ",")
+vroom::vroom_write(input_total_nutrients, 'outputs/Diet_total_nutrients.csv', delim = ",")
 ```

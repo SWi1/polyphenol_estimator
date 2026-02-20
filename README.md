@@ -1,6 +1,6 @@
 # Polyphenol Estimator
 
-This repository contains scripts to automate the estimation of dietary polyphenol intake and calculation of the dietary inflammatory index from ASA24 or NHANES diet recalls. 
+This repository contains scripts to automate the estimation of dietary polyphenol intake and calculation of the dietary inflammatory index from ASA24 recalls, ASA24 records, and NHANES WWEIA recalls.
 
 ### Releases
 - November 20, 2025 - Tutorial Draft Release
@@ -21,7 +21,7 @@ Want to estimate polyphenols in your dietary data? Please review our start-up gu
         
 | Inputs      | Provided | About   |
 |------------ |--------- |---------|
-| Diet Data  | No     	| ASA24 Items File, or NHANES<br>Note: Current pipeline requires each participant to have at least two recalls. 	|
+| Diet Data  | No     	| ASA24 Items File, or NHANES<br>Note: Current pipeline requires each participant to have at least two recalls, records, or record days. 	|
 | FDA Food Disaggregation Database V 3.1   | Yes  |   FDA's Food Disaggregation Database contains Ingredients and their percentages within FNDDS food codes. |
 | FooDB food polyphenol content  | Yes      	|   Contains polyphenol content in foods. Polyphenols were determined based off structure (an aromatic ring with at least two hydroxyl groups) with 9 compounds manually added to better reflect microbial enzyme substrates.   |
 | FooDB polyphenol list   | Yes      	| List of 3072 polyphenols. File includes FooDB compound ID, compound name, SMILES, InChI key, and taxonomic class. Taxonomic class is from ClassyFire, an automated chemical taxonomic classification application based on chemical structure.  |

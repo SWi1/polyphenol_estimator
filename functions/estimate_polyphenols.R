@@ -59,16 +59,34 @@ estimate_polyphenols = function(
     stop("The diet data file must contain the column '", id_var, "' for ", type, ".")
   }
   
-  # Obtain recall counts by user
-  recalls_per_user = diet_dat %>%
-    group_by(.data[[id_var]]) %>%
-    summarise(n_recalls = n_distinct(RecallNo), .groups = "drop")
+  # Determine if Recall or Record
+  if ("RecallNo" %in% names(diet_dat)) {
+    # Recall dataset
+    n_events = diet_dat %>%
+      group_by(.data[[id_var]]) %>%
+      summarise(n_events = n_distinct(RecallNo), .groups = "drop")
+    
+  } else if ("RecordNo" %in% names(diet_dat) || "RecordDayNo" %in% names(diet_dat)) {
+    # Record dataset
+    n_events = diet_dat %>%
+      group_by(.data[[id_var]]) %>%
+      summarise(
+        n_events = max(
+          n_distinct(RecordNo %||% 0),
+          n_distinct(RecordDayNo %||% 0)
+        ),
+        .groups = "drop"
+      )
+    
+  } else {
+    stop("Dataset has neither RecallNo nor RecordNo/RecordDayNo columns.")
+  }
   
   # Recall Status Message
-  if (max(recalls_per_user$n_recalls, na.rm = TRUE) < 2) {
-    stop("The diet recall file does not contain multiple recalls per participant.")
+  if (max(n_events$n_events, na.rm = TRUE) < 2) {
+    stop("Your diet file does not contain multiple recalls or records per participant.")
   } else {
-    message("Multiple recalls detected across participants.\n")
+    message("Multiple recalls or records detected across participants.\n")
   }
   
   ##########################################

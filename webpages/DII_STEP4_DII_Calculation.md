@@ -15,6 +15,7 @@ has_toc: true
     calculations](#clean-column-names-and-prepare-dii-category-calculations)
   - [BUILD DII calculation scores
     dataframe](#build-dii-calculation-scores-dataframe)
+  - [Specify grouping variables](#specify-grouping-variables)
   - [Calculate DII Scores](#calculate-dii-scores)
   - [Export DII total and component scores for downstream
     use](#export-dii-total-and-component-scores-for-downstream-use)
@@ -36,18 +37,19 @@ subclasses, and 7 additional food groups (10 possible).
 
 #### INPUTS
 
-- **Recall_total_nutrients.csv**: Total nutrient intakes for unique
-  participant and recall combination. Generated from step 1 of Polyphenol Estimator.
-- **Recall_FooDB_DII_eugenol_by_recall.csv**: Sum eugenol intake for
-  each participant recall
-- **Recall_FooDB_DII_subclass_by_recall.csv**: Sum of 6 DII polyphenol
+- **Diet_total_nutrients.csv**: Total nutrient intakes for unique
+  participant and recall (or record) combination. Generated from step 1
+  of the polyphenol estimation pipeline.
+- **Diet_FooDB_DII_eugenol_by_entry.csv**: Sum eugenol intake for each
+  participant recall or record
+- **Diet_FooDB_DII_subclass_by_entry.csv**: Sum of 6 DII polyphenol
   subclass intakes for each participant recall
-- **Recall_DII_foods_by_recall.csv** - Intake of 7 DII 2014 food
-  categories by participant recall
+- **Diet_DII_foods_by_entry.csv** - Intake of 7 DII 2014 food categories
+  by participant recall or record
 
 #### OUTPUTS
 
-- **summary_DII_final_scores_by_recall.csv** - Total DII scores and 42
+- **summary_DII_final_scores_by_entry.csv** - Total DII scores and 42
   individual component scores
 
 ## SCRIPT
@@ -65,15 +67,23 @@ Load dietary test data
 
 ``` r
 # Load dietary data
-total_nut = vroom::vroom('outputs/Recall_total_nutrients.csv', show_col_types = FALSE) 
+total_nut = vroom::vroom('outputs/Diet_total_nutrients.csv', show_col_types = FALSE) 
 
 # Load DII calculation files
-eugenol = vroom::vroom('outputs/Recall_DII_eugenol_by_recall.csv',
-                       show_col_types = FALSE) # eugenol intake
-subclass = vroom::vroom('outputs/Recall_DII_subclass_by_recall.csv', 
-                        show_col_types = FALSE) # polyphenol subclass intakes
-DII_foods = vroom::vroom('outputs/Recall_DII_foods_by_recall.csv', 
-                         show_col_types = FALSE) # food intakes
+# eugenol intake
+eugenol = vroom::vroom('outputs/Diet_DII_eugenol_by_entry.csv', show_col_types = FALSE) %>%
+  # If dataframe is empty, ensure that file still merges
+   mutate(across(any_of(c("RecallNo", "RecordNo", "RecordDayNo")), as.numeric))
+
+# polyphenol subclass intakes
+subclass = vroom::vroom('outputs/Diet_DII_subclass_by_entry.csv', show_col_types = FALSE) %>%
+  # If dataframe is empty, ensure that file still merges
+   mutate(across(any_of(c("RecallNo", "RecordNo", "RecordDayNo")), as.numeric))
+
+# food intakes
+DII_foods = vroom::vroom('outputs/Diet_DII_foods_by_entry.csv', show_col_types = FALSE) %>%
+  # If dataframe is empty, ensure that file still merges
+   mutate(across(any_of(c("RecallNo", "RecordNo", "RecordDayNo")), as.numeric))
 ```
 
 ### Merge calculations with ASA24 Items file
@@ -156,12 +166,14 @@ new_names = new_names[existing_idx]
 
 # Apply rename to relevant DII columns
 merge_renamed = merge %>%
-    rename(!!!setNames(old_names, new_names))
+    dplyr::rename(!!!setNames(old_names, new_names))
 ```
 
+Calculations required for DII
+
 ``` r
-# Serving size calculation for DII
 COHORT1 = merge_renamed %>%
+  
         # Apply Calculations
         dplyr::mutate(
             CAFFEINE = CAFF / 1000, # convert to grams
@@ -171,7 +183,8 @@ COHORT1 = merge_renamed %>%
             THYME = THYME * 1000) %>%  # Includes oregano
             # MISSING Components
             # ROSEMARY = ROSEMARY * 1000 # convert to mg
-        dplyr::select(subject, RecallNo, ALCOHOL, VITB12, VITB6, BCAROTENE, 
+        dplyr::select(subject, any_of(c("RecallNo", "RecordNo", "RecordDayNo")),
+                      ALCOHOL, VITB12, VITB6, BCAROTENE, 
                       CAFFEINE, CARB, CHOLES, KCAL, TOTALFAT, FIBER, FOLICACID,
                       IRON, MG, MUFA, NIACIN, N3FAT, N6FAT, PROTEIN, PUFA, 
                       RIBOFLAVIN, SATFAT, SE, THIAMIN, VITA,
@@ -188,8 +201,13 @@ Pivot to long format for ease of calculations
 
 ``` r
 COHORT2 = COHORT1 %>%
-        tidyr::pivot_longer(-c(subject, RecallNo), 
-                            names_to = "Variable", values_to = "Value")
+  # Ensure diet features are numeric
+  dplyr::mutate(across(-c(subject, any_of(c("RecallNo", "RecordNo", "RecordDayNo"))),
+                       as.numeric)) %>%
+  tidyr::pivot_longer(
+    cols = -c(subject, any_of(c("RecallNo", "RecordNo", "RecordDayNo"))),
+    names_to = "Variable",
+    values_to = "Value")
 ```
 
 ### BUILD DII calculation scores dataframe
@@ -233,6 +251,22 @@ SD = c(3.72, 2.7, 0.74, 1720, 6.67, 40, 51.2, 338, 0.08, 19.4, 4.9, 70.7, 2.9,
 DII_STD = data.frame(Variable, Overall_inflammatory_score, Global_mean, SD)
 ```
 
+### Specify grouping variables
+
+Column grouping depends on whether output is from a record or recall.
+
+``` r
+if ("RecallNo" %in% names(COHORT2)) {
+  group_vars = c("subject", "RecallNo")
+  
+} else if ("RecordNo" %in% names(COHORT2)) {
+  group_vars = c("subject", "RecordNo", "RecordDayNo")
+  
+} else {
+  stop("Data must contain RecallNo or RecordNo.")
+}
+```
+
 ### Calculate DII Scores
 
 ``` r
@@ -240,14 +274,13 @@ DII_STD = data.frame(Variable, Overall_inflammatory_score, Global_mean, SD)
 DII_scores = COHORT2 %>%
   # Add DII components for calculations
   dplyr::left_join(DII_STD, by = c("Variable")) %>%
-  # 
   dplyr::mutate(
     Z_SCORE = (Value - Global_mean) / SD,
     PERCENTILE = pnorm(Z_SCORE) * 2 - 1,
     IND_DII_SCORE = PERCENTILE * Overall_inflammatory_score) %>%
   # Shift data back to wide format
   tidyr::pivot_wider(names_from = Variable, values_from = IND_DII_SCORE) %>%
-  dplyr::group_by(subject, RecallNo) %>% 
+  dplyr::group_by(across(all_of(group_vars))) %>%
   # Summarize components
   dplyr::summarize(
             DII_ALL = sum(ALCOHOL, VITB12, VITB6, BCAROTENE, CAFFEINE, CARB, 
@@ -325,5 +358,5 @@ DII_scores = COHORT2 %>%
 ### Export DII total and component scores for downstream use
 
 ``` r
-vroom::vroom_write(DII_scores, "outputs/summary_DII_final_scores_by_recall.csv", delim = ",")
+vroom::vroom_write(DII_scores, "outputs/summary_DII_final_scores_by_entry.csv", delim = ",")
 ```

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Step 3d Summary - Food Contributors
-parent: Polyphenol Estimator
+parent: Polyphenol Estimation Pipeline
 nav_order: 7
 has_toc: true
 ---                              
@@ -9,6 +9,7 @@ has_toc: true
 - [Food Contributors to Total Polyphenol
   Intake](#food-contributors-to-total-polyphenol-intake)
 - [SCRIPTS](#scripts)
+  - [Specify grouping variables](#specify-grouping-variables)
   - [Food Consumption Counts](#food-consumption-counts)
   - [Total daily Polyphenol Intake Numbers BY
     RECALL](#total-daily-polyphenol-intake-numbers-by-recall)
@@ -23,11 +24,11 @@ This script examines food contributors to total polyphenol intake.
 
 #### INPUTS
 
-- **Recall_Disaggregated_mapped.csv.bz2**; Dissagregated dietary data,
+- **Diet_Disaggregated_mapped.csv.bz2**; Dissagregated dietary data,
   mapped to FooDB foods
-- **Recall_FooDB_polyphenol_content.csv.bz2**: Disaggregated dietary
-  data, mapped to FooDB foods and polyphenol content
-- **Recall_total_nutrients.csv** - total daily nutrient data to go with
+- **Diet_FooDB_polyphenol_content.csv.bz2**: Disaggregated dietary data,
+  mapped to FooDB foods and polyphenol content
+- **Diet_total_nutrients.csv** - total daily nutrient data to go with
   dietary data.
 
 #### OUTPUTS
@@ -49,23 +50,42 @@ suppressMessages(library(stringr))
 source("provided_files.R")
 
 # Foods Mapped
-input_mappings = vroom::vroom('outputs/Recall_Disaggregated_mapped.csv.bz2',
+input_mappings = vroom::vroom('outputs/Diet_Disaggregated_mapped.csv.bz2',
                               show_col_types = FALSE)
 
 # Foods Mapped with content
-input_polyphenol_content = vroom::vroom('outputs/Recall_FooDB_polyphenol_content.csv.bz2',
+input_polyphenol_content = vroom::vroom('outputs/Diet_FooDB_polyphenol_content.csv.bz2',
                                         show_col_types = FALSE)
-input_kcal = vroom::vroom('outputs/Recall_total_nutrients.csv', show_col_types = FALSE) %>%
+input_kcal = vroom::vroom('outputs/Diet_total_nutrients.csv', show_col_types = FALSE) %>%
   # Ensure consistent KCAL naming whether ASA24 or NHANES
-  rename_with(~ "Total_KCAL", .cols = any_of(c("Total_KCAL", # Specific to ASA24
+  dplyr::rename_with(~ "Total_KCAL", .cols = any_of(c("Total_KCAL", # Specific to ASA24
                                                "Total_DRXIKCAL"))) %>%  # Specific to NHANES
-  select(c(subject, RecallNo, Total_KCAL))
+  dplyr::select(c(subject,
+          # Ensures we pull correct columns for record or recall
+           any_of(c("RecallNo", "RecordNo", "RecordDayNo")),
+           Total_KCAL))
 
 # Merge the two files
-input_polyphenol_kcal = left_join(input_polyphenol_content, input_kcal)
+input_polyphenol_kcal = dplyr::left_join(input_polyphenol_content, input_kcal)
 ```
 
     ## Joining with `by = join_by(subject, RecallNo)`
+
+### Specify grouping variables
+
+Column grouping depends on whether output is from a record or recall.
+
+``` r
+if ("RecallNo" %in% names(input_polyphenol_kcal)) {
+  group_vars = c("subject", "RecallNo", "fdd_ingredient")
+  
+} else if ("RecordNo" %in% names(input_polyphenol_kcal)) {
+  group_vars = c("subject", "RecordNo", "RecordDayNo", "fdd_ingredient")
+  
+} else {
+  stop("Data must contain RecallNo or RecordNo.")
+}
+```
 
 ### Food Consumption Counts
 
@@ -76,15 +96,15 @@ participants consume a food.
 food_counts = input_mappings %>%
   # Every time a subject consumed food, how much of it in total did they eat? 
   # How many instances did they eat this food in one day?
-  group_by(subject, RecallNo, fdd_ingredient) %>%
-  summarise(
+  dplyr::group_by(across(all_of(group_vars))) %>%
+  dplyr::summarise(
     amount_consumed_g = sum(FoodAmt_Ing_g, na.rm =TRUE),
     times_consumed = n(),
     .groups = "drop") %>%
   
   # Across the cohort summary
-  group_by(fdd_ingredient) %>%
-  summarise(
+  dplyr::group_by(fdd_ingredient) %>%
+  dplyr::summarise(
     # How many instances was this food seen
     total_times_consumed = sum(times_consumed),
     
@@ -98,36 +118,39 @@ food_counts = input_mappings %>%
     max_amount_consumed_g = max(amount_consumed_g),
     
     .groups = "drop") %>%
-  arrange(desc(total_times_consumed))
+  dplyr::arrange(desc(total_times_consumed))
 ```
 
 ### Total daily Polyphenol Intake Numbers BY RECALL
 
 ``` r
-content_by_recall_food = input_polyphenol_kcal %>%
+content_by_entry_food = input_polyphenol_kcal %>%
   
-  # Sum by Recall and Participant
-  group_by(subject, RecallNo, fdd_ingredient) %>%
-  mutate(pp_recallsum_mg = sum(pp_consumed, na.rm = TRUE),
+  # Recall - Sum by Subject, Recall
+  # Record - Sum by Subject, Record Number, Day in Record Number
+  # Both recall and record group by compound
+  dplyr::group_by(across(all_of(group_vars))) %>%
+  dplyr::mutate(pp_recallsum_mg = sum(pp_consumed, na.rm = TRUE),
          pp_recallsum_mg1000kcal = pp_recallsum_mg/(Total_KCAL/1000)) %>%
-  ungroup() %>%
-  distinct(subject, RecallNo, fdd_ingredient, .keep_all = TRUE) %>%
-  select(c(subject, RecallNo, fdd_ingredient, pp_recallsum_mg, Total_KCAL, pp_recallsum_mg1000kcal))
+  dplyr::ungroup() %>%
+  dplyr::distinct(across(all_of(group_vars)), .keep_all = TRUE) %>%
+  dplyr::select(c(subject, any_of(c("RecallNo", "RecordNo", "RecordDayNo")),
+                  fdd_ingredient, pp_recallsum_mg, Total_KCAL, pp_recallsum_mg1000kcal))
 ```
 
 ### Total daily Polyphenol Intake Numbers AVERAGE FOR SUBJECT
 
 ``` r
-content_by_subject_food = content_by_recall_food %>%
+content_by_subject_food = content_by_entry_food %>%
   
   # Average by Participant
-  group_by(subject, fdd_ingredient) %>%
-  mutate(pp_average_mg = mean(pp_recallsum_mg, na.rm = TRUE),
+  dplyr::group_by(subject, fdd_ingredient) %>%
+  dplyr::mutate(pp_average_mg = mean(pp_recallsum_mg, na.rm = TRUE),
          kcal_average = mean(Total_KCAL, na.rm = TRUE),
          pp_average_mg_1000kcal = pp_average_mg/(kcal_average/1000)) %>%
-  ungroup() %>%
-  distinct(subject, fdd_ingredient, .keep_all = TRUE) %>%
-  select(c(subject, fdd_ingredient, pp_average_mg, kcal_average, pp_average_mg_1000kcal)) 
+  dplyr::ungroup() %>%
+  dplyr::distinct(subject, fdd_ingredient, .keep_all = TRUE) %>%
+  dplyr::select(c(subject, fdd_ingredient, pp_average_mg, kcal_average, pp_average_mg_1000kcal)) 
 ```
 
 ### Obtain food contributors to total polyphenol intake
@@ -136,13 +159,13 @@ content_by_subject_food = content_by_recall_food %>%
 content_by_food = content_by_subject_food %>%
   
   # Average by food
-  group_by(fdd_ingredient) %>%
-  mutate(food_pp_average_mg1000kcal = mean(pp_average_mg_1000kcal, na.rm = TRUE)) %>%
-  ungroup() %>%
-  distinct(fdd_ingredient, .keep_all = TRUE) %>%
-  select(c(fdd_ingredient, food_pp_average_mg1000kcal)) %>%
-  left_join(food_counts, by = "fdd_ingredient") %>%
-  arrange(desc(food_pp_average_mg1000kcal), desc(n_subjects))
+  dplyr::group_by(fdd_ingredient) %>%
+  dplyr::mutate(food_pp_average_mg1000kcal = mean(pp_average_mg_1000kcal, na.rm = TRUE)) %>%
+  dplyr::ungroup() %>%
+  dplyr::distinct(fdd_ingredient, .keep_all = TRUE) %>%
+  dplyr::select(c(fdd_ingredient, food_pp_average_mg1000kcal)) %>%
+  dplyr::left_join(food_counts, by = "fdd_ingredient") %>%
+  dplyr::arrange(desc(food_pp_average_mg1000kcal), desc(n_subjects))
 
 # Export food contributors file 
 vroom::vroom_write(content_by_food, 'outputs/summary_total_polyphenol_food_contributors.csv', delim = ",")
