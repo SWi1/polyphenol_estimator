@@ -1,7 +1,7 @@
  ---
 layout: default
 title: Step 3a Summary - Total
-parent: Polyphenol Estimation Pipeline
+parent: Polyphenol Estimator
 nav_order: 4
 has_toc: true
 ---                             
