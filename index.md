@@ -6,7 +6,7 @@ nav_order: 1
 
 # Polyphenol Estimator
 
-This start guide shows you how to take your ASA24 or NHANES dietary data and estimate polyphenol intake using the [FooDB](https://foodb.ca/) and calculate the dietary inflammatory index [(Shivapppa et al. 2013)](10.1017/S1368980013002115). Example ASA24 data, borrowed from the [DietDiveR Repository](https://computational-nutrition-lab.github.io/DietDiveR/), is provided for you to test. Check out [the example file here](https://github.com/SWi1/polyphenol_pipeline/blob/main/user_inputs/VVKAJ_Items.csv) to see the input structure required for Polyphenol Estimator.
+This start guide shows you how to take your ASA24 or NHANES dietary data and estimate polyphenol intake using the [FooDB](https://foodb.ca/) and calculate the dietary inflammatory index [(Shivapppa et al. 2013)](10.1017/S1368980013002115). Example ASA24 data, borrowed from the [DietDiveR Repository](https://computational-nutrition-lab.github.io/DietDiveR/), is provided for you to test. Check out [the example file here](https://github.com/SWi1/polyphenol_estimator/blob/main/user_inputs/VVKAJ_Items.csv) to see the input structure required for Polyphenol Estimator.
 
 ### 1. Download the entire repository directly [here](https://github.com/SWi1/polyphenol_estimator/archive/refs/heads/main.zip) then unzip the folder. 
 The repository contains files and scripts used in the tutorial.
