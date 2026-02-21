@@ -142,7 +142,7 @@ compound_intakes_subject = compound_intakes_entry %>%
   
   #Remove duplicates
   dplyr::distinct(subject, compound_public_id, .keep_all = TRUE) %>%
-  dplyr::select(-compound_intake_mg) %>%
+  dplyr::select(-c(compound_intake_mg, any_of(c("RecallNo", "RecordNo", "RecordDayNo")))) %>%
   
   # Add kcal data
   dplyr::left_join(kcal_subject, by = 'subject') %>%

@@ -8,7 +8,9 @@ has_children: true
 
 # Polyphenol Estimator
 
-Polyphenol Estimator takes either ASA24 Items Files or NHANES "Individual Foods" Recall Files. Based on the data input, STEP 1 will differ but STEPS 2 - 6 are the same. For simplicity, STEPS 2 - 6 in this tutorial show the output from the demo ASA24 data. The report for STEP 2 shows summary information about the number of unmapped foods, which will vary between datasets.
+![Overview of unique feature sizes at various processing steps of Polyphenol Estimator](../workflow_images/Polyphenol_Estimator_Overview_with_counts.png)
+
+Polyphenol Estimator takes ASA24 Record Items Files, ASA24 Recall Items Files, or NHANES "Individual Foods" Recall Files. Based on the data input (ASA24 vs NHANES), STEP 1 will differ but STEPS 2 - 3 are the same. For simplicity, STEPS 2 - 3 in this tutorial show the output from the demo ASA24 data. Click [here](https://swi1.github.io/polyphenol_estimator/webpages/DII_calculation.html) for further details on STEP 4, the calculation of the Dietary Inflammatory Index.
 
 ### Steps Specific to ASA24
 1. STEP1_ASA24_FDD_Disaggregation.Rmd
@@ -32,6 +34,7 @@ Polyphenol Estimator takes either ASA24 Items Files or NHANES "Individual Foods"
     - Examines food contributors to total polyphenol intake.
 
 ## Outputs
+
 
 ### Mapping
 #### Intermediate Files

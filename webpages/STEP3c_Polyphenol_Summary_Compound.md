@@ -6,6 +6,14 @@ nav_order: 6
 has_toc: true
 ---                              
                               
+---
+layout: default
+title: Step 3c Summary - Compound
+parent: Polyphenol Estimation Pipeline
+nav_order: 6
+has_toc: true
+---                              
+                              
 - [Calculate Compound-Level Polyphenol
   Intakes](#calculate-compound-level-polyphenol-intakes)
 - [SCRIPTS](#scripts)
@@ -147,7 +155,7 @@ compound_intakes_subject = compound_intakes_entry %>%
   
   #Remove duplicates
   dplyr::distinct(subject, compound_public_id, .keep_all = TRUE) %>%
-  dplyr::select(-compound_intake_mg) %>%
+  dplyr::select(-c(compound_intake_mg, any_of(c("RecallNo", "RecordNo", "RecordDayNo")))) %>%
   
   # Add kcal data
   dplyr::left_join(kcal_subject, by = 'subject') %>%

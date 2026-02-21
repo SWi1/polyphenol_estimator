@@ -6,6 +6,14 @@ nav_order: 5
 has_toc: true
 ---                              
                               
+---
+layout: default
+title: Step 3b Summary - Class
+parent: Polyphenol Estimation Pipeline
+nav_order: 5
+has_toc: true
+---                              
+                              
 - [Calculate Class-Level Polypenol
   Intakes](#calculate-class-level-polypenol-intakes)
 - [SCRIPTS](#scripts)
@@ -131,7 +139,7 @@ kcal_subject = input_kcal %>%
 # Then let's average the class intakes
 class_intakes_subject = class_intakes_entry %>%
   # We will replace these with the subject average
-  dplyr::select(-c(Total_KCAL,class_intake_mg1000kcal)) %>%
+  dplyr::select(-c(Total_KCAL, class_intake_mg1000kcal)) %>%
   
   #Average polyphenol intake across recalls for each class
   dplyr::group_by(subject, class) %>%
@@ -140,11 +148,11 @@ class_intakes_subject = class_intakes_entry %>%
   
   #Remove duplicates
   dplyr::distinct(subject, class, .keep_all = TRUE) %>%
-  dplyr::select(-class_intake_mg) %>%
+  dplyr::select(-c(class_intake_mg, any_of(c("RecallNo", "RecordNo", "RecordDayNo")))) %>%
   
   # Add kcal data
   dplyr::left_join(kcal_subject, by = 'subject') %>%
-  dplyr::mutate(class_intake_mg1000kcal = Avg_class_intake_mg/(avg_Total_KCAL/1000)) 
+  dplyr::mutate(class_intake_mg1000kcal = Avg_class_intake_mg/(avg_Total_KCAL/1000))
 
 vroom::vroom_write(class_intakes_subject,
                    "outputs/summary_class_intake_by_subject.csv", delim = ",")
