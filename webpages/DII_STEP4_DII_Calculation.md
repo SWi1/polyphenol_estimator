@@ -177,6 +177,7 @@ COHORT1 = merge_renamed %>%
         # Apply Calculations
         dplyr::mutate(
             CAFFEINE = CAFF / 1000, # convert to grams
+            TEA = TEA/1000, # convert to grams
             N3FAT = P183 + P184 + P205 + P225 + P226,
             N6FAT = P182 + P204,
             TURMERIC = TURMERIC * 1000,
