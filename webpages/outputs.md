@@ -11,7 +11,7 @@ Polyphenol Estimator provides polyphenol intake summaries at three different res
 
 <details>
 <summary>Total Polyphenol Intake</summary>
-   <ul>
+  <ul>
     <li><strong>Diet_total_nutrients.csv</strong>: Nutrient totals are provided by entry (recall or record and record day) for each participant</li>
     <li><strong>summary_total_intake_by_entry.csv</strong>: polyphenol total intakes by entry (recall or record and record day) for each participant</li>
     <li><strong>summary_total_intake_by_subject.csv</strong>: polyphenol total intakes for each participant</li>
@@ -24,7 +24,7 @@ Polyphenol Estimator provides polyphenol intake summaries at three different res
   <ul>
    <li><strong>summary_class_by_entry.csv</strong>: polyphenol class intakes by entry (recall or record and record day) for each participant</li>
    <li><strong>summary_class_by_subject.csv</strong>: polyphenol class intakes for each participant, provided in long format (classes as rows)
-    <li><strong>summary_class_by_subject_wide.csv</strong>: polyphenol class intakes for each participant, provided in wide format (classes as columns)</li>
+   <li><strong>summary_class_by_subject_wide.csv</strong>: polyphenol class intakes for each participant, provided in wide format, i.e. classes as columns</li>
   </ul>
 </details>
 
@@ -33,7 +33,7 @@ Polyphenol Estimator provides polyphenol intake summaries at three different res
   <ul>
    <li><strong>summary_compound_by_entry.csv</strong>:  polyphenol compound intakes by entry for each participant</li>
    <li><strong>summary_compound_by_subject.csv</strong>: polyphenol compound intakes for each participant, provided in long format (compounds as rows)</li>
-   <li><strong>summary_compound_by_subject_wide.csv</strong>: polyphenol compound intakes for each participant, provided in wide format (compounds as columns)</li>
+   <li><strong>summary_compound_by_subject_wide.csv</strong>: polyphenol compound intakes for each participant, provided in wide formal, i.e. compounds as columns</li>
   </ul>
 </details>
 
@@ -53,6 +53,11 @@ Our mapping output files are large feature-rich datasets, which we have compress
     <li><strong>Diet_Disaggregated_mapped.csv.bz2</strong>: Food codes are shown with their underlying ingredients and newly calculated gram intakes, and FooDB food name equivalent (no content)
     <li><strong>Diet_FooDB_polyphenol_content.csv.bz2</strong>: Food codes are shown with their underlying ingredients and newly calculated gram intakes, and FooDB food names (with polyphenol content)
   </ul>
+</details>
+
+<details>
+<summary>Log Files</summary>
+A log file is also generated for each run of estimate_polyphenols() and calculate_DII(). These files are intended to help users track use and time of Polyphenol Estimator runs, including those runs that experienced an error.
 </details>
 
 ### Dietary Inflammatory Index (DII) Calculation

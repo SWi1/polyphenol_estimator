@@ -52,6 +52,7 @@ calculate_DII = function(report = c("none", "html", "md")) {
   log_message(
     "====================================\n",
     "42-Component DII Calculation Starting \n",
+    "May 2026 Release\n",
     "\nSession start: ", format(start_time, "%Y-%m-%d %H:%M:%S"),
     "\nreport type: ", report,
     "\n")

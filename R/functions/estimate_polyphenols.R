@@ -56,7 +56,8 @@ estimate_polyphenols = function(
   
   log_message(
     "\n====================================\n",
-    "Polyphenol Estimator \n",
+    "Polyphenol Estimator\n",
+    "May 2026 Release\n",
     "\nSession start: ", format(start_time, "%Y-%m-%d %H:%M:%S"),
     "\ninput file: ", diet_input_file,
     "\ninput type: ", type,
