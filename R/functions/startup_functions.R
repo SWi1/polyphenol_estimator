@@ -1,10 +1,11 @@
 # HELPER FUNCTIONS
-# Stephanie Wilson
+# Stephanie Wilson, Andrew Oliver
+# May 2026
 
 # package installation
 # ------------------------------------------------------------
 # Function to install pipeline packages if not already installed by user
-ensure_packages = function(pkgs, specify_inputs_script = "provided_files.R") {
+ensure_packages = function(pkgs, specify_inputs_script = "R/provided_files.R") {
   # message the user
   message("Checking for dependencies...")
   
@@ -16,12 +17,11 @@ ensure_packages = function(pkgs, specify_inputs_script = "provided_files.R") {
   
   # make sure the path exists otherwise error out
   if(!dir.exists(Local_R_packages)) {
-    stop("The path '", Local_R_packages, "' does not exist. Please check your 
-        specify_inputs.R file and ensure the Local_R_packages variable is set correctly.")
+    stop("The path '", Local_R_packages, "' does not exist.")
   }
   
   # Create a local library directory relative to the script
-  local_lib <- file.path(Local_R_packages, "r_packages")
+  local_lib = file.path(Local_R_packages, "r_packages")
   
   if (!dir.exists(local_lib)) {
     dir.create(local_lib, recursive = TRUE)
@@ -33,7 +33,7 @@ ensure_packages = function(pkgs, specify_inputs_script = "provided_files.R") {
   }
   
   # Check and install missing packages
-  missing_pkgs <- pkgs[!sapply(pkgs, requireNamespace, quietly = TRUE)]
+  missing_pkgs = pkgs[!sapply(pkgs, requireNamespace, quietly = TRUE)]
   
   if (length(missing_pkgs) > 0) {
     message("Installing missing packages to: ", local_lib, "\n")
@@ -55,24 +55,24 @@ ensure_packages = function(pkgs, specify_inputs_script = "provided_files.R") {
 # rmarkdown::render, run scripts and render html or md reports for a given RMD
 # ------------------------------------------------------------
 # triggers html yaml components
-run_create_html_report = function(file, diet_input_file) {
+run_create_html_report = function(file) {
   rmarkdown::render(
-    file,
+    normalizePath(file),
     output_format = "html_document",
     output_file = NULL,
-    output_dir = "reports",
+    output_dir = here::here("reports"),
     clean = TRUE,
     quiet = TRUE
   )
 }
 
 # Triggers md yaml components
-run_create_md_report = function(file, diet_input_file) {
+run_create_md_report = function(file) {
   rmarkdown::render(
-    file,
+    normalizePath(file),
     output_format = "md_document",
     output_file = NULL,
-    output_dir = "reports",
+    output_dir = here::here("reports"),
     clean = TRUE,
     quiet = TRUE
   )

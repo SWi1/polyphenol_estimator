@@ -4,8 +4,8 @@ title: Step 1 Disaggregate food codes (NHANES)
 parent: Polyphenol Estimator
 nav_order: 2
 has_toc: true
----
-
+---                             
+                              
 - [Disaggregation of NHANES Foods](#disaggregation-of-nhanes-foods)
 - [SCRIPT](#script)
   - [Sum Recall to get total kcal and Additional Nutrient
@@ -16,6 +16,7 @@ has_toc: true
     Brewing](#apply-ingredient-percentage-adjustment-for-coffee-and-tea-brewing)
   - [Disaggregate FoodCodes and compute final Ingredient
     Weights](#disaggregate-foodcodes-and-compute-final-ingredient-weights)
+  - [Write output files](#write-output-files)
 
 ## Disaggregation of NHANES Foods
 
@@ -47,6 +48,7 @@ polyphenol intakes can be standardized to caloric intake later on.
 ``` r
 # Load packages
 suppressMessages(library(dplyr))
+suppressMessages(library(here))
 suppressMessages(library(vroom))
 suppressMessages(library(tidyr))
 suppressMessages(library(stringr))
@@ -57,7 +59,7 @@ Load Example Dietary Data and FDA-FDD V3.6
 
 ``` r
 # Load provided file paths
-source("provided_files.R")
+source(here::here("R", "provided_files.R"))
 
 # Load User Dietary Data
 input_data = vroom::vroom(diet_input_file, show_col_types = FALSE) %>%
@@ -86,8 +88,12 @@ input_total_nutrients = input_data %>%
   ungroup()
 ```
 
-    ## `summarise()` has grouped output by 'subject'. You can
-    ## override using the `.groups` argument.
+    ## `summarise()` has regrouped the output.
+    ## ℹ Summaries were computed grouped by subject and RecallNo.
+    ## ℹ Output is grouped by subject.
+    ## ℹ Use `summarise(.groups = "drop_last")` to silence this message.
+    ## ℹ Use `summarise(.by = c(subject, RecallNo))` for per-operation grouping
+    ##   (`?dplyr::dplyr_by`) instead.
 
 ### Minimize the number of columns to the essential data
 
@@ -143,17 +149,11 @@ merge = left_join(input_data_clean_minimal, FDD_V3_adjusted, by = "wweia_food_co
       coalesce(brewing_adjustment_percentage, ingredient_percent) / 100))
 ```
 
-#### Write output files
-
-Ensure outputs directory is created
-
-``` r
-if (!dir.exists("outputs")) dir.create("outputs", recursive = TRUE)
-```
+### Write output files
 
 Write Files
 
 ``` r
-vroom::vroom_write(merge, 'outputs/Diet_Disaggregated.csv.bz2', delim = ",")
-vroom::vroom_write(input_total_nutrients, 'outputs/Diet_total_nutrients.csv', delim = ",")
+vroom::vroom_write(merge, here::here('outputs/Diet_Disaggregated.csv.bz2'), delim = ",")
+vroom::vroom_write(input_total_nutrients, here::here('outputs/Diet_total_nutrients.csv'), delim = ",")
 ```

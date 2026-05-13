@@ -49,6 +49,7 @@ maps them to FooDB to derive polyphenol content.
 ``` r
 # Load packages
 suppressMessages(library(dplyr))
+suppressMessages(library(here))
 suppressMessages(library(vroom))
 suppressMessages(library(tidyr))
 suppressMessages(library(stringr))
@@ -58,9 +59,9 @@ Load data
 
 ``` r
 # Load provided file paths
-source("provided_files.R")
+source(here::here("R", "provided_files.R"))
 
-input = vroom::vroom('outputs/Diet_Disaggregated.csv.bz2', 
+input = vroom::vroom(here::here("outputs", "Diet_Disaggregated.csv.bz2"), 
                      show_col_types = FALSE) %>%
   dplyr::select(-wweia_food_description)
 
@@ -103,7 +104,7 @@ input_mapped = input %>%
   # Connect to foodb names
   dplyr::left_join(mapping, by = c("fdd_ingredient"))
 
-vroom::vroom_write(input_mapped, 'outputs/Diet_Disaggregated_mapped.csv.bz2', delim = ",")
+vroom::vroom_write(input_mapped, here::here("outputs", "Diet_Disaggregated_mapped.csv.bz2"), delim = ",")
 ```
 
 ### Merge FooDB-matched Ingredient Codes to FooDB Polyphenol Content File.
@@ -134,7 +135,8 @@ Export polyphenol content file. Compress as this is the largest file
 that we generate.
 
 ``` r
-vroom::vroom_write(input_mapped_content, 'outputs/Diet_FooDB_polyphenol_content.csv.bz2', delim = ",")
+vroom::vroom_write(input_mapped_content, here::here("outputs", "Diet_FooDB_polyphenol_content.csv.bz2"), 
+                   delim = ",")
 ```
 
 ### Review of Unmapped Foods
@@ -188,8 +190,8 @@ report_lines = c(
   paste("Number of records/recalls where at least one food did not map:", num_recalls_some_missing))
 
 # Write to text file
-writeLines(report_lines, "outputs/summary_missing_foods_overview.txt")
+writeLines(report_lines, here::here("outputs", "summary_missing_foods_overview.txt"))
 
 # Write out detailed recall-level data
-vroom::vroom_write(missing_counts, 'outputs/summary_missing_foods_detailed.csv', delim = ",")
+vroom::vroom_write(missing_counts, here::here("outputs", "summary_missing_foods_detailed.csv"), delim = ",")
 ```

@@ -24,7 +24,7 @@ This script examines food contributors to total polyphenol intake.
 
 #### INPUTS
 
-- **Diet_Disaggregated_mapped.csv.bz2**; Dissagregated dietary data,
+- **Diet_Disaggregated_mapped.csv.bz2**; Disaggregated dietary data,
   mapped to FooDB foods
 - **Diet_FooDB_polyphenol_content.csv.bz2**: Disaggregated dietary data,
   mapped to FooDB foods and polyphenol content
@@ -40,6 +40,7 @@ This script examines food contributors to total polyphenol intake.
 ``` r
 # Load packages
 suppressMessages(library(dplyr))
+suppressMessages(library(here))
 suppressMessages(library(vroom))
 suppressMessages(library(tidyr))
 suppressMessages(library(stringr))
@@ -47,16 +48,18 @@ suppressMessages(library(stringr))
 
 ``` r
 # Load provided file paths
-source("provided_files.R")
+source(here::here("R", "provided_files.R"))
 
 # Foods Mapped
-input_mappings = vroom::vroom('outputs/Diet_Disaggregated_mapped.csv.bz2',
+input_mappings = vroom::vroom(here::here("outputs", "Diet_Disaggregated_mapped.csv.bz2"),
                               show_col_types = FALSE)
 
 # Foods Mapped with content
-input_polyphenol_content = vroom::vroom('outputs/Diet_FooDB_polyphenol_content.csv.bz2',
+input_polyphenol_content = vroom::vroom(here::here("outputs", "Diet_FooDB_polyphenol_content.csv.bz2"),
                                         show_col_types = FALSE)
-input_kcal = vroom::vroom('outputs/Diet_total_nutrients.csv', show_col_types = FALSE) %>%
+
+input_kcal = vroom::vroom(here::here("outputs", "Diet_total_nutrients.csv"), 
+                          show_col_types = FALSE) %>%
   # Ensure consistent KCAL naming whether ASA24 or NHANES
   dplyr::rename_with(~ "Total_KCAL", .cols = any_of(c("Total_KCAL", # Specific to ASA24
                                                "Total_DRXIKCAL"))) %>%  # Specific to NHANES
@@ -168,5 +171,6 @@ content_by_food = content_by_subject_food %>%
   dplyr::arrange(desc(food_pp_average_mg1000kcal), desc(n_subjects))
 
 # Export food contributors file 
-vroom::vroom_write(content_by_food, 'outputs/summary_total_polyphenol_food_contributors.csv', delim = ",")
+vroom::vroom_write(content_by_food, here::here("outputs", "summary_total_polyphenol_food_contributors.csv"),
+                   delim = ",")
 ```

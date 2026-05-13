@@ -6,14 +6,6 @@ nav_order: 5
 has_toc: true
 ---                              
                               
----
-layout: default
-title: Step 3b Summary - Class
-parent: Polyphenol Estimation Pipeline
-nav_order: 5
-has_toc: true
----                              
-                              
 - [Calculate Class-Level Polypenol
   Intakes](#calculate-class-level-polypenol-intakes)
 - [SCRIPTS](#scripts)
@@ -50,6 +42,7 @@ provided dietary data.
 
 ``` r
 suppressMessages(library(dplyr))
+suppressMessages(library(here))
 suppressMessages(library(vroom))
 suppressMessages(library(tidyr))
 suppressMessages(library(stringr))
@@ -57,13 +50,13 @@ suppressMessages(library(stringr))
 
 ``` r
 # Load provided file paths
-source("provided_files.R")
+source(here::here("R", "provided_files.R"))
 
 #Content and kcal data
-input_polyphenol_content = vroom::vroom('outputs/Diet_FooDB_polyphenol_content.csv.bz2',
+input_polyphenol_content = vroom::vroom(here::here("outputs", "Diet_FooDB_polyphenol_content.csv.bz2"),
                                         show_col_types = FALSE)
 
-input_kcal = vroom::vroom('outputs/Diet_total_nutrients.csv', show_col_types = FALSE) %>%
+input_kcal = vroom::vroom(here::here("outputs", "Diet_total_nutrients.csv"), show_col_types = FALSE) %>%
   # Ensure consistent KCAL naming whether ASA24 or NHANES
   dplyr::rename_with(~ "Total_KCAL", .cols = any_of(c("Total_KCAL", # Specific to ASA24
                                                "Total_DRXIKCAL"))) %>%  # Specific to NHANES
@@ -125,7 +118,9 @@ class_intakes_entry = input_polyphenol_kcal %>%
   #Standardize Intakes to caloric intake
   dplyr::mutate(class_intake_mg1000kcal = class_intake_mg/(Total_KCAL/1000))
 
-vroom::vroom_write(class_intakes_entry, "outputs/summary_class_intake_by_entry.csv", delim = ",")
+vroom::vroom_write(class_intakes_entry, 
+                   here::here("outputs", "summary_class_intake_by_entry.csv"),
+                              delim = ",")
 ```
 
 ### Daily Class Intakes by SUBJECT
@@ -155,7 +150,8 @@ class_intakes_subject = class_intakes_entry %>%
   dplyr::mutate(class_intake_mg1000kcal = Avg_class_intake_mg/(avg_Total_KCAL/1000))
 
 vroom::vroom_write(class_intakes_subject,
-                   "outputs/summary_class_intake_by_subject.csv", delim = ",")
+                   here::here("outputs", "summary_class_intake_by_subject.csv"),
+                   delim = ",")
 ```
 
 Available for users who prefer wide format for their analyses
@@ -169,5 +165,6 @@ class_intakes_subject_wide = class_intakes_subject %>%
               values_from = class_intake_mg1000kcal, values_fill = 0)
 
 vroom::vroom_write(class_intakes_subject_wide,
-                   "outputs/summary_class_intake_by_subject_wide.csv", delim = ",")
+                   here::here("outputs", "summary_class_intake_by_subject_wide.csv"),
+                   delim = ",")
 ```

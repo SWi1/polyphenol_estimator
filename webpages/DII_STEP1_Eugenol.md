@@ -39,6 +39,7 @@ Load packages
 
 ``` r
 suppressMessages(library(dplyr))
+suppressMessages(library(here))
 suppressMessages(library(vroom))
 suppressMessages(library(tidyr))
 suppressMessages(library(stringr))
@@ -48,10 +49,10 @@ Load data
 
 ``` r
 # Load provided file paths
-source("provided_files.R")
+source(here::here("R", "provided_files.R"))
 
 # Load Dietary data that has been disaggregated and connected to FooDB
-input_mapped = vroom::vroom('outputs/Diet_Disaggregated_mapped.csv.bz2', 
+input_mapped = vroom::vroom(here::here("outputs", "Diet_Disaggregated_mapped.csv.bz2"), 
                             show_col_types = FALSE)
 
 # Eugenol Content in FooDB
@@ -92,7 +93,7 @@ input_mapped_content = input_mapped %>%
   # Recall - Sum by Subject, Recall
   # Record - Sum by Subject, Record Number, Day in Record Number
   dplyr::group_by(across(all_of(group_vars))) %>%
-  # Calculate EUGENOL summed per recal or record
+  # Calculate EUGENOL summed per recall or record
   # with rename for dietaryindex function
   dplyr::mutate(EUGENOL = sum(eugenol_mg)) %>%
   dplyr::ungroup() %>%
@@ -104,5 +105,7 @@ input_mapped_content = input_mapped %>%
 ### Export Eugenol Intake File for DII Calculation
 
 ``` r
-vroom::vroom_write(input_mapped_content, 'outputs/Diet_DII_eugenol_by_entry.csv', delim = ",")
+vroom::vroom_write(input_mapped_content, 
+                   here::here("outputs", "Diet_DII_eugenol_by_entry.csv"),
+                   delim = ",")
 ```

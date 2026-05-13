@@ -1,7 +1,7 @@
 ---
 title: "Obtaining and Cleaning NHANES Dietary Data"
 author: "Stephanie M.G. Wilson"
-date: "January 2026"
+date: "May 2026"
 output:
   md_document:
     variant: gfm
@@ -263,10 +263,10 @@ Given the number of entries, we will compress the dietary file to reduce file si
 If you receive the error "No such file or directory" when running this code, ensure "preparing_diet_data_NHANES.Rmd" is in the scripts folder of the downloaded repository.
 ```{r}
 vroom::vroom_write(diet_data_filtered_QC,
-                   'user_inputs/NHANES_2021_2023_diet_adults.csv.bz2', delim = ",")
+                   '../../user_inputs/NHANES_2021_2023_diet_adults.csv.bz2', delim = ",")
 
 # For users who want to keep the filtered, QC'd demographic data
-vroom::vroom_write(demo_adults_filtered_QC, 'user_inputs/NHANES_2021_2023_demographics_adults.csv', delim = ",")
+vroom::vroom_write(demo_adults_filtered_QC, '../../user_inputs/NHANES_2021_2023_demographics_adults.csv', delim = ",")
 ```
 
 

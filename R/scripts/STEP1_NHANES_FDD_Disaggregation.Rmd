@@ -1,7 +1,7 @@
 ---
 title: "Disaggregation of NHANES Foods"
 author: "Stephanie Wilson"
-date: "February 2026"
+date: "May 2026"
 output:
   md_document:
     variant: gfm
@@ -37,13 +37,10 @@ This script takes in NHANES dietary recalls (merged into a singular dataframe), 
 rm(list = ls())
 ```
 
-```{r setup, include=FALSE}
-knitr::opts_knit$set(root.dir = "..") # project root relative to scripts/
-```
-
 ```{r warning = FALSE}
 # Load packages
 suppressMessages(library(dplyr))
+suppressMessages(library(here))
 suppressMessages(library(vroom))
 suppressMessages(library(tidyr))
 suppressMessages(library(stringr))
@@ -53,7 +50,7 @@ suppressMessages(library(readxl))
 Load Example Dietary Data and FDA-FDD V3.6
 ```{r}
 # Load provided file paths
-source("provided_files.R")
+source(here::here("R", "provided_files.R"))
 
 # Load User Dietary Data
 input_data = vroom::vroom(diet_input_file, show_col_types = FALSE) %>%
@@ -139,13 +136,8 @@ merge = left_join(input_data_clean_minimal, FDD_V3_adjusted, by = "wweia_food_co
 
 
 ### Write output files
-Ensure outputs directory is created
-```{r}
-if (!dir.exists("outputs")) dir.create("outputs", recursive = TRUE)
-```
-
 Write Files
 ```{r}
-vroom::vroom_write(merge, 'outputs/Diet_Disaggregated.csv.bz2', delim = ",")
-vroom::vroom_write(input_total_nutrients, 'outputs/Diet_total_nutrients.csv', delim = ",")
+vroom::vroom_write(merge, here::here('outputs/Diet_Disaggregated.csv.bz2'), delim = ",")
+vroom::vroom_write(input_total_nutrients, here::here('outputs/Diet_total_nutrients.csv'), delim = ",")
 ```

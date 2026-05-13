@@ -42,6 +42,8 @@ Load packages
 
 ``` r
 suppressMessages(library(dplyr))
+suppressMessages(library(here))
+suppressMessages(library(here))
 suppressMessages(library(vroom))
 suppressMessages(library(tidyr))
 suppressMessages(library(stringr))
@@ -51,10 +53,10 @@ Load data
 
 ``` r
 # Load provided file paths
-source("provided_files.R")
+source(here::here("R", "provided_files.R"))
 
 # Load dietary data mapped to polyphenol content
-input_polyphenol_content = vroom::vroom('outputs/Diet_FooDB_polyphenol_content.csv.bz2',
+input_polyphenol_content = vroom::vroom(here::here("outputs", "Diet_FooDB_polyphenol_content.csv.bz2"),
                                         show_col_types = FALSE)
 
 # Polyphenol classifications
@@ -106,7 +108,7 @@ subclass_intakes = input_polyphenol_content_filtered %>%
                   component, component_sum)) %>%
   # pivot to wide version
   tidyr::pivot_wider(names_from = component, values_from = component_sum) %>%
-  # Rename the columns to match the DII category names in the DietaryIndex function
+  # Rename the columns to match the DII category names in the function
   dplyr::rename(
     ISOFLAVONES = Isoflavones,
     "FLA3OL" = "Flavan-3-ols",
@@ -119,5 +121,7 @@ subclass_intakes = input_polyphenol_content_filtered %>%
 ### Export Polyphenol Subclass Intakes for DII Calculation
 
 ``` r
-vroom::vroom_write(subclass_intakes, 'outputs/Diet_DII_subclass_by_entry.csv', delim = ",")
+vroom::vroom_write(subclass_intakes, 
+                   here::here("outputs", "Diet_DII_subclass_by_entry.csv"),
+                   delim = ",")
 ```

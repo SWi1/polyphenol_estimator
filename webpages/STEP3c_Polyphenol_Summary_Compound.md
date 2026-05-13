@@ -6,14 +6,6 @@ nav_order: 6
 has_toc: true
 ---                              
                               
----
-layout: default
-title: Step 3c Summary - Compound
-parent: Polyphenol Estimation Pipeline
-nav_order: 6
-has_toc: true
----                              
-                              
 - [Calculate Compound-Level Polyphenol
   Intakes](#calculate-compound-level-polyphenol-intakes)
 - [SCRIPTS](#scripts)
@@ -53,6 +45,7 @@ mg/1000kcal) for provided dietary data.
 ``` r
 # Load packages
 suppressMessages(library(dplyr))
+suppressMessages(library(here))
 suppressMessages(library(vroom))
 suppressMessages(library(tidyr))
 suppressMessages(library(stringr))
@@ -60,13 +53,14 @@ suppressMessages(library(stringr))
 
 ``` r
 # Load provided file paths
-source("provided_files.R")
+source(here::here("R", "provided_files.R"))
 
 #Content and kcal data
-input_polyphenol_content = vroom::vroom('outputs/Diet_FooDB_polyphenol_content.csv.bz2',
+input_polyphenol_content = vroom::vroom(here::here("outputs", "Diet_FooDB_polyphenol_content.csv.bz2"),
                                         show_col_types = FALSE)
 
-input_kcal = vroom::vroom('outputs/Diet_total_nutrients.csv', show_col_types = FALSE) %>%
+input_kcal = vroom::vroom(here::here("outputs", "Diet_total_nutrients.csv"), 
+                          show_col_types = FALSE) %>%
   # Ensure consistent KCAL naming whether ASA24 or NHANES
   dplyr::rename_with(~ "Total_KCAL", .cols = any_of(c("Total_KCAL", # Specific to ASA24
                                                "Total_DRXIKCAL"))) %>%  # Specific to NHANES
@@ -132,7 +126,8 @@ compound_intakes_entry = input_polyphenol_kcal %>%
 
 # Write output
 vroom::vroom_write(compound_intakes_entry,
-                   "outputs/summary_compound_intake_by_entry.csv", delim = ",")
+                   here::here("outputs", "summary_compound_intake_by_entry.csv"), 
+                   delim = ",")
 ```
 
 ### Daily Class Intakes by Subject
@@ -165,7 +160,8 @@ compound_intakes_subject = compound_intakes_entry %>%
 
 # Write Output
 vroom::vroom_write(compound_intakes_subject,
-                   "outputs/summary_compound_intake_by_subject.csv", delim = ",")
+                   here::here("outputs", "summary_compound_intake_by_subject.csv"),
+                   delim = ",")
 ```
 
 Available for users who prefer a wide format
@@ -180,5 +176,7 @@ compound_intakes_subject_wide = compound_intakes_subject %>%
 
 # Write Output
 vroom::vroom_write(compound_intakes_subject_wide,
-                   "outputs/summary_compound_intake_by_subject_wide.csv", delim = ",")
+                   here::here("outputs", 
+                   "summary_compound_intake_by_subject_wide.csv"), 
+                   delim = ",")
 ```

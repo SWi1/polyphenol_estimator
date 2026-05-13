@@ -40,6 +40,7 @@ Load packages
 
 ``` r
 suppressMessages(library(dplyr))
+suppressMessages(library(here))
 suppressMessages(library(vroom))
 suppressMessages(library(tidyr))
 suppressMessages(library(stringr))
@@ -50,10 +51,10 @@ Load data
 
 ``` r
 # Load provided file paths
-source("provided_files.R")
+source(here::here("R", "provided_files.R"))
 
 # Load Dietary data that has been disaggregated and connected to FooDB
-input_mapped = vroom::vroom('outputs/Diet_Disaggregated_mapped.csv.bz2', 
+input_mapped = vroom::vroom(here::here("outputs", "Diet_Disaggregated_mapped.csv.bz2"), 
                             show_col_types = FALSE)
 
 # Load FDA-FDD 3.1
@@ -162,12 +163,14 @@ component_sums = input_mapped %>%
 # In smaller groups, some foods may be missing.
 food_list = c("GARLIC", "GINGER", "ONION", "TURMERIC", "TEA", "PEPPER", "THYME")
 missing_cols = setdiff(food_list, names(component_sums))
-# Add any missing colums as 0
+# Add any missing columns as 0
 component_sums[missing_cols] =0
 ```
 
 ### Export Food Intake Amounts for DII Calculation
 
 ``` r
-vroom::vroom_write(component_sums, 'outputs/Diet_DII_foods_by_entry.csv', delim = ",")
+vroom::vroom_write(component_sums, 
+                   here::here("outputs", "Diet_DII_foods_by_entry.csv"), 
+                   delim = ",")
 ```

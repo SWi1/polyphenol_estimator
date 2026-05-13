@@ -52,6 +52,7 @@ intake later on.
 ``` r
 # Load packages
 suppressMessages(library(dplyr))
+suppressMessages(library(here))
 suppressMessages(library(vroom))
 suppressMessages(library(tidyr))
 suppressMessages(library(stringr))
@@ -62,7 +63,7 @@ Load Example Dietary Data and FDA-FDD V3.6
 
 ``` r
 # Load provided file paths
-source("provided_files.R")
+source(here::here("R", "provided_files.R"))
 
 # Load User Dietary Data
 input_data = vroom::vroom(diet_input_file, show_col_types = FALSE) %>%
@@ -140,8 +141,12 @@ input_total_nutrients = input_data_clean %>%
   dplyr::ungroup()
 ```
 
-    ## `summarise()` has grouped output by 'subject'. You can override using the
-    ## `.groups` argument.
+    ## `summarise()` has regrouped the output.
+    ## ℹ Summaries were computed grouped by subject and RecallNo.
+    ## ℹ Output is grouped by subject.
+    ## ℹ Use `summarise(.groups = "drop_last")` to silence this message.
+    ## ℹ Use `summarise(.by = c(subject, RecallNo))` for per-operation grouping
+    ##   (`?dplyr::dplyr_by`) instead.
 
 ### Minimize the number of columns to the essential data
 
@@ -200,15 +205,7 @@ merge = dplyr::left_join(input_data_clean_minimal, FDD_V3_adjusted, by = "wweia_
 
 ### Write output files
 
-Ensure outputs directory is created
-
 ``` r
-if (!dir.exists("outputs")) dir.create("outputs", recursive = TRUE)
-```
-
-Write Files
-
-``` r
-vroom::vroom_write(merge, 'outputs/Diet_Disaggregated.csv.bz2', delim = ",")
-vroom::vroom_write(input_total_nutrients, 'outputs/Diet_total_nutrients.csv', delim = ",")
+vroom::vroom_write(merge, here::here("outputs", "Diet_Disaggregated.csv.bz2"), delim = ",")
+vroom::vroom_write(input_total_nutrients, here::here("outputs", "Diet_total_nutrients.csv"), delim = ",")
 ```

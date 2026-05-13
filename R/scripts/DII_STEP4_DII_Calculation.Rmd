@@ -1,7 +1,7 @@
 ---
 title: "DII_Calculation"
 author: "Stephanie Wilson"
-date: "February 2026"
+date: "May 2026"
 output:
   md_document:
     variant: gfm
@@ -44,14 +44,10 @@ This script adapts the DII_ASA24.R from the `dietaryindex` package to include 14
 rm(list = ls())
 ```
 
-```{r setup, include=FALSE}
-knitr::opts_knit$set(root.dir = "..") # project root relative to scripts/
-```
-
 Load package
-
 ```{r warning = FALSE}
 suppressMessages(library(dplyr))
+suppressMessages(library(here))
 suppressMessages(library(vroom))
 suppressMessages(library(tidyr))
 suppressMessages(library(stringr))
@@ -61,21 +57,21 @@ Load dietary test data
 
 ```{r}
 # Load dietary data
-total_nut = vroom::vroom('outputs/Diet_total_nutrients.csv', show_col_types = FALSE) 
+total_nut = vroom::vroom(here::here("outputs", "Diet_total_nutrients.csv"), show_col_types = FALSE) 
 
 # Load DII calculation files
 # eugenol intake
-eugenol = vroom::vroom('outputs/Diet_DII_eugenol_by_entry.csv', show_col_types = FALSE) %>%
+eugenol = vroom::vroom(here::here("outputs", "Diet_DII_eugenol_by_entry.csv"), show_col_types = FALSE) %>%
   # If dataframe is empty, ensure that file still merges
    mutate(across(any_of(c("RecallNo", "RecordNo", "RecordDayNo")), as.numeric))
 
 # polyphenol subclass intakes
-subclass = vroom::vroom('outputs/Diet_DII_subclass_by_entry.csv', show_col_types = FALSE) %>%
+subclass = vroom::vroom(here::here("outputs", "Diet_DII_subclass_by_entry.csv"), show_col_types = FALSE) %>%
   # If dataframe is empty, ensure that file still merges
    mutate(across(any_of(c("RecallNo", "RecordNo", "RecordDayNo")), as.numeric))
 
 # food intakes
-DII_foods = vroom::vroom('outputs/Diet_DII_foods_by_entry.csv', show_col_types = FALSE) %>%
+DII_foods = vroom::vroom(here::here("outputs", "Diet_DII_foods_by_entry.csv"), show_col_types = FALSE) %>%
   # If dataframe is empty, ensure that file still merges
    mutate(across(any_of(c("RecallNo", "RecordNo", "RecordDayNo")), as.numeric))
 ```
@@ -326,7 +322,7 @@ DII_scores = COHORT2 %>%
             FLAVONOLS = sum(FLAVONOLS, na.rm = TRUE),
             FLAVONES = sum(FLAVONES, na.rm = TRUE),
             EUGENOL = sum(EUGENOL, na.rm = TRUE))
-            # Can add with future updats
+            # Can add with future updates
             # SAFFRON =sum(SAFFRON, na.rm = TRUE),
             # ROSEMARY = sum(ROSEMARY, na.rm = TRUE),
             # TRANS = sum(TRANS, na.rm = TRUE))
@@ -335,5 +331,7 @@ DII_scores = COHORT2 %>%
 ### Export DII total and component scores for downstream use
 
 ```{r}
-vroom::vroom_write(DII_scores, "outputs/summary_DII_final_scores_by_entry.csv", delim = ",")
+vroom::vroom_write(DII_scores, 
+                   here::here("outputs", "summary_DII_final_scores_by_entry.csv"),
+                   delim = ",")
 ```

@@ -36,6 +36,7 @@ provided dietary data.
 
 ``` r
 suppressMessages(library(dplyr))
+suppressMessages(library(here))
 suppressMessages(library(vroom))
 suppressMessages(library(tidyr))
 suppressMessages(library(stringr))
@@ -43,13 +44,14 @@ suppressMessages(library(stringr))
 
 ``` r
 # Load provided file paths
-source("provided_files.R")
+source(here::here("R", "provided_files.R"))
 
 # Load dietary data mapped to polyphenol content
-input_polyphenol_content = vroom::vroom('outputs/Diet_FooDB_polyphenol_content.csv.bz2',
+input_polyphenol_content = vroom::vroom(here::here("outputs", "Diet_FooDB_polyphenol_content.csv.bz2"),
                                         show_col_types = FALSE)
 
-input_kcal = vroom::vroom('outputs/Diet_total_nutrients.csv', show_col_types = FALSE) %>%
+input_kcal = vroom::vroom(here::here("outputs", "Diet_total_nutrients.csv"), 
+                                     show_col_types = FALSE) %>%
   # Ensure consistent KCAL naming whether ASA24 or NHANES
   dplyr::rename_with(~ "Total_KCAL", .cols = any_of(c("Total_KCAL", # Specific to ASA24
                                                "Total_DRXIKCAL"))) %>%  # Specific to NHANES
@@ -97,7 +99,9 @@ content_by_entry = input_polyphenol_kcal %>%
                   pp_recallsum_mg, Total_KCAL, pp_recallsum_mg1000kcal))
 
 # Write Output
-vroom::vroom_write(content_by_entry, "outputs/summary_total_intake_by_entry.csv", delim = ",")
+vroom::vroom_write(content_by_entry, 
+                   here::here("outputs", "summary_total_intake_by_entry.csv"),
+                   delim = ",")
 ```
 
 ## Total daily Polyphenol Intake Numbers AVERAGE FOR SUBJECT
@@ -115,5 +119,7 @@ content_by_subject = content_by_entry %>%
   dplyr::select(c(subject, pp_average_mg, kcal_average, pp_average_mg_1000kcal))
 
 # Write Output
-vroom::vroom_write(content_by_subject, "outputs/summary_total_intake_by_subject.csv", delim = ",")
+vroom::vroom_write(content_by_subject, 
+                   here::here("outputs", "summary_total_intake_by_subject.csv"),
+                   delim = ",")
 ```

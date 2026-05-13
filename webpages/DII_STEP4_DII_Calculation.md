@@ -58,6 +58,7 @@ Load package
 
 ``` r
 suppressMessages(library(dplyr))
+suppressMessages(library(here))
 suppressMessages(library(vroom))
 suppressMessages(library(tidyr))
 suppressMessages(library(stringr))
@@ -67,21 +68,21 @@ Load dietary test data
 
 ``` r
 # Load dietary data
-total_nut = vroom::vroom('outputs/Diet_total_nutrients.csv', show_col_types = FALSE) 
+total_nut = vroom::vroom(here::here("outputs", "Diet_total_nutrients.csv"), show_col_types = FALSE) 
 
 # Load DII calculation files
 # eugenol intake
-eugenol = vroom::vroom('outputs/Diet_DII_eugenol_by_entry.csv', show_col_types = FALSE) %>%
+eugenol = vroom::vroom(here::here("outputs", "Diet_DII_eugenol_by_entry.csv"), show_col_types = FALSE) %>%
   # If dataframe is empty, ensure that file still merges
    mutate(across(any_of(c("RecallNo", "RecordNo", "RecordDayNo")), as.numeric))
 
 # polyphenol subclass intakes
-subclass = vroom::vroom('outputs/Diet_DII_subclass_by_entry.csv', show_col_types = FALSE) %>%
+subclass = vroom::vroom(here::here("outputs", "Diet_DII_subclass_by_entry.csv"), show_col_types = FALSE) %>%
   # If dataframe is empty, ensure that file still merges
    mutate(across(any_of(c("RecallNo", "RecordNo", "RecordDayNo")), as.numeric))
 
 # food intakes
-DII_foods = vroom::vroom('outputs/Diet_DII_foods_by_entry.csv', show_col_types = FALSE) %>%
+DII_foods = vroom::vroom(here::here("outputs", "Diet_DII_foods_by_entry.csv"), show_col_types = FALSE) %>%
   # If dataframe is empty, ensure that file still merges
    mutate(across(any_of(c("RecallNo", "RecordNo", "RecordDayNo")), as.numeric))
 ```
@@ -346,11 +347,15 @@ DII_scores = COHORT2 %>%
             EUGENOL = sum(EUGENOL, na.rm = TRUE))
 ```
 
-    ## `summarise()` has grouped output by 'subject'. You can override using the
-    ## `.groups` argument.
+    ## `summarise()` has regrouped the output.
+    ## ℹ Summaries were computed grouped by subject and RecallNo.
+    ## ℹ Output is grouped by subject.
+    ## ℹ Use `summarise(.groups = "drop_last")` to silence this message.
+    ## ℹ Use `summarise(.by = c(subject, RecallNo))` for per-operation grouping
+    ##   (`?dplyr::dplyr_by`) instead.
 
 ``` r
-            # Can add with future updats
+            # Can add with future updates
             # SAFFRON =sum(SAFFRON, na.rm = TRUE),
             # ROSEMARY = sum(ROSEMARY, na.rm = TRUE),
             # TRANS = sum(TRANS, na.rm = TRUE))
@@ -359,5 +364,7 @@ DII_scores = COHORT2 %>%
 ### Export DII total and component scores for downstream use
 
 ``` r
-vroom::vroom_write(DII_scores, "outputs/summary_DII_final_scores_by_entry.csv", delim = ",")
+vroom::vroom_write(DII_scores, 
+                   here::here("outputs", "summary_DII_final_scores_by_entry.csv"),
+                   delim = ",")
 ```

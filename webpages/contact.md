@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Contact
-nav_order: 6
+nav_order: 7
 ---
 
 <h2>Contact Us</h2>
@@ -36,7 +36,7 @@ nav_order: 6
   }
 </style>
 
-<form action="https://formspree.io/f/xeodabjk" method="POST">
+<form action="https://formspree.io/f/mykovrrp" method="POST">
   <label>
     Your Name:
     <input type="text" name="name" required>

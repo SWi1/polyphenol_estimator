@@ -1,33 +1,78 @@
 # Calculate the 42-component DII
 # Stephanie Wilson
+# May 2026
 
 # DII pipeline runner for beginners
 calculate_DII = function(report = c("none", "html", "md")) {
   
+  # Match user input
   report = match.arg(report)
   
+  ##########################################
+  # Create log file
+  
+  # Ensure outputs directory is created
+  if (!dir.exists("outputs")) dir.create("outputs", recursive = TRUE)
+  
+  log_file = here::here("outputs", 
+                       paste0("log_dii_", format(Sys.time(), "%Y%m%d_%H%M"), ".log"))
+  
+  # Captures log messages and also displays during user run
+  log_message = function(...) {
+    
+    txt = paste0(...)
+    
+    # console output
+    message(txt)
+    
+    # log file output
+    cat(txt,"\n", file = log_file, append = TRUE)}
+  
+  # Let users know where information is going
+  log_message("Log started at ", log_file, "\n")
+  
+  ##########################################
   # Install and load required packages
-  source("functions/startup_functions.R")     # defines install_if_missing()
-  ensure_packages(pkgs = c("dplyr", "vroom", "tidyr", "stringr", "ggplot2", "readxl", "rmarkdown"))
+  source("R/functions/startup_functions.R")     # defines install_if_missing()
+  ensure_packages(pkgs = c("dplyr", "here", "vroom", "tidyr", 
+                           "stringr", "readxl", "rmarkdown"))
   
   # Load package
   suppressMessages(library(rmarkdown))
   suppressMessages(library(dplyr))
   suppressMessages(library(vroom))
   
-  # The Polyphenol Estimation Pipeline Needs to run first.
+  ##########################################
+  # Start tracking
+  
+  # Start time
+  start_time = Sys.time()
+ 
+  # Starting log message
+  log_message(
+    "====================================\n",
+    "42-Component DII Calculation Starting \n",
+    "\nSession start: ", format(start_time, "%Y-%m-%d %H:%M:%S"),
+    "\nreport type: ", report,
+    "\n")
+
+  ##########################################
+  # Preliminary Checks
+  
+  # Polyphenol Estimator must be run prior to DII calculation
   # Output from this pipeline kicks off the DII calculation scripts
-  starting_file = "outputs/Diet_Disaggregated_mapped.csv.bz2"
+  log_message("Checking if Polyphenol Estimator was run...")
+  starting_file = here::here("outputs/Diet_Disaggregated_mapped.csv.bz2")
   
   # Check if it was by confirming Disaggregated Dietary Data File exists
   if (!file.exists(starting_file)) {
-    stop("\n Please run the polyphenol estimation pipeline before running the DII calculation.")
+    stop(log_message("\n Please run estimate_polyphenols before running the DII calculation."))
   } else {
-    message("Confirmed polyphenol estimation pipeline was run.\n")
+    log_message(" - Done.\n")
   }
   
   # List of DII scripts in order
-  dii_steps = file.path("scripts", c(
+  dii_steps = file.path("R/scripts", c(
   # Step 1: Calculate Intake of Eugenol
   "DII_STEP1_Eugenol.Rmd",
   # Step 2: Calculate Intake of 6 polyphenol subclasses
@@ -46,12 +91,6 @@ calculate_DII = function(report = c("none", "html", "md")) {
   # Check if reports directory exists, and if not, Create one
   if (!dir.exists("reports")) dir.create("reports", recursive = TRUE)
   
-  # Message saying which report is getting made
-  message("DII calculation will now begin and also generate ", report, " reports.\n")
-  
-  # Start timing
-  start_time = Sys.time()
-  
   ###########################################################################
   # Case 1: Produce reports (html/md) with Rmd files
   ###########################################################################
@@ -60,11 +99,12 @@ calculate_DII = function(report = c("none", "html", "md")) {
     for (script in dii_steps) {
       tryCatch(
         {
+          log_message("Running: ", script)
           render_fun(script)
-          message("Completed: ", script, "\n")
+          log_message("Done.\n")
         },
         error = function(e) {
-          stop("Error in ", script, ": ", e$message)
+          stop(log_message("Error in ", script, ": ", e$message))
         }
       )
     }
@@ -74,8 +114,10 @@ calculate_DII = function(report = c("none", "html", "md")) {
     ###########################################################################
   } else {
     
-    # Convert Rmd to R quietly
+    # Generate list
     scripts = character(length(dii_steps))
+    
+    # Convert Rmd to R quietly
     for (i in seq_along(dii_steps)) {
       
       # Construct .R path
@@ -93,17 +135,20 @@ calculate_DII = function(report = c("none", "html", "md")) {
     
     # Execute each R script without showing messages or warnings
     for (rfile in scripts) {
-      message("Running: ", rfile)
+      log_message("Running: ", rfile)
       tryCatch({
         suppressMessages(suppressWarnings(source(rfile, local = FALSE)))
-        message("Done. Moving to next script.\n")
+        log_message("Done.\n")
       },
-      error = function(e) stop("Error running ", rfile, ": ", e$message))
+      error = function(e) stop(log_message("Error running ", rfile, ": ", e$message)))
     }
     
     # Remove temporary R scripts
     removed = file.remove(scripts)
-    if (!all(removed)) warning("Some temporary R scripts could not be deleted.")
+    if (!all(removed)) {
+      log_message("Some temporary R scripts could not be deleted.")
+      warning("Some temporary R scripts could not be deleted.", call. = FALSE)
+    }
   }
   
   # End timing
@@ -113,6 +158,6 @@ calculate_DII = function(report = c("none", "html", "md")) {
   seconds = round(total_seconds %% 60)
   
   # Completion messages
-  message("42-Component DII Calculation completed successfully.\n")
-  message("Total runtime: ", minutes, " min ", seconds, " sec")
+  log_message("42-Component DII Calculation completed successfully.")
+  log_message("Total runtime: ", minutes, " min ", seconds, " sec")
 }

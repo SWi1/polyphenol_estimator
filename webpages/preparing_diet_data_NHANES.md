@@ -26,8 +26,7 @@ NHANES dietary data from the CDC website and perform several diet
 cleaning steps. To generate the same outputs, users are encouraged to
 download the entire GitHub Repository
 [here](https://github.com/SWi1/polyphenol_estimator/archive/refs/heads/main.zip)
-and run this script in RStudio. The NHANES preparation script is located
-within the scripts folder
+and run this script in RStudio. This NHANES preparation script is located within the scripts folder
 [here](https://github.com/SWi1/polyphenol_estimator/blob/main/scripts/preparing_diet_data_NHANES.Rmd).
 
 **About NHANES**  

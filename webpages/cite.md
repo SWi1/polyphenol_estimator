@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Cite
-nav_order: 5
+nav_order: 6
 ---
 
 ## Cite Us
