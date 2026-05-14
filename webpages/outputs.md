@@ -57,9 +57,9 @@ Polyphenol Estimator provides polyphenol intake summaries at three different res
 Our mapping output files are large feature-rich datasets, which we have compressed.
 
   <ul> 
-    <li><strong>Diet_Disaggregated.csv.bz2</strong>: Food codes are shown with their underlying ingredients and newly calculated gram intakes
-    <li><strong>Diet_Disaggregated_mapped.csv.bz2</strong>: Food codes are shown with their underlying ingredients and newly calculated gram intakes, and FooDB food name equivalent (no content)
-    <li><strong>Diet_FooDB_polyphenol_content.csv.bz2</strong>: Food codes are shown with their underlying ingredients and newly calculated gram intakes, and FooDB food names. Contains polyphenol content.
+    <li><strong>Diet_Disaggregated.csv.bz2</strong>: Food codes are shown with their underlying ingredients and newly calculated gram intakes</li>
+    <li><strong>Diet_Disaggregated_mapped.csv.bz2</strong>: Food codes are shown with their underlying ingredients and newly calculated gram intakes, and FooDB food name equivalent (no content)</li>
+    <li><strong>Diet_FooDB_polyphenol_content.csv.bz2</strong>: Food codes are shown with their underlying ingredients and newly calculated gram intakes, and FooDB food names. Contains polyphenol content.</li>
   </ul>
 
 </details>
