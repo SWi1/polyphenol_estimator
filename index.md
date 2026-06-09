@@ -4,34 +4,38 @@ layout: home
 nav_order: 1
 ---
 
-<div class="two-column">
-  <div class="left-column">
-    <h2>Polyphenol Estimator</h2>
-
+## Polyphenol Estimator
+<div style="display:flex; flex-wrap:wrap; gap:20px; align-items:flex-start;">
+ 
+  <div style="flex:3;">
     <p>
-      This start guide shows you how to take your ASA24 or NHANES dietary data and estimate polyphenol intake using
-      <a href="https://foodb.ca/">FooDB</a>
-      and calculate the Dietary Inflammatory Index described by
-      <a href="https://doi.org/10.1017/S1368980013002115">
-        Shivappa et al. (2013)
-      </a>. 
-      Example ASA24 data, borrowed from
-      <a href="https://computational-nutrition-lab.github.io/DietDiveR/">
-        DietDiveR
-      </a>,
-      is provided for testing. See the
-      <a href="https://github.com/SWi1/polyphenol_estimator/blob/main/user_inputs/VVKAJ_Items.csv">
-        example input file
-      </a>
-      to view the required input structure for Polyphenol Estimator.
+        This start guide shows you how to take your ASA24 or NHANES dietary data and estimate polyphenol intake using
+        <a href="https://foodb.ca/">FooDB</a>
+        and calculate the Dietary Inflammatory Index described by
+        <a href="https://doi.org/10.1017/S1368980013002115">
+          Shivappa et al. (2013)
+        </a>. 
+        Example ASA24 data, borrowed from
+        <a href="https://computational-nutrition-lab.github.io/DietDiveR/">
+          DietDiveR
+        </a>,
+        is provided for testing. See the
+        <a href="https://github.com/SWi1/polyphenol_estimator/blob/main/user_inputs/VVKAJ_Items.csv">
+          example input file
+        </a>
+        to view the required input structure for Polyphenol Estimator.
     </p>
   </div>
 
-  <div class="right-column">
-    <img src="{{ site.baseurl }}/workflow_images/Polyphenol_Estimator_Logo.png"
-         alt="Logo featuring the text Polyphenol Estimator in cursive red script within a blood orange shape.">
-  </div>
+  <figure style="flex:2; margin:0;">
+    <img src="{{ site.baseurl }}/workflow_images/Polyphenol_Estimator_Logo.png" alt="Logo featuring the text Polyphenol Estimator in cursive red script within a blood orange shape." style="width: 100%; height: auto;">
+    <figcaption><a href = "https://doi.org/10.64898/2026.05.27.26353727"> 
+      Polyphenol Estimator
+      </a>: Automated calculation of polyphenol intake estimates and DII from ASA24 or NHANES dietary data.</figcaption>
+  </figure>
+
 </div>
+
 
 <details>
 <summary>Prerequisite: R and R Studio Installed</summary>
