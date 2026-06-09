@@ -4,9 +4,38 @@ layout: home
 nav_order: 1
 ---
 
-# Polyphenol Estimator
+<div class="two-column">
+  <div class="left-column">
+    <h2>Polyphenol Estimator</h2>
 
-This start guide shows you how to take your ASA24 or NHANES dietary data and estimate polyphenol intake using [FooDB](https://foodb.ca/) and calculate the dietary inflammatory index [(Shivapppa et al. 2013)](https://doi.org/10.1017/S1368980013002115). Example ASA24 data, borrowed from the [DietDiveR Repository](https://computational-nutrition-lab.github.io/DietDiveR/), is provided for you to test. Check out [the example file here](https://github.com/SWi1/polyphenol_estimator/blob/main/user_inputs/VVKAJ_Items.csv) to see the input structure required for Polyphenol Estimator.
+    <p>
+      This start guide shows you how to take your ASA24 or NHANES dietary data and estimate polyphenol intake using
+      <a href="https://foodb.ca/">FooDB</a>
+      and calculate the Dietary Inflammatory Index described by
+      <a href="https://doi.org/10.1017/S1368980013002115">
+        Shivappa et al. (2013)
+      </a>.
+    </p>
+
+    <p>
+      Example ASA24 data, borrowed from
+      <a href="https://computational-nutrition-lab.github.io/DietDiveR/">
+        DietDiveR
+      </a>,
+      is provided for testing. See the
+      <a href="https://github.com/SWi1/polyphenol_estimator/blob/main/user_inputs/VVKAJ_Items.csv">
+        example input file
+      </a>
+      to view the required input structure for Polyphenol Estimator.
+    </p>
+  </div>
+
+  <div class="right-column">
+    <img src="/workflow_images/Polyphenol_Estimator_Logo.png"
+         alt="Polyphenol Estimator logo featuring the text Polyphenol Estimator within a blood orange shape.">
+  </div>
+</div>
+
 
 <details>
 <summary>Prerequisite: R and R Studio Installed</summary>
