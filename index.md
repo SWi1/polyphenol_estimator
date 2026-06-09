@@ -29,9 +29,6 @@ nav_order: 1
 
   <figure style="flex:2; margin:0;">
     <img src="{{ site.baseurl }}/workflow_images/Polyphenol_Estimator_Logo.png" alt="Logo featuring the text Polyphenol Estimator in cursive red script within a blood orange shape." style="width: 100%; height: auto;">
-    <figcaption><a href = "https://doi.org/10.64898/2026.05.27.26353727"> 
-      Polyphenol Estimator
-      </a>: Automated calculation of polyphenol intake estimates and DII from ASA24 or NHANES dietary data.</figcaption>
   </figure>
 
 </div>
