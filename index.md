@@ -14,10 +14,7 @@ nav_order: 1
       and calculate the Dietary Inflammatory Index described by
       <a href="https://doi.org/10.1017/S1368980013002115">
         Shivappa et al. (2013)
-      </a>.
-    </p>
-
-    <p>
+      </a>. 
       Example ASA24 data, borrowed from
       <a href="https://computational-nutrition-lab.github.io/DietDiveR/">
         DietDiveR
@@ -31,11 +28,10 @@ nav_order: 1
   </div>
 
   <div class="right-column">
-    <img src="/workflow_images/Polyphenol_Estimator_Logo.png"
-         alt="Polyphenol Estimator logo featuring the text Polyphenol Estimator within a blood orange shape.">
+    <img src="{{ site.baseurl }}/workflow_images/Polyphenol_Estimator_Logo.png"
+         alt="Logo featuring the text Polyphenol Estimator in cursive red script within a blood orange shape.">
   </div>
 </div>
-
 
 <details>
 <summary>Prerequisite: R and R Studio Installed</summary>
