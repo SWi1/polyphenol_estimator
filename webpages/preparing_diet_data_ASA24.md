@@ -16,7 +16,7 @@ An example ASA24 Recall Items File is provided from [DietDiveR](https://github.c
 ![Screenshot of downloading recall data from ASA24 Researcher Website](../workflow_images/ASA24_download.png)
 
 ### 2. Perform dietary quality control checks. 
-  - Polyphenol Estimator will automatically include complete entries (`RecallStatus`==5 or `Record_Status`==5).
+  - Polyphenol Estimator will automatically include complete entries (`RecallStatus`==2 or `Record_Status`==2).
   - **Additional dietary quality control checks** should be done before running Polyphenol Estimator without disturbing the data structure. The CDC provides [ASA24 quality control guidelines](https://epi.grants.cancer.gov/asa24/resources/cleaning.html), which covers missing data, text entries, outlier review, and duplicate entries.
 
 ### 3. Come back to run_pipeline.R and update `diet_input_file` with your own ASA24 file path.
