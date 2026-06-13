@@ -4,7 +4,7 @@ This repository contains scripts to automate the estimation of dietary polypheno
 
 ### Releases
 - November 20, 2025 - Tutorial Draft Release
-- May 13, 2026 - Polyphenol Estimator & Tutorial 1st Release
+- May 13, 2026 - Polyphenol Estimator & Tutorial Pre-release
 
 ## How it Works
 

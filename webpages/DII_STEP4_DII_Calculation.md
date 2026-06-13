@@ -95,7 +95,9 @@ merge = total_nut %>%
   rename_with(~ gsub("^Total_", "", .x)) %>%
   left_join(eugenol) %>%
   left_join(subclass) %>%
-  left_join(DII_foods)
+  left_join(DII_foods) %>%
+  # Ensure there are no missing intake values by replacing with zero
+  mutate(across(where(is.numeric), ~ replace_na(.x, 0)))
 ```
 
     ## Joining with `by = join_by(subject, RecallNo)`
